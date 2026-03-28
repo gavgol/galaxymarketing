@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto; /* Must be auto — smooth interferes with scroll-driven frame animation */
 }
 
 @layer base {

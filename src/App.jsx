@@ -1,10 +1,38 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
+import { Routes, Route, useLocation, Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { MousePointer2, ArrowRight, Zap, Target, Layers, Globe, Search, Code, BarChart3, Rocket, TrendingUp, Palette, Menu, X, Send, Phone, Mail, CheckCircle, Bot, Brain, Eye } from 'lucide-react';
+import Blog from './pages/Blog.jsx';
+import BlogPost from './pages/BlogPost.jsx';
+import blogPosts from './data/blogPosts.js';
 
 gsap.registerPlugin(ScrollTrigger);
+
+/* ── Loader ── */
+const Loader = ({ progress, visible }) => (
+  <div
+    className="fixed inset-0 z-[9999] bg-background flex items-center justify-center transition-opacity duration-600"
+    style={{ opacity: visible ? 1 : 0, pointerEvents: visible ? 'auto' : 'none' }}
+  >
+    <div className="text-center">
+      <div className="font-sans text-3xl font-bold text-textMain mb-6 tracking-tight">
+        GALAXY <span className="text-primary">MARKETING</span>
+      </div>
+      <p className="font-mono text-xs text-textMuted uppercase tracking-[3px] mb-4">Loading</p>
+      <div className="w-48 h-[3px] rounded bg-slate/50 mx-auto">
+        <div
+          className="h-full rounded bg-primary transition-[width] duration-300"
+          style={{ width: `${progress}%` }}
+        />
+      </div>
+    </div>
+  </div>
+);
+
+/* ── Reduced Motion ── */
+const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ── Helpers ── */
 const scrollTo = (id) => {
@@ -83,10 +111,14 @@ const Navbar = () => {
   const navRef = useRef(null);
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+
   const links = [
     { label: 'Services', id: 'services' },
     { label: 'Process', id: 'process' },
     { label: 'Results', id: 'results' },
+    { label: 'Blog', id: 'blog', isRoute: true },
     { label: 'Contact', id: 'contact' },
   ];
 
@@ -104,7 +136,16 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', showNav);
   }, []);
 
-  const handleNav = (id) => {
+  const handleNav = (id, isRoute) => {
+    if (isRoute) {
+      setMobileOpen(false);
+      return; // Link component handles navigation
+    }
+    if (!isHome) {
+      // Navigate to home then scroll
+      window.location.href = `/#${id}`;
+      return;
+    }
     scrollTo(id);
     setMobileOpen(false);
   };
@@ -112,16 +153,22 @@ const Navbar = () => {
   return (
     <>
       <nav ref={navRef} className="fixed top-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between px-6 py-3 rounded-full border border-transparent transition-all duration-500 w-[90%] max-w-6xl">
-        <button onClick={scrollToTop} className="text-xl font-sans font-bold tracking-tight flex items-center gap-2 cursor-pointer">
+        <Link to="/" onClick={scrollToTop} className="text-xl font-sans font-bold tracking-tight flex items-center gap-2 cursor-pointer">
           GALAXY<span className="text-primary">.</span>
-        </button>
+        </Link>
 
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-8 font-mono text-sm">
           {links.map(link => (
-            <button key={link.id} onClick={() => handleNav(link.id)} className="text-textMuted hover:text-textMain hover:-translate-y-[1px] transition-all cursor-pointer">
-              {link.label}
-            </button>
+            link.isRoute ? (
+              <Link key={link.id} to={`/${link.id}`} className="text-textMuted hover:text-textMain hover:-translate-y-[1px] transition-all cursor-pointer">
+                {link.label}
+              </Link>
+            ) : (
+              <button key={link.id} onClick={() => handleNav(link.id)} className="text-textMuted hover:text-textMain hover:-translate-y-[1px] transition-all cursor-pointer">
+                {link.label}
+              </button>
+            )
           ))}
         </div>
 
@@ -130,17 +177,23 @@ const Navbar = () => {
         </div>
 
         {/* Mobile hamburger */}
-        <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden text-textMain p-2 cursor-pointer">
+        <button onClick={() => setMobileOpen(!mobileOpen)} aria-label={mobileOpen ? 'Close menu' : 'Open menu'} aria-expanded={mobileOpen} className="md:hidden text-textMain p-2 cursor-pointer">
           {mobileOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </nav>
 
       {/* Mobile menu */}
-      <div className={`fixed inset-0 z-40 bg-background/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 transition-all duration-500 ${mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+      <div role="dialog" aria-label="Mobile navigation" className={`fixed inset-0 z-40 bg-background/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 transition-all duration-500 ${mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
         {links.map(link => (
-          <button key={link.id} onClick={() => handleNav(link.id)} className="text-2xl font-sans font-medium text-textMain hover:text-primary transition-colors cursor-pointer">
-            {link.label}
-          </button>
+          link.isRoute ? (
+            <Link key={link.id} to={`/${link.id}`} onClick={() => setMobileOpen(false)} className="text-2xl font-sans font-medium text-textMain hover:text-primary transition-colors cursor-pointer">
+              {link.label}
+            </Link>
+          ) : (
+            <button key={link.id} onClick={() => handleNav(link.id)} className="text-2xl font-sans font-medium text-textMain hover:text-primary transition-colors cursor-pointer">
+              {link.label}
+            </button>
+          )
         ))}
         <MagneticButton variant="primary" className="mt-4" href="#contact" onClick={() => setMobileOpen(false)}>Get a Free Quote</MagneticButton>
       </div>
@@ -148,32 +201,160 @@ const Navbar = () => {
   );
 };
 
-/* ── Hero Mockups ── */
+/* ── Scroll Video Hero — clean, fast, no cards ── */
+const FRAME_COUNT = 61;
+
+const ScrollVideoHero = ({ onFramesLoaded }) => {
+  const sectionRef = useRef(null);
+  const canvasRef = useRef(null);
+  const heroTextRef = useRef(null);
+  const overlayRef = useRef(null);
+  const framesRef = useRef([]);
+  const currentFrameRef = useRef(-1);
+  const ctxRef = useRef(null);
+  const allLoadedRef = useRef(false);
+
+  // Cover-fit drawing — always fills the viewport edge-to-edge
+  const drawFrame = useCallback((index) => {
+    const canvas = canvasRef.current;
+    const ctx = ctxRef.current;
+    const img = framesRef.current[index];
+    if (!canvas || !ctx || !img || !img.complete) return;
+
+    const cw = canvas.width, ch = canvas.height;
+    ctx.clearRect(0, 0, cw, ch);
+
+    // Cover-fit (fill viewport, crop overflow)
+    const imgRatio = img.naturalWidth / img.naturalHeight;
+    const canvasRatio = cw / ch;
+    let drawW, drawH;
+    if (canvasRatio > imgRatio) { drawW = cw; drawH = cw / imgRatio; }
+    else { drawH = ch; drawW = ch * imgRatio; }
+    ctx.drawImage(img, (cw - drawW) / 2, (ch - drawH) / 2, drawW, drawH);
+  }, []);
+
+  // Canvas resize — NO devicePixelRatio (1x = faster draws)
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    ctxRef.current = canvas.getContext('2d', { willReadFrequently: false });
+
+    const resize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      if (currentFrameRef.current >= 0) drawFrame(currentFrameRef.current);
+    };
+    resize();
+    window.addEventListener('resize', resize);
+    return () => window.removeEventListener('resize', resize);
+  }, [drawFrame]);
+
+  // Preload all frames
+  useEffect(() => {
+    let loaded = 0;
+    const imgs = [];
+    for (let i = 1; i <= FRAME_COUNT; i++) {
+      const img = new Image();
+      img.src = `/frames/frame_${String(i).padStart(4, '0')}.jpg`;
+      img.onload = () => {
+        loaded++;
+        onFramesLoaded(Math.round((loaded / FRAME_COUNT) * 100));
+        if (loaded === FRAME_COUNT) {
+          allLoadedRef.current = true;
+          currentFrameRef.current = 0;
+          drawFrame(0);
+        }
+      };
+      imgs.push(img);
+    }
+    framesRef.current = imgs;
+  }, [drawFrame, onFramesLoaded]);
+
+  // Scroll → frame mapping. Pure vanilla, no React state, requestAnimationFrame + passive
+  useEffect(() => {
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const section = sectionRef.current;
+          if (!section || !allLoadedRef.current) { ticking = false; return; }
+
+          const rect = section.getBoundingClientRect();
+          const scrollableHeight = section.offsetHeight - window.innerHeight;
+          const progress = Math.min(1, Math.max(0, -rect.top / scrollableHeight));
+
+          // Only redraw when frame changes
+          const frameIndex = Math.min(FRAME_COUNT - 1, Math.floor(progress * FRAME_COUNT));
+          if (frameIndex !== currentFrameRef.current) {
+            currentFrameRef.current = frameIndex;
+            drawFrame(frameIndex);
+          }
+
+          // Fade out hero text as scroll starts
+          const textOpacity = Math.max(0, 1 - progress * 8);
+          if (heroTextRef.current) {
+            heroTextRef.current.style.opacity = textOpacity;
+            heroTextRef.current.style.pointerEvents = textOpacity > 0.5 ? 'auto' : 'none';
+          }
+          if (overlayRef.current) {
+            overlayRef.current.style.opacity = textOpacity;
+          }
+
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [drawFrame]);
+
+  return (
+    <section ref={sectionRef} className="relative" style={{ height: '200vh' }}>
+      <div className="sticky top-0 w-full overflow-hidden bg-background" style={{ height: '100vh' }}>
+        <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
+
+        {/* Dark overlay for text readability */}
+        <div
+          ref={overlayRef}
+          className="absolute inset-0 z-[5] pointer-events-none"
+          style={{
+            background: 'linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.7) 45%, rgba(0,0,0,0.5) 75%, rgba(0,0,0,0.15) 100%)',
+          }}
+        />
+
+        {/* Hero text */}
+        <div ref={heroTextRef} className="absolute inset-0 z-10 flex items-center justify-center">
+          <div className="text-center px-6 max-w-3xl">
+            <p className="text-primary font-mono text-xs sm:text-sm tracking-widest mb-4 sm:mb-6 uppercase flex items-center justify-center gap-3">
+              <span className="h-[1px] w-8 bg-primary"></span>
+              Web Design &bull; SEO &bull; AI Visibility
+            </p>
+            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-sans font-bold leading-[1.05] tracking-tight mb-2 text-white">
+              Get Found. <br />
+              <span className="block font-serif italic text-white/80 text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] mt-2">Get Chosen.</span>
+            </h1>
+            <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-xl mx-auto mt-6 sm:mt-10 font-sans leading-relaxed">
+              We build websites that rank, get recommended by AI, and convert.
+            </p>
+            <div className="mt-6 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5">
+              <MagneticButton href="#contact">Start Your Project <ArrowRight size={18} /></MagneticButton>
+              <MagneticButton variant="outline" href="#results">See Our Results <BarChart3 size={18} /></MagneticButton>
+            </div>
+            <div className="mt-8 sm:mt-12 flex items-center justify-center gap-2 text-white/40 text-xs font-mono animate-bounce">
+              <span>Scroll to explore</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* ── Hero Mockups (kept for reference, unused) ── */
 const HeroMockups = () => {
   const containerRef = useRef(null);
-
-  useGSAP(() => {
-    gsap.from('.mockup-item', {
-      y: 80,
-      opacity: 0,
-      rotateX: 15,
-      duration: 1.4,
-      stagger: 0.25,
-      ease: 'power3.out',
-      delay: 0.5
-    });
-
-    gsap.to('.mockup-float-1', { y: -12, duration: 5, repeat: -1, yoyo: true, ease: 'sine.inOut' });
-    gsap.to('.mockup-float-2', { y: 10, x: -5, duration: 6, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 1.5 });
-    gsap.to('.mockup-float-3', { y: -8, x: 5, duration: 4.5, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 0.8 });
-    // Subtle shimmer on main screen
-    gsap.to('.screen-shimmer', {
-      backgroundPosition: '200% 0%',
-      duration: 3,
-      repeat: -1,
-      ease: 'none'
-    });
-  }, { scope: containerRef });
 
   return (
     <div ref={containerRef} className="relative w-full h-full min-h-[450px] lg:min-h-[550px]" style={{ perspective: '1200px' }}>
@@ -376,39 +557,20 @@ const HeroMockups = () => {
 const Hero = () => {
   const containerRef = useRef(null);
   const gradientRef = useRef(null);
-  const orbRef1 = useRef(null);
-  const orbRef2 = useRef(null);
-  const orbRef3 = useRef(null);
 
   useGSAP(() => {
+    const rm = prefersReducedMotion();
     gsap.from('.hero-text', {
-      y: 40,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.15,
-      ease: 'power3.out',
-      delay: 0.2
+      y: rm ? 10 : 40, opacity: 0,
+      duration: rm ? 0.5 : 1, stagger: 0.15, ease: 'power3.out', delay: 0.2
     });
-
-    gsap.to(gradientRef.current, {
-      backgroundPosition: '200% 200%',
-      duration: 20,
-      repeat: -1,
-      yoyo: true,
-      ease: 'sine.inOut'
-    });
-
-    gsap.to(orbRef1.current, { x: 60, y: -40, duration: 8, repeat: -1, yoyo: true, ease: 'sine.inOut' });
-    gsap.to(orbRef2.current, { x: -80, y: 50, duration: 10, repeat: -1, yoyo: true, ease: 'sine.inOut' });
-    gsap.to(orbRef3.current, { x: 40, y: 60, duration: 12, repeat: -1, yoyo: true, ease: 'sine.inOut' });
+    gsap.to(gradientRef.current, { backgroundPosition: '200% 200%', duration: rm ? 40 : 20, repeat: -1, yoyo: true, ease: 'sine.inOut' });
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="relative w-full flex items-center pt-28 pb-16 md:pt-32 md:pb-20 px-6 md:px-16 overflow-hidden min-h-[90vh]">
-      <div className="absolute inset-0 z-0 bg-[#0A0A0F]">
-        <div ref={orbRef1} className="absolute top-[15%] right-[20%] w-[500px] h-[500px] rounded-full bg-primary/15 blur-[120px]"></div>
-        <div ref={orbRef2} className="absolute bottom-[20%] left-[10%] w-[400px] h-[400px] rounded-full bg-primary/10 blur-[100px]"></div>
-        <div ref={orbRef3} className="absolute top-[50%] left-[50%] w-[600px] h-[600px] rounded-full bg-primary/8 blur-[150px]"></div>
+    <section ref={containerRef} className="relative w-full flex items-center pt-28 pb-16 md:pt-32 md:pb-20 px-6 md:px-16 overflow-hidden min-h-dvh">
+      {/* Background — space dark with gradient */}
+      <div className="absolute inset-0 z-0 bg-background">
         <div className="absolute inset-0 opacity-[0.03]"
           style={{
             backgroundImage: 'linear-gradient(rgba(201,168,76,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.3) 1px, transparent 1px)',
@@ -423,7 +585,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-end">
+      <div className="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
         {/* Left — Copy */}
         <div className="max-w-2xl">
           <p className="hero-text text-primary font-mono text-sm tracking-widest mb-6 uppercase flex items-center gap-3">
@@ -457,9 +619,25 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Right — Mockups */}
-        <div className="hero-text hidden lg:block">
-          <HeroMockups />
+        {/* Right — Video */}
+        <div className="hero-text hidden lg:block relative">
+          <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-[0_20px_80px_-15px_rgba(201,168,76,0.15)]">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              ref={(el) => { if (el) el.playbackRate = 0.4; }}
+              className="w-full h-full object-cover"
+              src="/hero-video.mp4"
+            />
+            {/* Soft edge blend into background */}
+            <div className="absolute inset-0 pointer-events-none"
+              style={{
+                boxShadow: 'inset 0 0 60px 30px #0D0D12',
+              }}
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -472,14 +650,11 @@ const Philosophy = () => {
 
   useGSAP(() => {
     gsap.from('.phil-word', {
-      scrollTrigger: {
-        trigger: textRef.current,
-        start: 'top 80%',
-      },
-      y: 30,
+      scrollTrigger: { trigger: textRef.current, start: 'top 80%' },
+      y: prefersReducedMotion() ? 0 : 30,
       opacity: 0,
-      duration: 0.8,
-      stagger: 0.08,
+      duration: prefersReducedMotion() ? 0.3 : 0.8,
+      stagger: prefersReducedMotion() ? 0.02 : 0.08,
       ease: 'power3.out'
     });
   }, { scope: textRef });
@@ -505,8 +680,19 @@ const Philosophy = () => {
 /* ── Interactive Cards ── */
 const CardShuffler = () => {
   const [cards, setCards] = useState(['Google SEO', 'AI Visibility (GEO)', 'Answer Engines (AEO)']);
+  const ref = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(([entry]) => setIsVisible(entry.isIntersecting), { threshold: 0.1 });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
     const int = setInterval(() => {
       setCards(prev => {
         const newArr = [...prev];
@@ -514,12 +700,12 @@ const CardShuffler = () => {
         newArr.unshift(last);
         return newArr;
       });
-    }, 3000);
+    }, prefersReducedMotion() ? 4000 : 3000);
     return () => clearInterval(int);
-  }, []);
+  }, [isVisible]);
 
   return (
-    <div className="relative h-48 w-full flex items-center justify-center">
+    <div ref={ref} className="relative h-48 w-full flex items-center justify-center">
       {cards.map((text, i) => {
         const yOffset = i * -15;
         const scale = 1 - (i * 0.05);
@@ -547,8 +733,19 @@ const CardShuffler = () => {
 const CardTypewriter = () => {
   const text = "Your website is live. Google indexed it in 4 hours. ChatGPT is already recommending you to local customers.";
   const [display, setDisplay] = useState('');
+  const ref = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(([entry]) => setIsVisible(entry.isIntersecting), { threshold: 0.1 });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
     let index = 0;
     const int = setInterval(() => {
       setDisplay(text.slice(0, index));
@@ -556,10 +753,10 @@ const CardTypewriter = () => {
       if (index > text.length + 10) index = 0;
     }, 80);
     return () => clearInterval(int);
-  }, []);
+  }, [isVisible]);
 
   return (
-    <div className="h-48 w-full bg-surface border border-slate rounded-2xl p-6 flex flex-col font-mono relative overflow-hidden">
+    <div ref={ref} className="h-48 w-full bg-surface border border-slate rounded-2xl p-6 flex flex-col font-mono relative overflow-hidden">
       <div className="flex items-center gap-2 text-xs text-textMuted mb-6 uppercase">
         <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse"></span>
         Building your site
@@ -575,14 +772,15 @@ const CardScheduler = () => {
   const containerRef = useRef(null);
 
   useGSAP(() => {
+    const rm = prefersReducedMotion();
     const tl = gsap.timeline({ repeat: -1 });
     tl.set('.cursor-svg', { x: -20, y: -20, scale: 1, opacity: 0 })
       .to('.cursor-svg', { opacity: 1, duration: 0.3 })
-      .to('.cursor-svg', { x: 74, y: 34, duration: 1, ease: 'power2.inOut', delay: 0.2 })
+      .to('.cursor-svg', { x: 74, y: 34, duration: rm ? 0.5 : 1, ease: 'power2.inOut', delay: 0.2 })
       .to('.cursor-svg', { scale: 0.8, duration: 0.1 })
       .to('.day-cell', { backgroundColor: '#C9A84C', color: '#000', duration: 0.2 }, '<')
       .to('.cursor-svg', { scale: 1, duration: 0.1 })
-      .to('.cursor-svg', { x: 180, y: 80, duration: 1, ease: 'power2.inOut', delay: 0.5 })
+      .to('.cursor-svg', { x: 180, y: 80, duration: rm ? 0.5 : 1, ease: 'power2.inOut', delay: 0.5 })
       .to('.cursor-svg', { opacity: 0, duration: 0.3 })
       .to('.day-cell', { backgroundColor: 'transparent', color: '#A0A0AA', duration: 0.5 });
   }, { scope: containerRef });
@@ -650,9 +848,9 @@ const Stats = () => {
   useGSAP(() => {
     gsap.from('.stat-item', {
       scrollTrigger: { trigger: containerRef.current, start: 'top 80%' },
-      y: 40,
+      y: prefersReducedMotion() ? 0 : 40,
       opacity: 0,
-      duration: 0.8,
+      duration: prefersReducedMotion() ? 0.3 : 0.8,
       stagger: 0.15,
       ease: 'power3.out'
     });
@@ -710,14 +908,15 @@ const Protocol = () => {
   const containerRef = useRef(null);
 
   useGSAP(() => {
+    const rm = prefersReducedMotion();
     const cards = gsap.utils.toArray('.protocol-card');
     cards.forEach((card, index) => {
       const isLast = index === cards.length - 1;
       if (!isLast) {
         gsap.to(card, {
-          scale: 0.92,
-          opacity: 0.3,
-          filter: 'blur(10px)',
+          scale: rm ? 0.96 : 0.92,
+          opacity: rm ? 0.5 : 0.3,
+          filter: rm ? 'blur(4px)' : 'blur(10px)',
           ease: 'power1.inOut',
           scrollTrigger: {
             trigger: cards[index + 1],
@@ -779,6 +978,7 @@ const TrustSignal = () => (
 /* ── Contact Form ── */
 const ContactForm = () => {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', service: '', message: '' });
+  const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const containerRef = useRef(null);
@@ -786,29 +986,58 @@ const ContactForm = () => {
   useGSAP(() => {
     gsap.from('.contact-anim', {
       scrollTrigger: { trigger: containerRef.current, start: 'top 80%' },
-      y: 40,
+      y: prefersReducedMotion() ? 0 : 40,
       opacity: 0,
-      duration: 0.8,
+      duration: prefersReducedMotion() ? 0.3 : 0.8,
       stagger: 0.1,
       ease: 'power3.out'
     });
   }, { scope: containerRef });
 
+  const validateField = (name, value) => {
+    switch (name) {
+      case 'name': return value.trim() ? '' : 'Please enter your name';
+      case 'email': return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) ? '' : 'Please enter a valid email';
+      case 'service': return value ? '' : 'Please select a service';
+      case 'message': return value.trim().length >= 10 ? '' : 'Please tell us a bit more (at least 10 characters)';
+      default: return '';
+    }
+  };
+
   const handleChange = (e) => {
-    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    if (errors[name]) setErrors(prev => ({ ...prev, [name]: validateField(name, value) }));
+  };
+
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    const error = validateField(name, value);
+    if (error) setErrors(prev => ({ ...prev, [name]: error }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const newErrors = {};
+    ['name', 'email', 'service', 'message'].forEach(field => {
+      const error = validateField(field, formData[field]);
+      if (error) newErrors[field] = error;
+    });
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      const firstErrorField = document.getElementById(Object.keys(newErrors)[0]);
+      if (firstErrorField) firstErrorField.focus();
+      return;
+    }
     setSending(true);
-    // Simulate send
     setTimeout(() => {
       setSending(false);
       setSubmitted(true);
+      setErrors({});
     }, 1500);
   };
 
-  const inputClasses = 'w-full bg-[#0A0A0F] border border-slate/40 rounded-xl px-5 py-4 text-textMain font-sans text-sm placeholder:text-textMuted/40 focus:outline-none focus:border-primary/60 transition-colors duration-300';
+  const inputClasses = 'w-full bg-[#0A0A0F] border border-slate/40 rounded-xl px-5 py-4 text-textMain font-sans text-sm placeholder:text-textMuted/60 focus:outline-none focus:border-primary/60 transition-colors duration-300';
 
   return (
     <section id="contact" ref={containerRef} className="py-32 px-6 md:px-16 bg-[#050508] border-t border-slate/20">
@@ -866,61 +1095,101 @@ const ContactForm = () => {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="bg-surface border border-slate/40 rounded-[2rem] p-8 md:p-10 space-y-5">
+              <form onSubmit={handleSubmit} className="bg-surface border border-slate/40 rounded-[2rem] p-8 md:p-10 space-y-5" noValidate>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Your Name *"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    className={inputClasses}
-                  />
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email Address *"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    className={inputClasses}
-                  />
+                  <div>
+                    <label htmlFor="name" className="sr-only">Your Name</label>
+                    <input
+                      id="name"
+                      type="text"
+                      name="name"
+                      placeholder="Your Name *"
+                      required
+                      aria-required="true"
+                      aria-invalid={errors.name ? 'true' : undefined}
+                      aria-describedby={errors.name ? 'name-error' : undefined}
+                      value={formData.name}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      className={`${inputClasses} ${errors.name ? 'border-red-500/60' : ''}`}
+                    />
+                    {errors.name && <p id="name-error" role="alert" className="text-red-400 text-xs font-mono mt-1.5 ml-1">{errors.name}</p>}
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="sr-only">Email Address</label>
+                    <input
+                      id="email"
+                      type="email"
+                      name="email"
+                      placeholder="Email Address *"
+                      required
+                      aria-required="true"
+                      aria-invalid={errors.email ? 'true' : undefined}
+                      aria-describedby={errors.email ? 'email-error' : undefined}
+                      value={formData.email}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      className={`${inputClasses} ${errors.email ? 'border-red-500/60' : ''}`}
+                    />
+                    {errors.email && <p id="email-error" role="alert" className="text-red-400 text-xs font-mono mt-1.5 ml-1">{errors.email}</p>}
+                  </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <input
-                    type="tel"
-                    name="phone"
-                    placeholder="Phone Number"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className={inputClasses}
-                  />
-                  <select
-                    name="service"
-                    value={formData.service}
-                    onChange={handleChange}
-                    required
-                    className={`${inputClasses} ${!formData.service ? 'text-textMuted/40' : ''}`}
-                  >
-                    <option value="" disabled>What do you need? *</option>
-                    <option value="web-design">Website Design & Development</option>
-                    <option value="seo">SEO & Google Rankings</option>
-                    <option value="geo-aeo">GEO & AEO (AI Visibility)</option>
-                    <option value="full-package">Full Package (Design + SEO + AI)</option>
-                    <option value="marketing">Digital Marketing & Ads</option>
-                    <option value="other">Other / Not Sure Yet</option>
-                  </select>
+                  <div>
+                    <label htmlFor="phone" className="sr-only">Phone Number</label>
+                    <input
+                      id="phone"
+                      type="tel"
+                      name="phone"
+                      placeholder="Phone Number"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className={inputClasses}
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="service" className="sr-only">Service Type</label>
+                    <select
+                      id="service"
+                      name="service"
+                      value={formData.service}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      required
+                      aria-required="true"
+                      aria-invalid={errors.service ? 'true' : undefined}
+                      aria-describedby={errors.service ? 'service-error' : undefined}
+                      className={`${inputClasses} ${!formData.service ? 'text-textMuted/60' : ''} ${errors.service ? 'border-red-500/60' : ''}`}
+                    >
+                      <option value="" disabled>What do you need? *</option>
+                      <option value="web-design">Website Design &amp; Development</option>
+                      <option value="seo">SEO &amp; Google Rankings</option>
+                      <option value="geo-aeo">GEO &amp; AEO (AI Visibility)</option>
+                      <option value="full-package">Full Package (Design + SEO + AI)</option>
+                      <option value="marketing">Digital Marketing &amp; Ads</option>
+                      <option value="other">Other / Not Sure Yet</option>
+                    </select>
+                    {errors.service && <p id="service-error" role="alert" className="text-red-400 text-xs font-mono mt-1.5 ml-1">{errors.service}</p>}
+                  </div>
                 </div>
-                <textarea
-                  name="message"
-                  placeholder="Tell us about your business — what you do, who your customers are, and what success looks like for you..."
-                  rows={5}
-                  required
-                  value={formData.message}
-                  onChange={handleChange}
-                  className={`${inputClasses} resize-none`}
-                />
+                <div>
+                  <label htmlFor="message" className="sr-only">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Tell us about your business — what you do, who your customers are, and what success looks like for you..."
+                    rows={5}
+                    required
+                    aria-required="true"
+                    aria-invalid={errors.message ? 'true' : undefined}
+                    aria-describedby={errors.message ? 'message-error' : undefined}
+                    value={formData.message}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className={`${inputClasses} resize-none ${errors.message ? 'border-red-500/60' : ''}`}
+                  />
+                  {errors.message && <p id="message-error" role="alert" className="text-red-400 text-xs font-mono mt-1.5 ml-1">{errors.message}</p>}
+                </div>
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
                   <MagneticButton type="submit" variant="primary" className="w-full sm:w-auto">
                     {sending ? (
@@ -932,7 +1201,7 @@ const ContactForm = () => {
                       <span className="flex items-center gap-2">Get My Free Audit <Send size={16} /></span>
                     )}
                   </MagneticButton>
-                  <p className="text-textMuted/40 font-mono text-[10px] uppercase tracking-widest">
+                  <p className="text-textMuted/60 font-mono text-[10px] uppercase tracking-widest">
                     Free audit &bull; No obligation &bull; 24h response
                   </p>
                 </div>
@@ -966,6 +1235,7 @@ const Footer = () => (
           <button onClick={() => scrollTo('services')} className="hover:text-primary transition-colors cursor-pointer">Services</button>
           <button onClick={() => scrollTo('process')} className="hover:text-primary transition-colors cursor-pointer">Process</button>
           <button onClick={() => scrollTo('results')} className="hover:text-primary transition-colors cursor-pointer">Results</button>
+          <Link to="/blog" className="hover:text-primary transition-colors">Blog</Link>
           <button onClick={() => scrollTo('contact')} className="hover:text-primary transition-colors cursor-pointer">Contact</button>
         </div>
 
@@ -975,7 +1245,7 @@ const Footer = () => (
           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">LinkedIn</a>
         </div>
 
-        <p className="font-mono text-[10px] text-textMuted/40 uppercase tracking-widest">
+        <p className="font-mono text-[10px] text-textMuted/60 uppercase tracking-widest">
           &copy; 2026 Galaxy Marketing. All rights reserved.
         </p>
       </div>
@@ -983,23 +1253,21 @@ const Footer = () => (
   </footer>
 );
 
+/* ── Home Page ── */
+const HomePage = () => (
+  <main id="main-content">
+    <Hero />
+    <Philosophy />
+    <Stats />
+    <Features />
+    <Selectivity />
+    <Protocol />
+    <TrustSignal />
+    <ContactForm />
+  </main>
+);
+
 /* ── App ── */
 const App = () => {
   return (
-    <div className="w-full min-h-screen relative bg-background text-textMain antialiased selection:bg-primary/20 selection:text-primary">
-      <Noise />
-      <Navbar />
-      <Hero />
-      <Philosophy />
-      <Stats />
-      <Features />
-      <Selectivity />
-      <Protocol />
-      <TrustSignal />
-      <ContactForm />
-      <Footer />
-    </div>
-  );
-}
-
-export default App;
+    <div className="w-full min-h-screen relative bg-background t
