@@ -8,7 +8,7 @@ html {
 
 @layer base {
   body {
-    @apply bg-background text-textMain font-sans antialiased overflow-x-hidden;
+    @apply bg-[#070710] text-textMain font-sans antialiased overflow-x-hidden;
   }
 
   ::selection {
@@ -16,16 +16,6 @@ html {
   }
 }
 
-.noise-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0.05;
-}
 
 /* Hide scrollbar for a cleaner look */
 ::-webkit-scrollbar {

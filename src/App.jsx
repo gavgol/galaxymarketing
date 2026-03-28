@@ -31,6 +31,8 @@ const Loader = ({ progress, visible }) => (
   </div>
 );
 
+/* ── Global Space Background — removed, now each section manages its own bg ── */
+
 /* ── Reduced Motion ── */
 const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -42,15 +44,7 @@ const scrollTo = (id) => {
 
 const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
-/* ── Noise ── */
-const Noise = () => (
-  <svg className="noise-overlay">
-    <filter id="noiseFilter">
-      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch" />
-    </filter>
-    <rect width="100%" height="100%" filter="url(#noiseFilter)" />
-  </svg>
-);
+/* Noise removed */
 
 /* ── Magnetic Button ── */
 const MagneticButton = ({ children, variant = 'primary', className = '', onClick, href, type = 'button' }) => {
@@ -70,7 +64,7 @@ const MagneticButton = ({ children, variant = 'primary', className = '', onClick
   const baseClasses = 'relative inline-flex items-center justify-center overflow-hidden rounded-full font-sans font-medium transition-all duration-300 group cursor-pointer';
   const variants = {
     primary: 'bg-primary text-background px-8 py-4',
-    outline: 'bg-transparent border border-slate text-textMain px-8 py-4 hover:border-primary',
+    outline: 'bg-background/80 border border-slate text-textMain px-8 py-4 hover:border-primary',
   };
 
   const handleClick = (e) => {
@@ -126,10 +120,10 @@ const Navbar = () => {
     const showNav = () => {
       if (window.scrollY > 100) {
         navRef.current.classList.add('bg-background/80', 'backdrop-blur-xl', 'border-slate/50');
-        navRef.current.classList.remove('bg-transparent', 'border-transparent');
+        navRef.current.classList.remove('bg-background/80', 'border-transparent');
       } else {
         navRef.current.classList.remove('bg-background/80', 'backdrop-blur-xl', 'border-slate/50');
-        navRef.current.classList.add('bg-transparent', 'border-transparent');
+        navRef.current.classList.add('bg-background/80', 'border-transparent');
       }
     };
     window.addEventListener('scroll', showNav);
@@ -311,7 +305,7 @@ const ScrollVideoHero = ({ onFramesLoaded }) => {
 
   return (
     <section ref={sectionRef} className="relative" style={{ height: '200vh' }}>
-      <div className="sticky top-0 w-full overflow-hidden bg-background" style={{ height: '100vh' }}>
+      <div className="sticky top-0 w-full overflow-hidden" style={{ height: '100vh' }}>
         <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
 
         {/* Dark overlay for text readability */}
@@ -557,6 +551,7 @@ const HeroMockups = () => {
 const Hero = () => {
   const containerRef = useRef(null);
   const gradientRef = useRef(null);
+  const videoElRef = useRef(null);
 
   useGSAP(() => {
     const rm = prefersReducedMotion();
@@ -567,26 +562,32 @@ const Hero = () => {
     gsap.to(gradientRef.current, { backgroundPosition: '200% 200%', duration: rm ? 40 : 20, repeat: -1, yoyo: true, ease: 'sine.inOut' });
   }, { scope: containerRef });
 
+
   return (
     <section ref={containerRef} className="relative w-full flex items-center pt-28 pb-16 md:pt-32 md:pb-20 px-6 md:px-16 overflow-hidden min-h-dvh">
-      {/* Background — space dark with gradient */}
-      <div className="absolute inset-0 z-0 bg-background">
-        <div className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: 'linear-gradient(rgba(201,168,76,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.3) 1px, transparent 1px)',
-            backgroundSize: '60px 60px'
+      {/* Video background with starfield canvas underneath */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          muted
+          playsInline
+          ref={(el) => {
+            videoElRef.current = el;
+            if (el) el.playbackRate = 0.7;
           }}
-        ></div>
+          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+          src="/hero-video.mp4"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/60 to-background"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/40 to-background/60"></div>
         <div
           ref={gradientRef}
           className="absolute inset-0 bg-gradient-to-tr from-background/80 via-primary/5 to-background/90 mix-blend-overlay"
           style={{ backgroundSize: '300% 300%', backgroundPosition: '0% 0%' }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-        {/* Left — Copy */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto">
         <div className="max-w-2xl">
           <p className="hero-text text-primary font-mono text-sm tracking-widest mb-6 uppercase flex items-center gap-3">
             <span className="h-[1px] w-8 bg-primary"></span>
@@ -619,26 +620,6 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Right — Video */}
-        <div className="hero-text hidden lg:block relative">
-          <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-[0_20px_80px_-15px_rgba(201,168,76,0.15)]">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              ref={(el) => { if (el) el.playbackRate = 0.4; }}
-              className="w-full h-full object-cover"
-              src="/hero-video.mp4"
-            />
-            {/* Soft edge blend into background */}
-            <div className="absolute inset-0 pointer-events-none"
-              style={{
-                boxShadow: 'inset 0 0 60px 30px #0D0D12',
-              }}
-            />
-          </div>
-        </div>
       </div>
     </section>
   );
@@ -660,8 +641,13 @@ const Philosophy = () => {
   }, { scope: textRef });
 
   return (
-    <section id="philosophy" ref={textRef} className="relative py-40 border-t border-slate/30 bg-[#0A0A0F]">
-      <div className="max-w-7xl mx-auto px-6 md:px-16 text-center">
+    <section id="philosophy" ref={textRef} className="relative py-40 border-t border-slate/30 overflow-hidden">
+      {/* Space background only for this section */}
+      <div className="absolute inset-0 pointer-events-none">
+        <img src="/space-bg.jpg" alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-background/60"></div>
+      </div>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-16 text-center">
         <h2 className="text-xl md:text-3xl font-sans font-normal text-textMuted mb-8 flex flex-wrap justify-center gap-2">
           {"Google changed. AI is answering the questions now.".split(' ').map((w, i) => <span key={i} className="phil-word inline-block">{w}</span>)}
         </h2>
@@ -805,7 +791,7 @@ const CardScheduler = () => {
 /* ── Features ── */
 const Features = () => {
   return (
-    <section id="services" className="py-32 px-6 md:px-16 max-w-7xl mx-auto border-t border-slate/20">
+    <section id="services" className="relative py-32 px-6 md:px-16 max-w-7xl mx-auto border-t border-slate/20">
       <div className="mb-24 md:text-center flex flex-col items-center">
         <h2 className="text-3xl md:text-5xl font-sans font-bold tracking-tight mb-6">
           The only agency you'll ever need.
@@ -945,7 +931,7 @@ const Protocol = () => {
         {steps.map((step, index) => (
           <div key={index} className="protocol-card sticky top-24 rounded-[2.5rem] md:rounded-[3rem] bg-surface border border-slate shadow-2xl overflow-hidden will-change-transform mb-[40vh]" style={{ zIndex: index }}>
             <div className="flex flex-col md:flex-row h-full min-h-[400px]">
-              <div className="w-full md:w-1/3 bg-[#0A0A0F] p-10 md:p-12 pl-10 flex flex-col justify-between border-b md:border-b-0 md:border-r border-slate/30">
+              <div className="w-full md:w-1/3 bg-background/80 p-10 md:p-12 pl-10 flex flex-col justify-between border-b md:border-b-0 md:border-r border-slate/30">
                 <span className="font-mono text-primary text-4xl">({step.num})</span>
                 <div className="h-32 w-full flex items-center justify-center opacity-40 mt-8 md:mt-0">
                   <step.icon size={56} className="text-primary" />
@@ -1037,7 +1023,7 @@ const ContactForm = () => {
     }, 1500);
   };
 
-  const inputClasses = 'w-full bg-[#0A0A0F] border border-slate/40 rounded-xl px-5 py-4 text-textMain font-sans text-sm placeholder:text-textMuted/60 focus:outline-none focus:border-primary/60 transition-colors duration-300';
+  const inputClasses = 'w-full bg-background/80 border border-slate/40 rounded-xl px-5 py-4 text-textMain font-sans text-sm placeholder:text-textMuted/60 focus:outline-none focus:border-primary/60 transition-colors duration-300';
 
   return (
     <section id="contact" ref={containerRef} className="py-32 px-6 md:px-16 bg-[#050508] border-t border-slate/20">
@@ -1217,7 +1203,7 @@ const ContactForm = () => {
 
 /* ── Footer ── */
 const Footer = () => (
-  <footer className="bg-background pt-20 pb-12 px-6 md:px-16 border-t border-slate/30">
+  <footer className="relative bg-background pt-20 pb-12 px-6 md:px-16 border-t border-slate/30" style={{ zIndex: 1 }}>
     <div className="max-w-7xl mx-auto">
       <div className="border-b border-slate/30 pb-12 mb-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
         <div>
@@ -1258,16 +1244,31 @@ const HomePage = () => (
   <main id="main-content">
     <Hero />
     <Philosophy />
-    <Stats />
-    <Features />
-    <Selectivity />
-    <Protocol />
-    <TrustSignal />
-    <ContactForm />
+    <div className="relative bg-background" style={{ zIndex: 1 }}>
+      <Stats />
+      <Features />
+      <Selectivity />
+      <Protocol />
+      <TrustSignal />
+      <ContactForm />
+    </div>
   </main>
 );
 
 /* ── App ── */
 const App = () => {
   return (
-    <div className="w-full min-h-screen relative bg-background t
+    <div className="w-full min-h-screen relative text-textMain antialiased selection:bg-primary/20 selection:text-primary">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:bg-primary focus:text-background focus:px-4 focus:py-2 focus:rounded-full focus:font-sans focus:text-sm">Skip to content</a>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/blog" element={<Blog posts={blogPosts} />} />
+        <Route path="/blog/:slug" element={<BlogPost posts={blogPosts} />} />
+      </Routes>
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
