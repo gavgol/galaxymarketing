@@ -1,12 +1,13 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react';
+import React, { useEffect, useRef, useState, useCallback, lazy, Suspense } from 'react';
 import { Routes, Route, useLocation, Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-import { MousePointer2, ArrowRight, Zap, Target, Layers, Globe, Search, Code, BarChart3, Rocket, TrendingUp, Palette, Menu, X, Send, Phone, Mail, CheckCircle, Bot, Brain, Eye } from 'lucide-react';
-import Blog from './pages/Blog.jsx';
-import BlogPost from './pages/BlogPost.jsx';
+import { ArrowRight, Target, Globe, Search, Code, BarChart3, Rocket, TrendingUp, Palette, Menu, X, Send, Phone, Mail, CheckCircle, Bot, Brain } from 'lucide-react';
 import blogPosts from './data/blogPosts.js';
+
+const Blog = lazy(() => import('./pages/Blog.jsx'));
+const BlogPost = lazy(() => import('./pages/BlogPost.jsx'));
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -811,7 +812,7 @@ const Protocol = () => {
       </div>
       <div className="max-w-5xl mx-auto">
         {steps.map((step, index) => (
-          <div key={index} className={`protocol-card sticky top-20 md:top-24 rounded-2xl md:rounded-[3rem] bg-surface border border-slate shadow-2xl overflow-hidden will-change-transform ${index < steps.length - 1 ? 'mb-[35vh] md:mb-[15vh]' : 'mb-0'}`} style={{ zIndex: index }}>
+          <div key={index} className={`protocol-card sticky top-20 md:top-24 rounded-2xl md:rounded-[3rem] bg-surface border border-slate shadow-2xl overflow-hidden will-change-transform ${index < steps.length - 1 ? 'mb-[40vh] md:mb-[15vh]' : 'mb-0'}`} style={{ zIndex: index }}>
             <div className="flex flex-col md:flex-row h-full min-h-[280px] md:min-h-[400px]">
               <div className="w-full md:w-1/3 relative overflow-hidden border-b md:border-b-0 md:border-r border-slate/30 min-h-[120px] md:min-h-0">
                 <img src={step.img} alt={step.title} className="absolute inset-0 w-full h-full object-cover opacity-30" loading="lazy" />
