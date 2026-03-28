@@ -1,11 +1,11 @@
-// Scheduled Blog Posts — Galaxy Marketing
+// Scheduled Blog Posts Galaxy Marketing
 // 15 posts scheduled to go live 2-3 per week
-// Each post has a publishDate — only show posts where publishDate <= today
+// Each post has a publishDate only show posts where publishDate <= today
 
 const scheduledPosts = [
 
   // ═══════════════════════════════════════════════════════
-  // WEEK 1 — Mar 30, Apr 1, Apr 3
+  // WEEK 1 Mar 30, Apr 1, Apr 3
   // ═══════════════════════════════════════════════════════
 
   {
@@ -22,11 +22,11 @@ const scheduledPosts = [
     sections: [
       {
         type: 'intro',
-        content: `46% of all Google searches have local intent. When someone searches "best restaurant near me" or "plumber in Seattle," Google shows a map with three local results — the coveted "map pack." If your business isn't there, you're invisible to nearly half of all potential customers searching online. Local SEO is how you fix that.`
+        content: `46% of all Google searches have local intent. When someone searches "best restaurant near me" or "plumber in Seattle," Google shows a map with three local results the coveted "map pack." If your business isn't there, you're invisible to nearly half of all potential customers searching online. Local SEO is how you fix that.`
       },
       {
         type: 'source',
-        text: 'Google — Understanding the Local Search Landscape',
+        text: 'Google Understanding the Local Search Landscape',
         url: 'https://blog.google/products/maps/'
       },
       {
@@ -36,7 +36,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Traditional SEO focuses on ranking in organic results for broad queries. Local SEO targets geographically specific searches and aims to appear in Google's Local Pack (the map with three business listings), Google Maps, and localized organic results. The ranking factors are different too — your Google Business Profile, local citations, reviews, and proximity all play major roles that don't apply to regular SEO.`
+        content: `Traditional SEO focuses on ranking in organic results for broad queries. Local SEO targets geographically specific searches and aims to appear in Google's Local Pack (the map with three business listings), Google Maps, and localized organic results. The ranking factors are different too your Google Business Profile, local citations, reviews, and proximity all play major roles that don't apply to regular SEO.`
       },
       {
         type: 'heading',
@@ -55,7 +55,7 @@ const scheduledPosts = [
       },
       {
         type: 'source',
-        text: 'Whitespark — Local Search Ranking Factors Study',
+        text: 'Whitespark Local Search Ranking Factors Study',
         url: 'https://whitespark.ca/local-search-ranking-factors/'
       },
       {
@@ -65,7 +65,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Businesses with complete GBP profiles are 70% more likely to attract visits and 50% more likely to lead to a purchase, according to Google's own data. Fill out every single field: business name (exact legal name — no keyword stuffing), address, phone number, website, hours, business description, services, and products.`
+        content: `Businesses with complete GBP profiles are 70% more likely to attract visits and 50% more likely to lead to a purchase, according to Google's own data. Fill out every single field: business name (exact legal name no keyword stuffing), address, phone number, website, hours, business description, services, and products.`
       },
       {
         type: 'heading',
@@ -124,7 +124,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Reviews are the second most important local ranking factor, contributing roughly 16% to local pack rankings. But it's not just about quantity — Google looks at review velocity (how often you get new reviews), diversity (reviews across multiple platforms), and response rate.`
+        content: `Reviews are the second most important local ranking factor, contributing roughly 16% to local pack rankings. But it's not just about quantity Google looks at review velocity (how often you get new reviews), diversity (reviews across multiple platforms), and response rate.`
       },
       {
         type: 'heading',
@@ -139,7 +139,7 @@ const scheduledPosts = [
           'Make it effortless: send a direct link to your Google review page via text or email',
           'Train your team to make review requests part of the standard workflow',
           'Follow up on positive verbal feedback with a polite review request',
-          'Respond to EVERY review within 24 hours — positive and negative',
+          'Respond to EVERY review within 24 hours positive and negative',
           'Never buy fake reviews or incentivize reviews with discounts (Google penalizes this)'
         ]
       },
@@ -187,7 +187,7 @@ const scheduledPosts = [
       },
       {
         type: 'source',
-        text: 'Schema.org — LocalBusiness Markup',
+        text: 'Schema.org LocalBusiness Markup',
         url: 'https://schema.org/LocalBusiness'
       },
       {
@@ -197,7 +197,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Local SEO isn't a one-time project — it's an ongoing strategy. Start by claiming and fully optimizing your Google Business Profile. Build consistent citations. Develop a review generation system. Create local content. Then monitor your local rankings and refine your approach monthly. The businesses that commit to local SEO consistently are the ones that own their market.`
+        content: `Local SEO isn't a one-time project it's an ongoing strategy. Start by claiming and fully optimizing your Google Business Profile. Build consistent citations. Develop a review generation system. Create local content. Then monitor your local rankings and refine your approach monthly. The businesses that commit to local SEO consistently are the ones that own their market.`
       },
       {
         type: 'source',
@@ -206,7 +206,7 @@ const scheduledPosts = [
       },
       {
         type: 'source',
-        text: 'Moz — The Local SEO Checklist',
+        text: 'Moz The Local SEO Checklist',
         url: 'https://moz.com/local-seo-guide'
       }
     ]
@@ -226,7 +226,7 @@ const scheduledPosts = [
     sections: [
       {
         type: 'intro',
-        content: `"Hey ChatGPT, what's the best digital marketing agency for startups?" — This question, or one very much like it, is being asked thousands of times every day. And ChatGPT gives specific recommendations. The question is: is your business one of them? If not, here's exactly how to change that.`
+        content: `"Hey ChatGPT, what's the best digital marketing agency for startups?" This question, or one very much like it, is being asked thousands of times every day. And ChatGPT gives specific recommendations. The question is: is your business one of them? If not, here's exactly how to change that.`
       },
       {
         type: 'heading',
@@ -235,7 +235,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Understanding how large language models (LLMs) like ChatGPT form their "opinions" is the first step to influencing them. ChatGPT doesn't browse the web in real-time for most queries — it draws on patterns learned during training from billions of web pages, plus it can access real-time information through browsing and retrieval tools. Three factors determine whether your business appears in AI recommendations:`
+        content: `Understanding how large language models (LLMs) like ChatGPT form their "opinions" is the first step to influencing them. ChatGPT doesn't browse the web in real-time for most queries it draws on patterns learned during training from billions of web pages, plus it can access real-time information through browsing and retrieval tools. Three factors determine whether your business appears in AI recommendations:`
       },
       {
         type: 'list',
@@ -277,7 +277,7 @@ const scheduledPosts = [
       },
       {
         type: 'source',
-        text: 'Wikidata — How to Contribute',
+        text: 'Wikidata How to Contribute',
         url: 'https://www.wikidata.org/wiki/Wikidata:Introduction'
       },
       {
@@ -287,7 +287,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Original research gets cited everywhere — by journalists, bloggers, academics, and AI systems. Conduct industry surveys, publish benchmark reports, or share anonymized case study data. When other sites cite your original research, it creates a web of references that AI models learn from.`
+        content: `Original research gets cited everywhere by journalists, bloggers, academics, and AI systems. Conduct industry surveys, publish benchmark reports, or share anonymized case study data. When other sites cite your original research, it creates a web of references that AI models learn from.`
       },
       {
         type: 'heading',
@@ -296,7 +296,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `When ChatGPT browses the web for recommendations, review aggregator data is a primary signal. Maintain strong profiles on Google (4.5+ stars), Clutch, G2, Trustpilot, and industry-specific review platforms. Volume matters — a business with 200 reviews at 4.7 stars signals significantly more trust than one with 5 reviews at 5 stars.`
+        content: `When ChatGPT browses the web for recommendations, review aggregator data is a primary signal. Maintain strong profiles on Google (4.5+ stars), Clutch, G2, Trustpilot, and industry-specific review platforms. Volume matters a business with 200 reviews at 4.7 stars signals significantly more trust than one with 5 reviews at 5 stars.`
       },
       {
         type: 'heading',
@@ -314,7 +314,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `AI needs to understand your brand as an entity — not just a collection of keywords. Ensure consistent branding across all platforms. Create and maintain profiles on LinkedIn, Crunchbase, industry directories, and social platforms. The more places AI can find consistent information about your business, the more confident it becomes in recommending you.`
+        content: `AI needs to understand your brand as an entity not just a collection of keywords. Ensure consistent branding across all platforms. Create and maintain profiles on LinkedIn, Crunchbase, industry directories, and social platforms. The more places AI can find consistent information about your business, the more confident it becomes in recommending you.`
       },
       {
         type: 'heading',
@@ -323,7 +323,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Reddit, Quora, Stack Exchange, and industry forums are training data goldmines. Provide genuinely helpful answers in your area of expertise. Don't spam or self-promote — add real value. When your brand name naturally appears alongside expert advice in these discussions, AI models learn to associate your brand with expertise.`
+        content: `Reddit, Quora, Stack Exchange, and industry forums are training data goldmines. Provide genuinely helpful answers in your area of expertise. Don't spam or self-promote add real value. When your brand name naturally appears alongside expert advice in these discussions, AI models learn to associate your brand with expertise.`
       },
       {
         type: 'heading',
@@ -332,7 +332,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Regularly test your AI visibility by asking ChatGPT, Gemini, Perplexity, and Copilot questions that your ideal customers would ask. Document which queries return your brand and which don't. Use this data to identify gaps in your strategy. This is an emerging practice — businesses that start monitoring now will have a significant head start.`
+        content: `Regularly test your AI visibility by asking ChatGPT, Gemini, Perplexity, and Copilot questions that your ideal customers would ask. Document which queries return your brand and which don't. Use this data to identify gaps in your strategy. This is an emerging practice businesses that start monitoring now will have a significant head start.`
       },
       {
         type: 'callout',
@@ -354,16 +354,16 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `AI search isn't coming — it's here. Over 200 million people use ChatGPT weekly, and that number is growing rapidly. The businesses that invest in AI visibility now won't just benefit from early-mover advantage — they'll establish the compounding authority that makes it increasingly difficult for competitors to catch up. Start with step one, and build systematically from there.`
+        content: `AI search isn't coming it's here. Over 200 million people use ChatGPT weekly, and that number is growing rapidly. The businesses that invest in AI visibility now won't just benefit from early-mover advantage they'll establish the compounding authority that makes it increasingly difficult for competitors to catch up. Start with step one, and build systematically from there.`
       },
       {
         type: 'source',
-        text: 'OpenAI — About ChatGPT',
+        text: 'OpenAI About ChatGPT',
         url: 'https://openai.com/chatgpt'
       },
       {
         type: 'source',
-        text: 'Google — AI Overviews and Search Updates',
+        text: 'Google AI Overviews and Search Updates',
         url: 'https://blog.google/products/search/'
       }
     ]
@@ -383,7 +383,7 @@ const scheduledPosts = [
     sections: [
       {
         type: 'intro',
-        content: `Schema markup is the most underused SEO strategy in 2026. While only about 33% of websites use any form of structured data, those that do see an average of 30% higher click-through rates from search results. Schema markup is also one of the strongest signals for AI search engine citations. If you're not using it, you're leaving visibility — and revenue — on the table.`
+        content: `Schema markup is the most underused SEO strategy in 2026. While only about 33% of websites use any form of structured data, those that do see an average of 30% higher click-through rates from search results. Schema markup is also one of the strongest signals for AI search engine citations. If you're not using it, you're leaving visibility and revenue on the table.`
       },
       {
         type: 'heading',
@@ -400,7 +400,7 @@ const scheduledPosts = [
       },
       {
         type: 'source',
-        text: 'Schema.org — Official Documentation',
+        text: 'Schema.org Official Documentation',
         url: 'https://schema.org'
       },
       {
@@ -421,7 +421,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Schema markup enables rich results — enhanced search listings that display stars, prices, images, FAQ accordions, how-to steps, and more. These enhanced listings stand out from plain blue links and consistently achieve higher click-through rates. Google's own research shows that rich results receive 58% of clicks on mobile search results pages.`
+        content: `Schema markup enables rich results enhanced search listings that display stars, prices, images, FAQ accordions, how-to steps, and more. These enhanced listings stand out from plain blue links and consistently achieve higher click-through rates. Google's own research shows that rich results receive 58% of clicks on mobile search results pages.`
       },
       {
         type: 'heading',
@@ -489,7 +489,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `For instructional content, HowTo schema displays step-by-step instructions with images directly in search results. This is particularly valuable for voice search — Google Assistant reads HowTo schema steps aloud when users ask "how to" questions.`
+        content: `For instructional content, HowTo schema displays step-by-step instructions with images directly in search results. This is particularly valuable for voice search Google Assistant reads HowTo schema steps aloud when users ask "how to" questions.`
       },
       {
         type: 'heading',
@@ -539,7 +539,7 @@ const scheduledPosts = [
       },
       {
         type: 'source',
-        text: 'Google — Rich Results Test Tool',
+        text: 'Google Rich Results Test Tool',
         url: 'https://search.google.com/test/rich-results'
       },
       {
@@ -569,23 +569,23 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `As search becomes increasingly AI-driven, structured data becomes even more important. It's the bridge between your content and machine understanding. Websites with comprehensive, accurate schema markup are positioned to thrive in both traditional search and the emerging AI search landscape. Start implementing today — the competitive advantage only grows with time.`
+        content: `As search becomes increasingly AI-driven, structured data becomes even more important. It's the bridge between your content and machine understanding. Websites with comprehensive, accurate schema markup are positioned to thrive in both traditional search and the emerging AI search landscape. Start implementing today the competitive advantage only grows with time.`
       },
       {
         type: 'source',
-        text: 'Google Search Central — Structured Data Documentation',
+        text: 'Google Search Central Structured Data Documentation',
         url: 'https://developers.google.com/search/docs/appearance/structured-data'
       },
       {
         type: 'source',
-        text: 'Schema.org — Full Type Hierarchy',
+        text: 'Schema.org Full Type Hierarchy',
         url: 'https://schema.org/docs/full.html'
       }
     ]
   },
 
   // ═══════════════════════════════════════════════════════
-  // WEEK 2 — Apr 6, Apr 8, Apr 10
+  // WEEK 2 Apr 6, Apr 8, Apr 10
   // ═══════════════════════════════════════════════════════
 
   {
@@ -602,11 +602,11 @@ const scheduledPosts = [
     sections: [
       {
         type: 'intro',
-        content: `Google research confirms it: 53% of mobile users abandon sites that take more than 3 seconds to load. Amazon calculated that every 100ms of latency cost them 1% in sales. And since 2021, page speed has been a confirmed Google ranking factor through Core Web Vitals. Speed isn't a nice-to-have — it's the foundation of online success.`
+        content: `Google research confirms it: 53% of mobile users abandon sites that take more than 3 seconds to load. Amazon calculated that every 100ms of latency cost them 1% in sales. And since 2021, page speed has been a confirmed Google ranking factor through Core Web Vitals. Speed isn't a nice-to-have it's the foundation of online success.`
       },
       {
         type: 'source',
-        text: 'Google — Mobile Speed Matters',
+        text: 'Google Mobile Speed Matters',
         url: 'https://www.thinkwithgoogle.com/marketing-strategies/app-and-mobile/mobile-page-speed-new-industry-benchmarks/'
       },
       {
@@ -628,7 +628,7 @@ const scheduledPosts = [
       },
       {
         type: 'source',
-        text: 'Web.dev — Core Web Vitals',
+        text: 'Web.dev Core Web Vitals',
         url: 'https://web.dev/articles/vitals'
       },
       {
@@ -676,7 +676,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `A CDN distributes your website across servers worldwide, serving content from the location closest to each visitor. This reduces latency dramatically — especially for users far from your origin server. Popular CDN options include Cloudflare, Fastly, and AWS CloudFront. Cloudflare offers a generous free tier that's perfect for small businesses.`
+        content: `A CDN distributes your website across servers worldwide, serving content from the location closest to each visitor. This reduces latency dramatically especially for users far from your origin server. Popular CDN options include Cloudflare, Fastly, and AWS CloudFront. Cloudflare offers a generous free tier that's perfect for small businesses.`
       },
       {
         type: 'heading',
@@ -750,12 +750,12 @@ const scheduledPosts = [
       },
       {
         type: 'source',
-        text: 'Web.dev — Performance Optimization Guide',
+        text: 'Web.dev Performance Optimization Guide',
         url: 'https://web.dev/performance'
       },
       {
         type: 'source',
-        text: 'HTTP Archive — State of the Web Report',
+        text: 'HTTP Archive State of the Web Report',
         url: 'https://httparchive.org/reports/state-of-the-web'
       }
     ]
@@ -775,11 +775,11 @@ const scheduledPosts = [
     sections: [
       {
         type: 'intro',
-        content: `Organic search drives 33% of all e-commerce traffic, making it the single largest traffic source ahead of paid ads, social media, and email combined. Yet most online stores focus almost exclusively on paid acquisition, leaving enormous organic revenue on the table. This guide covers the specific SEO strategies that drive purchases — not just pageviews.`
+        content: `Organic search drives 33% of all e-commerce traffic, making it the single largest traffic source ahead of paid ads, social media, and email combined. Yet most online stores focus almost exclusively on paid acquisition, leaving enormous organic revenue on the table. This guide covers the specific SEO strategies that drive purchases not just pageviews.`
       },
       {
         type: 'source',
-        text: 'Statista — E-Commerce Traffic Sources Report',
+        text: 'Statista E-Commerce Traffic Sources Report',
         url: 'https://www.statista.com/topics/871/online-shopping/'
       },
       {
@@ -833,7 +833,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Never use manufacturer descriptions — they're duplicated across every retailer and provide zero SEO value. Write unique, benefit-focused descriptions for every product. Include the primary keyword naturally within the first 100 words. Aim for at least 300 words per product description, covering features, benefits, use cases, and specifications.`
+        content: `Never use manufacturer descriptions they're duplicated across every retailer and provide zero SEO value. Write unique, benefit-focused descriptions for every product. Include the primary keyword naturally within the first 100 words. Aim for at least 300 words per product description, covering features, benefits, use cases, and specifications.`
       },
       {
         type: 'heading',
@@ -842,11 +842,11 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Implement Product schema with complete properties: name, image, description, brand, sku, price, availability, and aggregate ratings. This enables rich product results in Google — showing star ratings, price, and availability directly in search results. Products with rich results see up to 30% higher click-through rates.`
+        content: `Implement Product schema with complete properties: name, image, description, brand, sku, price, availability, and aggregate ratings. This enables rich product results in Google showing star ratings, price, and availability directly in search results. Products with rich results see up to 30% higher click-through rates.`
       },
       {
         type: 'source',
-        text: 'Google — Product Structured Data Documentation',
+        text: 'Google Product Structured Data Documentation',
         url: 'https://developers.google.com/search/docs/appearance/structured-data/product'
       },
       {
@@ -900,7 +900,7 @@ const scheduledPosts = [
         items: [
           'Implement proper canonical tags to prevent duplicate content from product variations',
           'Create and maintain XML sitemaps for products, categories, and content pages',
-          'Handle out-of-stock products correctly (keep the page, show alternatives — never 404)',
+          'Handle out-of-stock products correctly (keep the page, show alternatives never 404)',
           'Optimize site speed: aim for sub-2-second LCP on product pages',
           'Implement hreflang tags if selling internationally',
           'Use structured data for products, breadcrumbs, reviews, and FAQs',
@@ -915,7 +915,7 @@ const scheduledPosts = [
       {
         type: 'list',
         items: [
-          'Organic revenue: The ultimate metric — revenue generated from organic search visitors',
+          'Organic revenue: The ultimate metric revenue generated from organic search visitors',
           'Non-brand organic traffic: Shows your true SEO visibility beyond people searching your brand name',
           'Product page impressions and clicks in Google Search Console',
           'Organic conversion rate compared to paid traffic conversion rate',
@@ -925,7 +925,7 @@ const scheduledPosts = [
       },
       {
         type: 'callout',
-        content: 'Most e-commerce businesses discover that organic traffic converts at a higher rate than paid traffic — visitors from organic search have stronger intent because they found you through their own research, not an ad.'
+        content: 'Most e-commerce businesses discover that organic traffic converts at a higher rate than paid traffic visitors from organic search have stronger intent because they found you through their own research, not an ad.'
       },
       {
         type: 'heading',
@@ -934,16 +934,16 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Unlike paid ads that stop generating traffic the moment you stop spending, SEO builds compounding organic value over time. A well-optimized product page can generate revenue for years. Invest in e-commerce SEO as a core growth channel — the returns only increase with time.`
+        content: `Unlike paid ads that stop generating traffic the moment you stop spending, SEO builds compounding organic value over time. A well-optimized product page can generate revenue for years. Invest in e-commerce SEO as a core growth channel the returns only increase with time.`
       },
       {
         type: 'source',
-        text: 'Google Search Central — E-Commerce SEO Best Practices',
+        text: 'Google Search Central E-Commerce SEO Best Practices',
         url: 'https://developers.google.com/search/docs/specialty/ecommerce'
       },
       {
         type: 'source',
-        text: 'Web.dev — E-Commerce Performance Guide',
+        text: 'Web.dev E-Commerce Performance Guide',
         url: 'https://web.dev/explore/fast'
       }
     ]
@@ -952,7 +952,7 @@ const scheduledPosts = [
   {
     id: 'landing-page-design-best-practices',
     title: 'Landing Page Design: 12 Best Practices That Double Your Conversion Rate',
-    subtitle: 'The difference between a landing page that converts at 2% and one that converts at 15% isn\'t luck — it\'s design science.',
+    subtitle: 'The difference between a landing page that converts at 2% and one that converts at 15% isn\'t luck it\'s design science.',
     author: 'Galaxy Marketing Team',
     date: '2026-04-10',
     readTime: '11 min read',
@@ -963,7 +963,7 @@ const scheduledPosts = [
     sections: [
       {
         type: 'intro',
-        content: `Landing pages exist for one reason: conversion. Yet the average landing page conversion rate across industries is just 5.89%. The top 25% convert at over 10%, and the elite top 10% achieve conversion rates above 25%. The gap between average and exceptional isn't about having more traffic — it's about applying proven design principles that guide visitors to act.`
+        content: `Landing pages exist for one reason: conversion. Yet the average landing page conversion rate across industries is just 5.89%. The top 25% convert at over 10%, and the elite top 10% achieve conversion rates above 25%. The gap between average and exceptional isn't about having more traffic it's about applying proven design principles that guide visitors to act.`
       },
       {
         type: 'heading',
@@ -972,7 +972,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `You have roughly 5 seconds to communicate your value proposition before visitors decide to stay or leave. Your hero section must answer three questions instantly: What do you offer? Who is it for? Why should I care? Use a clear, benefit-focused headline, a supporting subheadline with specifics, and a high-contrast CTA button — all visible without scrolling.`
+        content: `You have roughly 5 seconds to communicate your value proposition before visitors decide to stay or leave. Your hero section must answer three questions instantly: What do you offer? Who is it for? Why should I care? Use a clear, benefit-focused headline, a supporting subheadline with specifics, and a high-contrast CTA button all visible without scrolling.`
       },
       {
         type: 'heading',
@@ -981,7 +981,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Every element on your landing page should serve a single conversion goal. Remove navigation menus, sidebar links, and anything else that offers an exit path. Research consistently shows that landing pages with a single CTA outperform those with multiple options. Repeat the same CTA at logical intervals throughout the page — after the hero, after social proof, and at the bottom.`
+        content: `Every element on your landing page should serve a single conversion goal. Remove navigation menus, sidebar links, and anything else that offers an exit path. Research consistently shows that landing pages with a single CTA outperform those with multiple options. Repeat the same CTA at logical intervals throughout the page after the hero, after social proof, and at the bottom.`
       },
       {
         type: 'callout',
@@ -994,7 +994,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `People don't buy features — they buy outcomes. "AI-powered analytics dashboard" is a feature. "Know exactly which marketing channels drive revenue — in 30 seconds" is a benefit. Every section of your landing page should answer the visitor's implicit question: "What's in it for me?" Lead with the transformation, then explain the mechanism.`
+        content: `People don't buy features they buy outcomes. "AI-powered analytics dashboard" is a feature. "Know exactly which marketing channels drive revenue in 30 seconds" is a benefit. Every section of your landing page should answer the visitor's implicit question: "What's in it for me?" Lead with the transformation, then explain the mechanism.`
       },
       {
         type: 'heading',
@@ -1009,7 +1009,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Vague testimonials like "Great product!" add nothing. Specific social proof converts: "Galaxy Marketing redesigned our site and our organic leads increased 340% in 4 months — saving us $12,000/month in ad spend." Include the client's name, company, role, and photo whenever possible. Data-driven results beat emotional praise for B2B landing pages.`
+        content: `Vague testimonials like "Great product!" add nothing. Specific social proof converts: "Galaxy Marketing redesigned our site and our organic leads increased 340% in 4 months saving us $12,000/month in ad spend." Include the client's name, company, role, and photo whenever possible. Data-driven results beat emotional praise for B2B landing pages.`
       },
       {
         type: 'heading',
@@ -1018,7 +1018,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Every additional form field reduces conversions. Research shows that reducing form fields from 11 to 4 can increase conversions by 120%. For lead generation, ask only for what you truly need at this stage. Name and email are usually sufficient for initial contact. You can gather more information in follow-up interactions. If you need more fields, use multi-step forms — they feel less overwhelming.`
+        content: `Every additional form field reduces conversions. Research shows that reducing form fields from 11 to 4 can increase conversions by 120%. For lead generation, ask only for what you truly need at this stage. Name and email are usually sufficient for initial contact. You can gather more information in follow-up interactions. If you need more fields, use multi-step forms they feel less overwhelming.`
       },
       {
         type: 'heading',
@@ -1045,7 +1045,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Over 60% of landing page traffic comes from mobile devices, yet most landing pages are designed desktop-first. Design for mobile first: use a single-column layout, large tap targets (minimum 48x48px), readable text without zooming (minimum 16px body), and vertically stacked CTAs. Then enhance for desktop — not the other way around.`
+        content: `Over 60% of landing page traffic comes from mobile devices, yet most landing pages are designed desktop-first. Design for mobile first: use a single-column layout, large tap targets (minimum 48x48px), readable text without zooming (minimum 16px body), and vertically stacked CTAs. Then enhance for desktop not the other way around.`
       },
       {
         type: 'heading',
@@ -1054,7 +1054,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Authentic urgency works. Fake countdown timers that reset every visit destroy trust. Legitimate urgency signals include: limited availability ("Only 3 spots remaining this month"), deadline-based offers ("Pricing increases April 15"), and time-sensitive relevance ("Before the algorithm update hits"). Always be truthful — fake urgency erodes brand trust permanently.`
+        content: `Authentic urgency works. Fake countdown timers that reset every visit destroy trust. Legitimate urgency signals include: limited availability ("Only 3 spots remaining this month"), deadline-based offers ("Pricing increases April 15"), and time-sensitive relevance ("Before the algorithm update hits"). Always be truthful fake urgency erodes brand trust permanently.`
       },
       {
         type: 'heading',
@@ -1081,7 +1081,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `A/B testing is the only way to know what actually works for your specific audience. Test one element at a time: headlines, CTA button copy, CTA color, hero image, form length, social proof placement. Run tests until you reach statistical significance (typically 95% confidence, minimum 100 conversions per variant). Never stop testing — the best landing pages are continuously optimized.`
+        content: `A/B testing is the only way to know what actually works for your specific audience. Test one element at a time: headlines, CTA button copy, CTA color, hero image, form length, social proof placement. Run tests until you reach statistical significance (typically 95% confidence, minimum 100 conversions per variant). Never stop testing the best landing pages are continuously optimized.`
       },
       {
         type: 'heading',
@@ -1107,29 +1107,29 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `The difference between a mediocre landing page and a high-converting one is rarely dramatic — it's a collection of small, intentional decisions that compound into significant results. Apply these 12 principles systematically, test rigorously, and watch your conversion rate climb.`
+        content: `The difference between a mediocre landing page and a high-converting one is rarely dramatic it's a collection of small, intentional decisions that compound into significant results. Apply these 12 principles systematically, test rigorously, and watch your conversion rate climb.`
       },
       {
         type: 'source',
-        text: 'Nielsen Norman Group — Landing Page UX Guidelines',
+        text: 'Nielsen Norman Group Landing Page UX Guidelines',
         url: 'https://www.nngroup.com'
       },
       {
         type: 'source',
-        text: 'Google — Mobile Page Experience Best Practices',
+        text: 'Google Mobile Page Experience Best Practices',
         url: 'https://developers.google.com/search/docs/appearance/page-experience'
       }
     ]
   },
 
   // ═══════════════════════════════════════════════════════
-  // WEEK 3 — Apr 13, Apr 15, Apr 17
+  // WEEK 3 Apr 13, Apr 15, Apr 17
   // ═══════════════════════════════════════════════════════
 
   {
     id: 'brand-building-in-the-ai-era',
     title: 'Brand Building in the AI Era: Why Your Brand Is Your Most Important Asset',
-    subtitle: 'When AI decides who to recommend, brand strength becomes the ultimate competitive advantage. Here\'s how to build one that AI — and humans — can\'t ignore.',
+    subtitle: 'When AI decides who to recommend, brand strength becomes the ultimate competitive advantage. Here\'s how to build one that AI and humans can\'t ignore.',
     author: 'Galaxy Marketing Team',
     date: '2026-04-13',
     readTime: '12 min read',
@@ -1140,7 +1140,7 @@ const scheduledPosts = [
     sections: [
       {
         type: 'intro',
-        content: `In the age of AI search, something unexpected happened: brand matters more than ever. When every business can create content with AI and buy ads on the same platforms, the brands that stand out are the ones with genuine authority, recognition, and trust. Here's the paradox — AI is making human brand building more important, not less.`
+        content: `In the age of AI search, something unexpected happened: brand matters more than ever. When every business can create content with AI and buy ads on the same platforms, the brands that stand out are the ones with genuine authority, recognition, and trust. Here's the paradox AI is making human brand building more important, not less.`
       },
       {
         type: 'heading',
@@ -1149,15 +1149,15 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `In traditional SEO, you could rank by optimizing content better than competitors. In the AI era, search engines and AI assistants increasingly favor brands they "recognize" — entities with consistent, widespread online presence. Google's own documentation references brand signals as a ranking factor, and AI systems are trained on data where established brands appear more frequently.`
+        content: `In traditional SEO, you could rank by optimizing content better than competitors. In the AI era, search engines and AI assistants increasingly favor brands they "recognize" entities with consistent, widespread online presence. Google's own documentation references brand signals as a ranking factor, and AI systems are trained on data where established brands appear more frequently.`
       },
       {
         type: 'paragraph',
-        content: `Research from the Edelman Trust Barometer consistently shows that 81% of consumers say brand trust is a deciding factor in purchase decisions. In AI search, this translates directly: AI models learn from the same trust signals that influence humans — reviews, citations, media mentions, and professional presence.`
+        content: `Research from the Edelman Trust Barometer consistently shows that 81% of consumers say brand trust is a deciding factor in purchase decisions. In AI search, this translates directly: AI models learn from the same trust signals that influence humans reviews, citations, media mentions, and professional presence.`
       },
       {
         type: 'source',
-        text: 'Edelman — Trust Barometer Global Report',
+        text: 'Edelman Trust Barometer Global Report',
         url: 'https://www.edelman.com/trust/trust-barometer'
       },
       {
@@ -1178,7 +1178,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Your brand name, visual identity, messaging, and tone must be consistent everywhere — from your website to social profiles to business directories. Inconsistency confuses both humans and AI systems. Create a brand guide and enforce it across every touchpoint. This includes visual elements (logo, colors, typography) and verbal elements (voice, messaging, value proposition).`
+        content: `Your brand name, visual identity, messaging, and tone must be consistent everywhere from your website to social profiles to business directories. Inconsistency confuses both humans and AI systems. Create a brand guide and enforce it across every touchpoint. This includes visual elements (logo, colors, typography) and verbal elements (voice, messaging, value proposition).`
       },
       {
         type: 'heading',
@@ -1187,7 +1187,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Publish original perspectives that only your team can provide. This isn't about creating more content — it's about creating content that demonstrates genuine expertise. Share proprietary data, real case studies, contrarian views backed by evidence, and practical insights from frontline experience. Thought leadership content gets cited by other publications and referenced by AI.`
+        content: `Publish original perspectives that only your team can provide. This isn't about creating more content it's about creating content that demonstrates genuine expertise. Share proprietary data, real case studies, contrarian views backed by evidence, and practical insights from frontline experience. Thought leadership content gets cited by other publications and referenced by AI.`
       },
       {
         type: 'heading',
@@ -1246,7 +1246,7 @@ const scheduledPosts = [
       },
       {
         type: 'callout',
-        content: 'Your brand exists whether you manage it or not. Every customer interaction, online review, social post, and business listing is shaping how AI sees your brand. The choice isn\'t whether to do brand building — it\'s whether to do it intentionally.'
+        content: 'Your brand exists whether you manage it or not. Every customer interaction, online review, social post, and business listing is shaping how AI sees your brand. The choice isn\'t whether to do brand building it\'s whether to do it intentionally.'
       },
       {
         type: 'heading',
@@ -1255,16 +1255,16 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Unlike paid ads (which stop the moment you stop paying) and SEO (which takes months to build), brand authority compounds over years and becomes nearly impossible for competitors to replicate. A strong brand generates lower customer acquisition costs, higher conversion rates, premium pricing power, and — in the AI era — consistent recommendations across platforms. Start building your brand today. Your future self will thank you.`
+        content: `Unlike paid ads (which stop the moment you stop paying) and SEO (which takes months to build), brand authority compounds over years and becomes nearly impossible for competitors to replicate. A strong brand generates lower customer acquisition costs, higher conversion rates, premium pricing power, and in the AI era consistent recommendations across platforms. Start building your brand today. Your future self will thank you.`
       },
       {
         type: 'source',
-        text: 'Google — How Google Search Works: Understanding Entities',
+        text: 'Google How Google Search Works: Understanding Entities',
         url: 'https://www.google.com/search/howsearchworks/'
       },
       {
         type: 'source',
-        text: 'Wikidata — Create a New Item',
+        text: 'Wikidata Create a New Item',
         url: 'https://www.wikidata.org/wiki/Special:NewItem'
       }
     ]
@@ -1284,7 +1284,7 @@ const scheduledPosts = [
     sections: [
       {
         type: 'intro',
-        content: `Your Google Business Profile (GBP) appears in Google Maps, the local map pack, and knowledge panels — reaching potential customers at the exact moment they're looking for businesses like yours. It's free, incredibly powerful, and criminally underoptimized by most businesses. This guide covers every optimization opportunity available in 2026.`
+        content: `Your Google Business Profile (GBP) appears in Google Maps, the local map pack, and knowledge panels reaching potential customers at the exact moment they're looking for businesses like yours. It's free, incredibly powerful, and criminally underoptimized by most businesses. This guide covers every optimization opportunity available in 2026.`
       },
       {
         type: 'heading',
@@ -1297,7 +1297,7 @@ const scheduledPosts = [
       },
       {
         type: 'source',
-        text: 'Google Business Profile Help — How Customers Find Your Business',
+        text: 'Google Business Profile Help How Customers Find Your Business',
         url: 'https://support.google.com/business/answer/7091'
       },
       {
@@ -1313,14 +1313,14 @@ const scheduledPosts = [
       {
         type: 'list',
         items: [
-          'Business name: Use your exact legal name — no keyword stuffing',
+          'Business name: Use your exact legal name no keyword stuffing',
           'Primary category: Choose the most specific option available',
           'Secondary categories: Add up to 9 additional relevant categories',
           'Address: Exact match to your website and all other listings',
           'Phone number: Local number preferred over toll-free',
           'Website URL: Link to your homepage or a dedicated landing page',
           'Business hours: Keep these accurate and update for holidays',
-          'Business description: Use all 750 characters — include keywords naturally',
+          'Business description: Use all 750 characters include keywords naturally',
           'Opening date: Adds legitimacy and helps with searches for established businesses'
         ]
       },
@@ -1346,7 +1346,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Add every service and product your business offers. Include descriptions, prices (or price ranges), and categories. This content is searchable and helps Google match your business to relevant queries. Be thorough — many businesses skip this section entirely, giving you an easy competitive advantage.`
+        content: `Add every service and product your business offers. Include descriptions, prices (or price ranges), and categories. This content is searchable and helps Google match your business to relevant queries. Be thorough many businesses skip this section entirely, giving you an easy competitive advantage.`
       },
       {
         type: 'heading',
@@ -1377,7 +1377,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `The Q&A section on your GBP is publicly visible and anyone can ask — or answer — questions. Proactively seed your Q&A with common questions and provide thorough, helpful answers. Monitor this section weekly, as random users sometimes provide incorrect answers. This section also feeds into AI systems looking for direct answers about your business.`
+        content: `The Q&A section on your GBP is publicly visible and anyone can ask or answer questions. Proactively seed your Q&A with common questions and provide thorough, helpful answers. Monitor this section weekly, as random users sometimes provide incorrect answers. This section also feeds into AI systems looking for direct answers about your business.`
       },
       {
         type: 'heading',
@@ -1391,7 +1391,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Create a short, direct link to your Google review page and share it with every satisfied customer. Time your request at the peak satisfaction moment — right after completing a successful project or service. Make the process effortless: send the direct link via text or email with a personal message.`
+        content: `Create a short, direct link to your Google review page and share it with every satisfied customer. Time your request at the peak satisfaction moment right after completing a successful project or service. Make the process effortless: send the direct link via text or email with a personal message.`
       },
       {
         type: 'heading',
@@ -1429,7 +1429,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Your Google Business Profile is a living asset that requires consistent attention. The businesses that treat it as a weekly marketing activity — not a set-and-forget listing — are the ones that dominate local search results.`
+        content: `Your Google Business Profile is a living asset that requires consistent attention. The businesses that treat it as a weekly marketing activity not a set-and-forget listing are the ones that dominate local search results.`
       },
       {
         type: 'source',
@@ -1438,7 +1438,7 @@ const scheduledPosts = [
       },
       {
         type: 'source',
-        text: 'Google — Local Search Ranking Factors',
+        text: 'Google Local Search Ranking Factors',
         url: 'https://developers.google.com/search/docs/specialty/local'
       }
     ]
@@ -1447,7 +1447,7 @@ const scheduledPosts = [
   {
     id: 'video-marketing-seo-strategy',
     title: 'Video Marketing for SEO: How Video Content Boosts Rankings and Revenue',
-    subtitle: 'Video is the most engaging content format on the web — and it\'s a powerful SEO weapon. Here\'s how to leverage video to dominate search results.',
+    subtitle: 'Video is the most engaging content format on the web and it\'s a powerful SEO weapon. Here\'s how to leverage video to dominate search results.',
     author: 'Galaxy Marketing Team',
     date: '2026-04-17',
     readTime: '11 min read',
@@ -1458,11 +1458,11 @@ const scheduledPosts = [
     sections: [
       {
         type: 'intro',
-        content: `91% of businesses use video as a marketing tool, and 87% report positive ROI. But video's impact goes beyond engagement — it's a genuine SEO powerhouse. Pages with video are 53x more likely to reach the first page of Google, and video results appear in 62% of universal Google searches. Here's how to build a video strategy that drives both rankings and revenue.`
+        content: `91% of businesses use video as a marketing tool, and 87% report positive ROI. But video's impact goes beyond engagement it's a genuine SEO powerhouse. Pages with video are 53x more likely to reach the first page of Google, and video results appear in 62% of universal Google searches. Here's how to build a video strategy that drives both rankings and revenue.`
       },
       {
         type: 'source',
-        text: 'Wyzowl — State of Video Marketing Report',
+        text: 'Wyzowl State of Video Marketing Report',
         url: 'https://www.wyzowl.com/video-marketing-statistics/'
       },
       {
@@ -1477,7 +1477,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `When visitors watch a video on your page, they stay longer — dramatically longer. Average dwell time increases by 88% on pages with video content. Google interprets longer dwell times as a positive quality signal, which can improve rankings for the page. Video keeps visitors engaged instead of bouncing back to search results.`
+        content: `When visitors watch a video on your page, they stay longer dramatically longer. Average dwell time increases by 88% on pages with video content. Google interprets longer dwell times as a positive quality signal, which can improve rankings for the page. Video keeps visitors engaged instead of bouncing back to search results.`
       },
       {
         type: 'heading',
@@ -1540,7 +1540,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Videos under 60 seconds for YouTube Shorts, Instagram Reels, and TikTok drive brand awareness and can funnel traffic to your website. These short videos often get repurposed from longer content — a single 10-minute tutorial can yield 5-10 short clips, each driving visibility across platforms.`
+        content: `Videos under 60 seconds for YouTube Shorts, Instagram Reels, and TikTok drive brand awareness and can funnel traffic to your website. These short videos often get repurposed from longer content a single 10-minute tutorial can yield 5-10 short clips, each driving visibility across platforms.`
       },
       {
         type: 'heading',
@@ -1554,7 +1554,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Place your target keyword at the beginning of your video title. Keep titles under 60 characters and make them compelling enough to click. Format: "[Target Keyword]: [Benefit/Hook]" — for example, "Local SEO Guide: Rank #1 in Google Maps in 30 Days."`
+        content: `Place your target keyword at the beginning of your video title. Keep titles under 60 characters and make them compelling enough to click. Format: "[Target Keyword]: [Benefit/Hook]" for example, "Local SEO Guide: Rank #1 in Google Maps in 30 Days."`
       },
       {
         type: 'heading',
@@ -1592,7 +1592,7 @@ const scheduledPosts = [
       },
       {
         type: 'source',
-        text: 'Google — Video Structured Data Documentation',
+        text: 'Google Video Structured Data Documentation',
         url: 'https://developers.google.com/search/docs/appearance/structured-data/video'
       },
       {
@@ -1622,29 +1622,29 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Video marketing isn't optional in 2026 — it's expected. Start with the content you already have: turn your best blog posts into explainer videos, record client testimonials, create how-to screencasts. Optimize for both YouTube and Google. Embed videos in your existing pages to boost their SEO performance. The businesses investing in video now are building an asset library that will drive traffic and conversions for years.`
+        content: `Video marketing isn't optional in 2026 it's expected. Start with the content you already have: turn your best blog posts into explainer videos, record client testimonials, create how-to screencasts. Optimize for both YouTube and Google. Embed videos in your existing pages to boost their SEO performance. The businesses investing in video now are building an asset library that will drive traffic and conversions for years.`
       },
       {
         type: 'source',
-        text: 'YouTube Creators — Channel Growth Best Practices',
+        text: 'YouTube Creators Channel Growth Best Practices',
         url: 'https://www.youtube.com/creators/'
       },
       {
         type: 'source',
-        text: 'Google — Video Best Practices for Search',
+        text: 'Google Video Best Practices for Search',
         url: 'https://developers.google.com/search/docs/appearance/video'
       }
     ]
   },
 
   // ═══════════════════════════════════════════════════════
-  // WEEK 4 — Apr 20, Apr 22, Apr 24
+  // WEEK 4 Apr 20, Apr 22, Apr 24
   // ═══════════════════════════════════════════════════════
 
   {
     id: 'ai-tools-for-marketing-2026',
     title: 'AI Tools for Marketing: The 2026 Guide to Working Smarter, Not Harder',
-    subtitle: 'AI won\'t replace marketers — but marketers who use AI will replace those who don\'t. Here are the tools and workflows that 10x your marketing output.',
+    subtitle: 'AI won\'t replace marketers but marketers who use AI will replace those who don\'t. Here are the tools and workflows that 10x your marketing output.',
     author: 'Galaxy Marketing Team',
     date: '2026-04-20',
     readTime: '12 min read',
@@ -1655,7 +1655,7 @@ const scheduledPosts = [
     sections: [
       {
         type: 'intro',
-        content: `The marketing landscape has been transformed by AI tools that can research, write, design, analyze, and optimize at speeds no human team can match alone. But here's the key insight: AI doesn't replace human strategy and creativity — it amplifies it. The marketers achieving the best results in 2026 are using AI as a force multiplier, not a replacement.`
+        content: `The marketing landscape has been transformed by AI tools that can research, write, design, analyze, and optimize at speeds no human team can match alone. But here's the key insight: AI doesn't replace human strategy and creativity it amplifies it. The marketers achieving the best results in 2026 are using AI as a force multiplier, not a replacement.`
       },
       {
         type: 'heading',
@@ -1682,11 +1682,11 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `AI writing tools can generate first drafts, outline articles, create social media posts, and write ad copy variations in minutes. The critical workflow: use AI to generate first drafts and variations, then apply human expertise for accuracy, brand voice, original insights, and emotional resonance. Never publish AI-generated content without human review and enhancement — Google explicitly values content with genuine human expertise.`
+        content: `AI writing tools can generate first drafts, outline articles, create social media posts, and write ad copy variations in minutes. The critical workflow: use AI to generate first drafts and variations, then apply human expertise for accuracy, brand voice, original insights, and emotional resonance. Never publish AI-generated content without human review and enhancement Google explicitly values content with genuine human expertise.`
       },
       {
         type: 'source',
-        text: 'Google Search Central — Creating Helpful Content',
+        text: 'Google Search Central Creating Helpful Content',
         url: 'https://developers.google.com/search/docs/fundamentals/creating-helpful-content'
       },
       {
@@ -1725,7 +1725,7 @@ const scheduledPosts = [
         type: 'image',
         src: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80',
         alt: 'Team collaborating on digital marketing strategy with data visualizations',
-        caption: 'AI amplifies human creativity — it doesn\'t replace strategic thinking'
+        caption: 'AI amplifies human creativity it doesn\'t replace strategic thinking'
       },
       {
         type: 'heading',
@@ -1734,7 +1734,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `The biggest mistake businesses make is publishing raw AI output. AI-generated content that hasn't been enhanced with human expertise, brand voice, and original insights performs poorly in search — Google's algorithms are specifically designed to detect and devalue this approach. Use AI to accelerate your workflow, but always add the human layer that makes content genuinely valuable.`
+        content: `The biggest mistake businesses make is publishing raw AI output. AI-generated content that hasn't been enhanced with human expertise, brand voice, and original insights performs poorly in search Google's algorithms are specifically designed to detect and devalue this approach. Use AI to accelerate your workflow, but always add the human layer that makes content genuinely valuable.`
       },
       {
         type: 'heading',
@@ -1747,7 +1747,7 @@ const scheduledPosts = [
       },
       {
         type: 'callout',
-        content: 'The "10x Marketer" Rule: The most effective marketers in 2026 don\'t work 10x harder — they use AI to handle 80% of the process work, freeing them to focus on the 20% of strategic and creative work that drives 80% of results.'
+        content: 'The "10x Marketer" Rule: The most effective marketers in 2026 don\'t work 10x harder they use AI to handle 80% of the process work, freeing them to focus on the 20% of strategic and creative work that drives 80% of results.'
       },
       {
         type: 'heading',
@@ -1788,16 +1788,16 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `The businesses winning in 2026 aren't the ones with the most AI tools — they're the ones with the best human-AI collaboration workflows. AI handles speed and scale. Humans provide strategy, creativity, empathy, and judgment. Together, they create marketing that's both efficient and genuinely effective. Start building your AI-augmented marketing stack today.`
+        content: `The businesses winning in 2026 aren't the ones with the most AI tools they're the ones with the best human-AI collaboration workflows. AI handles speed and scale. Humans provide strategy, creativity, empathy, and judgment. Together, they create marketing that's both efficient and genuinely effective. Start building your AI-augmented marketing stack today.`
       },
       {
         type: 'source',
-        text: 'Harvard Business Review — AI in Marketing',
+        text: 'Harvard Business Review AI in Marketing',
         url: 'https://hbr.org/topic/subject/ai-and-machine-learning'
       },
       {
         type: 'source',
-        text: 'Google — AI-Generated Content Guidelines',
+        text: 'Google AI-Generated Content Guidelines',
         url: 'https://developers.google.com/search/blog/2023/02/google-search-and-ai-content'
       }
     ]
@@ -1806,7 +1806,7 @@ const scheduledPosts = [
   {
     id: 'reputation-management-online-reviews',
     title: 'Online Reputation Management: How Reviews Shape Your Business (and How to Shape Them Back)',
-    subtitle: 'Your online reputation is your most visible asset — or liability. Here\'s the systematic approach to building and protecting a 5-star reputation.',
+    subtitle: 'Your online reputation is your most visible asset or liability. Here\'s the systematic approach to building and protecting a 5-star reputation.',
     author: 'Galaxy Marketing Team',
     date: '2026-04-22',
     readTime: '10 min read',
@@ -1817,11 +1817,11 @@ const scheduledPosts = [
     sections: [
       {
         type: 'intro',
-        content: `93% of consumers say online reviews influence their purchasing decisions. A single one-star increase on Yelp can lead to a 5-9% revenue increase, according to Harvard Business School research. And in the AI era, your review profile directly influences whether AI assistants recommend your business. Online reputation isn't just about pride — it's about profit.`
+        content: `93% of consumers say online reviews influence their purchasing decisions. A single one-star increase on Yelp can lead to a 5-9% revenue increase, according to Harvard Business School research. And in the AI era, your review profile directly influences whether AI assistants recommend your business. Online reputation isn't just about pride it's about profit.`
       },
       {
         type: 'source',
-        text: 'Harvard Business School — Impact of Reviews on Revenue',
+        text: 'Harvard Business School Impact of Reviews on Revenue',
         url: 'https://www.hbs.edu/faculty/Pages/default.aspx'
       },
       {
@@ -1851,7 +1851,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Every customer journey has a moment of maximum satisfaction — when they first see their new website live, when they receive their product, or when they see measurable results from your service. Identify this moment for your business and build your review request process around it. Timing is everything.`
+        content: `Every customer journey has a moment of maximum satisfaction when they first see their new website live, when they receive their product, or when they see measurable results from your service. Identify this moment for your business and build your review request process around it. Timing is everything.`
       },
       {
         type: 'heading',
@@ -1898,7 +1898,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Negative reviews are inevitable — how you respond defines your brand. Respond calmly within 24 hours. Acknowledge the customer's frustration without being defensive. Apologize for their experience. Offer to resolve the issue offline by providing a direct contact method. Never argue publicly, never make excuses, and never question whether they were actually a customer. Future customers judge your character by how you handle criticism.`
+        content: `Negative reviews are inevitable how you respond defines your brand. Respond calmly within 24 hours. Acknowledge the customer's frustration without being defensive. Apologize for their experience. Offer to resolve the issue offline by providing a direct contact method. Never argue publicly, never make excuses, and never question whether they were actually a customer. Future customers judge your character by how you handle criticism.`
       },
       {
         type: 'callout',
@@ -1935,16 +1935,16 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `In 2026, your online reputation is visible in Google search, Google Maps, AI recommendations, social media, and review platforms. It's often the first and last thing a potential customer sees before deciding to contact you. Treat reputation management as a core business function — not an afterthought. Build the systems, monitor the signals, and never stop earning the trust your business depends on.`
+        content: `In 2026, your online reputation is visible in Google search, Google Maps, AI recommendations, social media, and review platforms. It's often the first and last thing a potential customer sees before deciding to contact you. Treat reputation management as a core business function not an afterthought. Build the systems, monitor the signals, and never stop earning the trust your business depends on.`
       },
       {
         type: 'source',
-        text: 'BrightLocal — Local Consumer Review Survey',
+        text: 'BrightLocal Local Consumer Review Survey',
         url: 'https://www.brightlocal.com/research/local-consumer-review-survey/'
       },
       {
         type: 'source',
-        text: 'Google — Managing Your Google Business Profile Reviews',
+        text: 'Google Managing Your Google Business Profile Reviews',
         url: 'https://support.google.com/business/answer/3474122'
       }
     ]
@@ -1964,11 +1964,11 @@ const scheduledPosts = [
     sections: [
       {
         type: 'intro',
-        content: `Google has used mobile-first indexing for all websites since 2023 — meaning Google evaluates your site's mobile version to determine rankings, not the desktop version. Yet most businesses still design for desktop first and "make it responsive" as an afterthought. The result: a mobile experience that technically works but frustrates users, kills conversions, and hurts SEO rankings.`
+        content: `Google has used mobile-first indexing for all websites since 2023 meaning Google evaluates your site's mobile version to determine rankings, not the desktop version. Yet most businesses still design for desktop first and "make it responsive" as an afterthought. The result: a mobile experience that technically works but frustrates users, kills conversions, and hurts SEO rankings.`
       },
       {
         type: 'source',
-        text: 'Google Search Central — Mobile-First Indexing',
+        text: 'Google Search Central Mobile-First Indexing',
         url: 'https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing'
       },
       {
@@ -1978,7 +1978,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Mobile-first design means starting the design process with the smallest screen and progressively enhancing for larger screens — not shrinking a desktop layout to fit mobile. This fundamental shift in approach results in dramatically better mobile experiences because constraints force clarity, prioritization, and simplicity.`
+        content: `Mobile-first design means starting the design process with the smallest screen and progressively enhancing for larger screens not shrinking a desktop layout to fit mobile. This fundamental shift in approach results in dramatically better mobile experiences because constraints force clarity, prioritization, and simplicity.`
       },
       {
         type: 'heading',
@@ -2002,7 +2002,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Mobile users behave fundamentally differently from desktop users. They're often multitasking, have shorter attention spans, interact with thumbs instead of precise mouse cursors, and expect instant loading. Designing for these behaviors — rather than adapting desktop behaviors — is what separates high-converting mobile sites from frustrating ones.`
+        content: `Mobile users behave fundamentally differently from desktop users. They're often multitasking, have shorter attention spans, interact with thumbs instead of precise mouse cursors, and expect instant loading. Designing for these behaviors rather than adapting desktop behaviors is what separates high-converting mobile sites from frustrating ones.`
       },
       {
         type: 'heading',
@@ -2031,7 +2031,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Mobile screens force you to prioritize ruthlessly — and that's a feature, not a bug. Decide what the single most important message and action are for each page, and make sure mobile users see them immediately. Secondary content can be accessed through progressive disclosure (expandable sections, tabs, "read more" toggles) rather than cluttering the initial view.`
+        content: `Mobile screens force you to prioritize ruthlessly and that's a feature, not a bug. Decide what the single most important message and action are for each page, and make sure mobile users see them immediately. Secondary content can be accessed through progressive disclosure (expandable sections, tabs, "read more" toggles) rather than cluttering the initial view.`
       },
       {
         type: 'heading',
@@ -2064,7 +2064,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Mobile users are often on slower connections (4G, weak Wi-Fi) and less powerful devices. Performance optimization isn't just nice-to-have — it's essential for mobile.`
+        content: `Mobile users are often on slower connections (4G, weak Wi-Fi) and less powerful devices. Performance optimization isn't just nice-to-have it's essential for mobile.`
       },
       {
         type: 'list',
@@ -2072,7 +2072,7 @@ const scheduledPosts = [
           'Target sub-2-second LCP on 4G connections',
           'Lazy load all images and videos below the fold',
           'Use responsive images (srcset) to serve appropriately sized images',
-          'Minimize JavaScript — every KB matters on mobile',
+          'Minimize JavaScript every KB matters on mobile',
           'Enable text compression (Brotli or Gzip)',
           'Use system fonts or subset custom fonts aggressively',
           'Test on real mid-range devices, not just your latest iPhone'
@@ -2096,7 +2096,7 @@ const scheduledPosts = [
       },
       {
         type: 'callout',
-        content: 'Testing Tip: Regularly test your website by using it on a phone with one hand while standing in a line, walking, or eating. If anything feels frustrating, your mobile visitors feel it too — and they\'re leaving because of it.'
+        content: 'Testing Tip: Regularly test your website by using it on a phone with one hand while standing in a line, walking, or eating. If anything feels frustrating, your mobile visitors feel it too and they\'re leaving because of it.'
       },
       {
         type: 'heading',
@@ -2105,23 +2105,23 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Mobile-first design isn't just about user experience — it's about business results. Sites designed mobile-first load faster (because they're built lean), rank higher (because Google uses mobile-first indexing), convert better (because they're designed for how most users actually interact), and cost less to maintain (because the codebase is simpler). Every day you run a desktop-first site, you're delivering a subpar experience to the majority of your visitors.`
+        content: `Mobile-first design isn't just about user experience it's about business results. Sites designed mobile-first load faster (because they're built lean), rank higher (because Google uses mobile-first indexing), convert better (because they're designed for how most users actually interact), and cost less to maintain (because the codebase is simpler). Every day you run a desktop-first site, you're delivering a subpar experience to the majority of your visitors.`
       },
       {
         type: 'source',
-        text: 'Google — Mobile Usability Best Practices',
+        text: 'Google Mobile Usability Best Practices',
         url: 'https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing'
       },
       {
         type: 'source',
-        text: 'Web.dev — Responsive Design Guide',
+        text: 'Web.dev Responsive Design Guide',
         url: 'https://web.dev/articles/responsive-web-design-basics'
       }
     ]
   },
 
   // ═══════════════════════════════════════════════════════
-  // WEEK 5 — Apr 27, Apr 29
+  // WEEK 5 Apr 27, Apr 29
   // ═══════════════════════════════════════════════════════
 
   {
@@ -2206,7 +2206,7 @@ const scheduledPosts = [
       },
       {
         type: 'source',
-        text: 'Google Analytics Help — Set Up GA4',
+        text: 'Google Analytics Help Set Up GA4',
         url: 'https://support.google.com/analytics/answer/9304153'
       },
       {
@@ -2239,7 +2239,7 @@ const scheduledPosts = [
       {
         type: 'list',
         items: [
-          'Last-click attribution: Simple but misleading — ignores everything that led to the final click',
+          'Last-click attribution: Simple but misleading ignores everything that led to the final click',
           'First-click attribution: Credits awareness but ignores the closing channel',
           'Linear attribution: Distributes credit equally across all touchpoints',
           'Data-driven attribution: Uses machine learning to distribute credit based on actual impact (GA4 default)',
@@ -2267,7 +2267,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Marketing ROI = (Revenue from Marketing - Marketing Cost) ÷ Marketing Cost × 100. For example, if you spent $5,000 on marketing and generated $20,000 in attributed revenue, your ROI is 300%. But be honest about your costs: include tools, team time, agency fees, ad spend, and content creation costs. And be rigorous about attribution — only count revenue you can legitimately attribute to marketing.`
+        content: `Marketing ROI = (Revenue from Marketing - Marketing Cost) ÷ Marketing Cost × 100. For example, if you spent $5,000 on marketing and generated $20,000 in attributed revenue, your ROI is 300%. But be honest about your costs: include tools, team time, agency fees, ad spend, and content creation costs. And be rigorous about attribution only count revenue you can legitimately attribute to marketing.`
       },
       {
         type: 'heading',
@@ -2276,11 +2276,11 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `The goal isn't perfect measurement — it's informed decision-making. Start with the basics: track conversions, know your CAC, understand which channels drive revenue. Then progressively add sophistication as your marketing matures. The businesses that win don't just collect data — they act on it weekly.`
+        content: `The goal isn't perfect measurement it's informed decision-making. Start with the basics: track conversions, know your CAC, understand which channels drive revenue. Then progressively add sophistication as your marketing matures. The businesses that win don't just collect data they act on it weekly.`
       },
       {
         type: 'source',
-        text: 'Google — Marketing Measurement Resources',
+        text: 'Google Marketing Measurement Resources',
         url: 'https://www.thinkwithgoogle.com/marketing-strategies/data-and-measurement/'
       },
       {
@@ -2294,7 +2294,7 @@ const scheduledPosts = [
   {
     id: 'social-media-seo-synergy',
     title: 'Social Media and SEO: How They Work Together to Amplify Your Results',
-    subtitle: 'Social media doesn\'t directly boost rankings — but the indirect effects are powerful. Here\'s how to create a social-SEO flywheel that drives both traffic and authority.',
+    subtitle: 'Social media doesn\'t directly boost rankings but the indirect effects are powerful. Here\'s how to create a social-SEO flywheel that drives both traffic and authority.',
     author: 'Galaxy Marketing Team',
     date: '2026-04-29',
     readTime: '10 min read',
@@ -2305,7 +2305,7 @@ const scheduledPosts = [
     sections: [
       {
         type: 'intro',
-        content: `Let's clear up a persistent myth: social media shares are NOT a direct Google ranking factor. Google has confirmed this repeatedly. But here's what IS true: social media indirectly boosts SEO performance in powerful ways — by amplifying content reach, generating backlinks, building brand awareness, and creating the authority signals that both Google and AI search engines reward.`
+        content: `Let's clear up a persistent myth: social media shares are NOT a direct Google ranking factor. Google has confirmed this repeatedly. But here's what IS true: social media indirectly boosts SEO performance in powerful ways by amplifying content reach, generating backlinks, building brand awareness, and creating the authority signals that both Google and AI search engines reward.`
       },
       {
         type: 'heading',
@@ -2319,7 +2319,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `When your content gets shared widely on social media, more people see it — including journalists, bloggers, and content creators who might link to it from their own websites. These backlinks ARE a direct ranking factor. Social media is the distribution engine that puts your content in front of link-worthy audiences. Studies show that content with strong social sharing earns 2-3x more backlinks than content with minimal social presence.`
+        content: `When your content gets shared widely on social media, more people see it including journalists, bloggers, and content creators who might link to it from their own websites. These backlinks ARE a direct ranking factor. Social media is the distribution engine that puts your content in front of link-worthy audiences. Studies show that content with strong social sharing earns 2-3x more backlinks than content with minimal social presence.`
       },
       {
         type: 'heading',
@@ -2328,7 +2328,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Active social media presence drives branded searches — people who saw your content on LinkedIn searching your company name on Google. Branded search volume is a strong authority signal. When Google sees increasing searches for your brand, it interprets this as growing brand recognition and relevance.`
+        content: `Active social media presence drives branded searches people who saw your content on LinkedIn searching your company name on Google. Branded search volume is a strong authority signal. When Google sees increasing searches for your brand, it interprets this as growing brand recognition and relevance.`
       },
       {
         type: 'heading',
@@ -2337,7 +2337,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Your LinkedIn company page, Twitter profile, Facebook page, and YouTube channel all rank for your brand name. This means you can dominate the entire first page of Google for branded searches with your own properties — pushing competitors and negative results further down.`
+        content: `Your LinkedIn company page, Twitter profile, Facebook page, and YouTube channel all rank for your brand name. This means you can dominate the entire first page of Google for branded searches with your own properties pushing competitors and negative results further down.`
       },
       {
         type: 'heading',
@@ -2375,7 +2375,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `YouTube videos rank directly in Google search results. Create video versions of your top-performing blog content. Optimize titles, descriptions, and tags for target keywords. Include links to your website in every video description. YouTube SEO is a direct traffic and ranking driver — not just an indirect one.`
+        content: `YouTube videos rank directly in Google search results. Create video versions of your top-performing blog content. Optimize titles, descriptions, and tags for target keywords. Include links to your website in every video description. YouTube SEO is a direct traffic and ranking driver not just an indirect one.`
       },
       {
         type: 'heading',
@@ -2430,29 +2430,29 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `The most effective digital marketing strategies don't treat SEO and social media as separate channels — they use each to amplify the other. Great content fuels social sharing. Social sharing drives brand awareness and backlinks. Brand awareness and backlinks boost SEO rankings. Higher rankings drive more traffic to content that gets shared socially. Build this flywheel, and your marketing compounds over time.`
+        content: `The most effective digital marketing strategies don't treat SEO and social media as separate channels they use each to amplify the other. Great content fuels social sharing. Social sharing drives brand awareness and backlinks. Brand awareness and backlinks boost SEO rankings. Higher rankings drive more traffic to content that gets shared socially. Build this flywheel, and your marketing compounds over time.`
       },
       {
         type: 'source',
-        text: 'Google Search Central — Social Media and Search',
+        text: 'Google Search Central Social Media and Search',
         url: 'https://developers.google.com/search/docs/fundamentals/seo-starter-guide'
       },
       {
         type: 'source',
-        text: 'LinkedIn Marketing Solutions — B2B Marketing Guide',
+        text: 'LinkedIn Marketing Solutions B2B Marketing Guide',
         url: 'https://business.linkedin.com/marketing-solutions'
       }
     ]
   },
 
   // ═══════════════════════════════════════════════════════
-  // WEEK 6 — May 4, May 6, May 8
+  // WEEK 6 May 4, May 6, May 8
   // ═══════════════════════════════════════════════════════
 
   {
     id: 'email-marketing-lead-nurturing',
     title: 'Email Marketing That Converts: From First Touch to Loyal Customer',
-    subtitle: 'Email delivers $36 for every $1 spent — the highest ROI of any marketing channel. Here\'s how to build an email program that turns subscribers into customers.',
+    subtitle: 'Email delivers $36 for every $1 spent the highest ROI of any marketing channel. Here\'s how to build an email program that turns subscribers into customers.',
     author: 'Galaxy Marketing Team',
     date: '2026-05-04',
     readTime: '11 min read',
@@ -2463,11 +2463,11 @@ const scheduledPosts = [
     sections: [
       {
         type: 'intro',
-        content: `With an average ROI of $36 for every $1 invested, email marketing remains the most profitable marketing channel available. Yet most businesses treat email as an afterthought — blasting generic newsletters to their entire list and wondering why engagement plummets. Strategic email marketing is about the right message, to the right person, at the right time.`
+        content: `With an average ROI of $36 for every $1 invested, email marketing remains the most profitable marketing channel available. Yet most businesses treat email as an afterthought blasting generic newsletters to their entire list and wondering why engagement plummets. Strategic email marketing is about the right message, to the right person, at the right time.`
       },
       {
         type: 'source',
-        text: 'Litmus — Email Marketing ROI Report',
+        text: 'Litmus Email Marketing ROI Report',
         url: 'https://www.litmus.com/resources/email-marketing-roi'
       },
       {
@@ -2497,7 +2497,7 @@ const scheduledPosts = [
       },
       {
         type: 'callout',
-        content: 'Lead Magnet Rule: Your lead magnet should give subscribers a quick win — something they can implement immediately that delivers measurable value. If it does, they\'ll trust you enough to open every email you send.'
+        content: 'Lead Magnet Rule: Your lead magnet should give subscribers a quick win something they can implement immediately that delivers measurable value. If it does, they\'ll trust you enough to open every email you send.'
       },
       {
         type: 'heading',
@@ -2565,7 +2565,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Write like you're emailing one person, not a list. Use short paragraphs (2-3 sentences max). Lead with the most valuable insight. Include one clear CTA per email — not three competing asks. Use a P.S. line (it's the second most-read part of an email after the subject line). And always write in plain text or minimal HTML — heavy design templates often land in the Promotions tab.`
+        content: `Write like you're emailing one person, not a list. Use short paragraphs (2-3 sentences max). Lead with the most valuable insight. Include one clear CTA per email not three competing asks. Use a P.S. line (it's the second most-read part of an email after the subject line). And always write in plain text or minimal HTML heavy design templates often land in the Promotions tab.`
       },
       {
         type: 'heading',
@@ -2583,7 +2583,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Email marketing amplifies your SEO efforts. When you email new content to your list, subscribers visit your site, spend time on pages, share content socially, and sometimes link to it from their own sites. This burst of engagement and distribution signals content quality to Google. Use email as a content distribution channel — every blog post should be shared with your email list.`
+        content: `Email marketing amplifies your SEO efforts. When you email new content to your list, subscribers visit your site, spend time on pages, share content socially, and sometimes link to it from their own sites. This burst of engagement and distribution signals content quality to Google. Use email as a content distribution channel every blog post should be shared with your email list.`
       },
       {
         type: 'heading',
@@ -2612,12 +2612,12 @@ const scheduledPosts = [
       },
       {
         type: 'source',
-        text: 'Litmus — Email Design and Deliverability Resources',
+        text: 'Litmus Email Design and Deliverability Resources',
         url: 'https://www.litmus.com/resources'
       },
       {
         type: 'source',
-        text: 'Google — Email Sender Guidelines',
+        text: 'Google Email Sender Guidelines',
         url: 'https://support.google.com/a/answer/81126'
       }
     ]
@@ -2637,11 +2637,11 @@ const scheduledPosts = [
     sections: [
       {
         type: 'intro',
-        content: `1.3 billion people worldwide live with some form of disability — that's 16% of the global population. Web accessibility lawsuits in the US have increased 300% since 2018. And here's the part most businesses miss: accessible websites perform better for ALL users, not just those with disabilities. Accessibility isn't a cost — it's a competitive advantage.`
+        content: `1.3 billion people worldwide live with some form of disability that's 16% of the global population. Web accessibility lawsuits in the US have increased 300% since 2018. And here's the part most businesses miss: accessible websites perform better for ALL users, not just those with disabilities. Accessibility isn't a cost it's a competitive advantage.`
       },
       {
         type: 'source',
-        text: 'World Health Organization — Disability Statistics',
+        text: 'World Health Organization Disability Statistics',
         url: 'https://www.who.int/news-room/fact-sheets/detail/disability-and-health'
       },
       {
@@ -2662,7 +2662,7 @@ const scheduledPosts = [
         type: 'image',
         src: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80',
         alt: 'Diverse team collaborating on inclusive design project',
-        caption: 'Accessibility benefits everyone — not just users with disabilities'
+        caption: 'Accessibility benefits everyone not just users with disabilities'
       },
       {
         type: 'heading',
@@ -2689,7 +2689,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `The "curb cut effect" — the principle that features designed for people with disabilities benefit everyone. Captions help users in noisy environments. High contrast helps users in bright sunlight. Keyboard navigation helps power users. Simple language helps non-native speakers. Accessibility improvements make your site better for 100% of your visitors.`
+        content: `The "curb cut effect" the principle that features designed for people with disabilities benefit everyone. Captions help users in noisy environments. High contrast helps users in bright sunlight. Keyboard navigation helps power users. Simple language helps non-native speakers. Accessibility improvements make your site better for 100% of your visitors.`
       },
       {
         type: 'heading',
@@ -2720,7 +2720,7 @@ const scheduledPosts = [
       },
       {
         type: 'source',
-        text: 'W3C — Web Content Accessibility Guidelines (WCAG) 2.2',
+        text: 'W3C Web Content Accessibility Guidelines (WCAG) 2.2',
         url: 'https://www.w3.org/TR/WCAG22/'
       },
       {
@@ -2760,12 +2760,12 @@ const scheduledPosts = [
       },
       {
         type: 'source',
-        text: 'WebAIM — Accessibility Evaluation Tools',
+        text: 'WebAIM Accessibility Evaluation Tools',
         url: 'https://webaim.org/resources/'
       },
       {
         type: 'callout',
-        content: 'Warning: Accessibility overlay tools (plugins that promise "one-click accessibility") do NOT make websites accessible and may actually make things worse. They\'ve been the subject of lawsuits themselves. Real accessibility requires proper design and development — there are no shortcuts.'
+        content: 'Warning: Accessibility overlay tools (plugins that promise "one-click accessibility") do NOT make websites accessible and may actually make things worse. They\'ve been the subject of lawsuits themselves. Real accessibility requires proper design and development there are no shortcuts.'
       },
       {
         type: 'heading',
@@ -2774,16 +2774,16 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Accessible websites are better websites — period. They're faster, more structured, more usable, and more findable by search engines. Building accessibility into your website from the start costs a fraction of retrofitting it later. Treat accessibility as a quality standard, not a checkbox. Your business, your users, and your search rankings will all benefit.`
+        content: `Accessible websites are better websites period. They're faster, more structured, more usable, and more findable by search engines. Building accessibility into your website from the start costs a fraction of retrofitting it later. Treat accessibility as a quality standard, not a checkbox. Your business, your users, and your search rankings will all benefit.`
       },
       {
         type: 'source',
-        text: 'W3C — Web Accessibility Initiative (WAI)',
+        text: 'W3C Web Accessibility Initiative (WAI)',
         url: 'https://www.w3.org/WAI/'
       },
       {
         type: 'source',
-        text: 'WebAIM — Introduction to Web Accessibility',
+        text: 'WebAIM Introduction to Web Accessibility',
         url: 'https://webaim.org/intro/'
       }
     ]
@@ -2803,7 +2803,7 @@ const scheduledPosts = [
     sections: [
       {
         type: 'intro',
-        content: `Perplexity AI has quietly become one of the fastest-growing search platforms, processing millions of queries daily with growth rates exceeding 50% quarter over quarter. Unlike traditional search that shows links, and unlike ChatGPT that generates from training data, Perplexity searches the live web and provides sourced, cited answers in real-time. This creates a fundamentally new optimization opportunity — one that most businesses haven't even considered yet.`
+        content: `Perplexity AI has quietly become one of the fastest-growing search platforms, processing millions of queries daily with growth rates exceeding 50% quarter over quarter. Unlike traditional search that shows links, and unlike ChatGPT that generates from training data, Perplexity searches the live web and provides sourced, cited answers in real-time. This creates a fundamentally new optimization opportunity one that most businesses haven't even considered yet.`
       },
       {
         type: 'heading',
@@ -2868,7 +2868,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Perplexity values content that itself cites credible sources. When your article references research papers, official documentation, or authoritative data — and links to them — it signals to Perplexity that your content is well-researched and trustworthy. Content that makes unsourced claims is less likely to be selected as a citation.`
+        content: `Perplexity values content that itself cites credible sources. When your article references research papers, official documentation, or authoritative data and links to them it signals to Perplexity that your content is well-researched and trustworthy. Content that makes unsourced claims is less likely to be selected as a citation.`
       },
       {
         type: 'heading',
@@ -2891,7 +2891,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `AI search engines recognize topical depth. Don't write one article about a topic — create comprehensive content clusters that cover every angle. A business that has 20 interlinked articles about web design, each covering a specific subtopic in depth, will be cited by AI search engines far more than a business with a single "ultimate guide."`
+        content: `AI search engines recognize topical depth. Don't write one article about a topic create comprehensive content clusters that cover every angle. A business that has 20 interlinked articles about web design, each covering a specific subtopic in depth, will be cited by AI search engines far more than a business with a single "ultimate guide."`
       },
       {
         type: 'heading',
@@ -2928,7 +2928,7 @@ const scheduledPosts = [
       },
       {
         type: 'paragraph',
-        content: `Google AI Overviews, ChatGPT with browsing, Perplexity AI, Microsoft Copilot, and other AI search tools are collectively reshaping how people find and consume information online. The businesses that optimize for this new landscape — not just Google's traditional blue links — will capture the growing share of search traffic that flows through AI interfaces. The window for early-mover advantage is open now, but it won't stay open forever.`
+        content: `Google AI Overviews, ChatGPT with browsing, Perplexity AI, Microsoft Copilot, and other AI search tools are collectively reshaping how people find and consume information online. The businesses that optimize for this new landscape not just Google's traditional blue links will capture the growing share of search traffic that flows through AI interfaces. The window for early-mover advantage is open now, but it won't stay open forever.`
       },
       {
         type: 'source',
@@ -2937,12 +2937,12 @@ const scheduledPosts = [
       },
       {
         type: 'source',
-        text: 'Google — AI Overviews in Search',
+        text: 'Google AI Overviews in Search',
         url: 'https://blog.google/products/search/'
       },
       {
         type: 'source',
-        text: 'Schema.org — Article Markup',
+        text: 'Schema.org Article Markup',
         url: 'https://schema.org/Article'
       }
     ]

@@ -254,7 +254,7 @@ const BlogPost = ({ posts }) => {
       <main className="relative z-10 min-h-screen pt-28 pb-24">
 
         {/* Hero */}
-        <div className="relative h-[50vh] md:h-[60vh] overflow-hidden">
+        <div className="relative h-[28vh] md:h-[35vh] overflow-hidden">
           <img
             src={post.heroImage}
             alt={post.heroImageAlt}

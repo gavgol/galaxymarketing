@@ -101,7 +101,7 @@ const Blog = ({ posts }) => {
             Insights for the <span className="font-serif italic text-primary">AI-first</span> era
           </h1>
           <p className="text-textMuted text-lg leading-relaxed">
-            Expert guides on SEO, GEO, AEO, web design, and content strategy — everything you need to dominate search in 2026 and beyond.
+            Expert guides on SEO, GEO, AEO, web design, and content strategy. Everything you need to dominate search in 2026 and beyond.
           </p>
         </div>
 

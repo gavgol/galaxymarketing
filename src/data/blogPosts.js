@@ -1,4 +1,4 @@
-// Blog Posts Data — Galaxy Marketing
+// Blog Posts Data Galaxy Marketing
 // High-quality, SEO/AEO/GEO optimized content
 
 const blogPosts = [
@@ -16,7 +16,7 @@ const blogPosts = [
     sections: [
       {
         type: 'intro',
-        content: `Search engine optimization isn't dead — it's evolved. In 2026, the SEO playbook that worked five years ago won't cut it anymore. Google's AI Overviews now appear in over 60% of search queries, and the way users interact with search results has fundamentally shifted. But here's the good news: businesses that adapt are seeing record-breaking organic traffic.`
+        content: `Search engine optimization isn't dead it's evolved. In 2026, the SEO playbook that worked five years ago won't cut it anymore. Google's AI Overviews now appear in over 60% of search queries, and the way users interact with search results has fundamentally shifted. But here's the good news: businesses that adapt are seeing record-breaking organic traffic.`
       },
       {
         type: 'heading',
@@ -36,11 +36,11 @@ const blogPosts = [
       },
       {
         type: 'paragraph',
-        content: `Google's AI Overviews (formerly SGE) have matured significantly. According to data from Search Engine Land, AI Overviews now appear for the majority of informational queries, pushing traditional organic results further down the page. This means ranking #1 isn't enough anymore — you need to be the source that AI cites.`
+        content: `Google's AI Overviews (formerly SGE) have matured significantly. According to data from Search Engine Land, AI Overviews now appear for the majority of informational queries, pushing traditional organic results further down the page. This means ranking #1 isn't enough anymore you need to be the source that AI cites.`
       },
       {
         type: 'source',
-        text: 'Search Engine Land — Google AI Overviews Study',
+        text: 'Search Engine Land Google AI Overviews Study',
         url: 'https://searchengineland.com'
       },
       {
@@ -67,7 +67,7 @@ const blogPosts = [
       },
       {
         type: 'source',
-        text: 'Google Developers — Web Vitals Documentation',
+        text: 'Google Developers Web Vitals Documentation',
         url: 'https://web.dev/articles/vitals'
       },
       {
@@ -88,7 +88,7 @@ const blogPosts = [
       },
       {
         type: 'paragraph',
-        content: `Despite all the algorithm changes, one thing remains constant: high-quality, original content wins. Google's helpful content system continues to reward content written for humans first. The key difference in 2026 is depth — surface-level articles are being outranked by comprehensive, well-researched pieces that truly answer user questions.`
+        content: `Despite all the algorithm changes, one thing remains constant: high-quality, original content wins. Google's helpful content system continues to reward content written for humans first. The key difference in 2026 is depth surface-level articles are being outranked by comprehensive, well-researched pieces that truly answer user questions.`
       },
       {
         type: 'heading',
@@ -109,7 +109,7 @@ const blogPosts = [
       {
         type: 'heading',
         level: 3,
-        content: 'Link Building — Evolved, Not Dead'
+        content: 'Link Building Evolved, Not Dead'
       },
       {
         type: 'paragraph',
@@ -140,16 +140,16 @@ const blogPosts = [
       },
       {
         type: 'paragraph',
-        content: `SEO in 2026 rewards businesses that combine technical excellence with genuine expertise. The fundamentals haven't changed — great content, solid technical foundation, and authoritative backlinks still drive results. What's new is the need to optimize for AI citation and zero-click search results. Businesses that embrace this dual approach will dominate their markets.`
+        content: `SEO in 2026 rewards businesses that combine technical excellence with genuine expertise. The fundamentals haven't changed great content, solid technical foundation, and authoritative backlinks still drive results. What's new is the need to optimize for AI citation and zero-click search results. Businesses that embrace this dual approach will dominate their markets.`
       },
       {
         type: 'source',
-        text: 'Google Search Central — SEO Starter Guide',
+        text: 'Google Search Central SEO Starter Guide',
         url: 'https://developers.google.com/search/docs/fundamentals/seo-starter-guide'
       },
       {
         type: 'source',
-        text: 'Web.dev — Performance Best Practices',
+        text: 'Web.dev Performance Best Practices',
         url: 'https://web.dev/performance'
       }
     ]
@@ -169,7 +169,7 @@ const blogPosts = [
     sections: [
       {
         type: 'intro',
-        content: `When someone asks ChatGPT "What's the best web design agency for startups?", will your business be in the answer? Generative Engine Optimization (GEO) is the new frontier of digital visibility — and most businesses don't even know it exists yet.`
+        content: `When someone asks ChatGPT "What's the best web design agency for startups?", will your business be in the answer? Generative Engine Optimization (GEO) is the new frontier of digital visibility and most businesses don't even know it exists yet.`
       },
       {
         type: 'heading',
@@ -178,7 +178,7 @@ const blogPosts = [
       },
       {
         type: 'paragraph',
-        content: `GEO is the practice of optimizing your online presence so that AI-powered search engines — like ChatGPT, Google Gemini, Perplexity AI, and Microsoft Copilot — cite, recommend, or reference your brand in their generated responses. Unlike traditional SEO, which focuses on ranking in a list of blue links, GEO focuses on being included in AI-generated answers.`
+        content: `GEO is the practice of optimizing your online presence so that AI-powered search engines like ChatGPT, Google Gemini, Perplexity AI, and Microsoft Copilot cite, recommend, or reference your brand in their generated responses. Unlike traditional SEO, which focuses on ranking in a list of blue links, GEO focuses on being included in AI-generated answers.`
       },
       {
         type: 'paragraph',
@@ -186,7 +186,7 @@ const blogPosts = [
       },
       {
         type: 'source',
-        text: 'GEO: Generative Engine Optimization — Research Paper (arXiv)',
+        text: 'GEO: Generative Engine Optimization Research Paper (arXiv)',
         url: 'https://arxiv.org/abs/2311.09735'
       },
       {
@@ -217,7 +217,7 @@ const blogPosts = [
       },
       {
         type: 'source',
-        text: 'OpenAI — ChatGPT Usage Statistics',
+        text: 'OpenAI ChatGPT Usage Statistics',
         url: 'https://openai.com/blog'
       },
       {
@@ -227,7 +227,7 @@ const blogPosts = [
       },
       {
         type: 'paragraph',
-        content: `Here's the critical insight: ranking #1 on Google doesn't guarantee AI engines will cite you. AI models pull from a variety of signals — your content quality, citation frequency across the web, structured data, and brand authority all play roles. A business with mediocre Google rankings but strong topical authority can outperform a #1-ranked competitor in AI-generated results.`
+        content: `Here's the critical insight: ranking #1 on Google doesn't guarantee AI engines will cite you. AI models pull from a variety of signals your content quality, citation frequency across the web, structured data, and brand authority all play roles. A business with mediocre Google rankings but strong topical authority can outperform a #1-ranked competitor in AI-generated results.`
       },
       {
         type: 'heading',
@@ -299,7 +299,7 @@ const blogPosts = [
       },
       {
         type: 'source',
-        text: 'Schema.org — Official Structured Data Documentation',
+        text: 'Schema.org Official Structured Data Documentation',
         url: 'https://schema.org'
       },
       {
@@ -309,7 +309,7 @@ const blogPosts = [
       },
       {
         type: 'paragraph',
-        content: `Don't write one article about a topic — own it. Create content clusters that cover every angle of your expertise area. If you're a web design agency, publish authoritative content about UX design, conversion optimization, page speed, accessibility, and design trends. AI engines recognize topical depth and reward it.`
+        content: `Don't write one article about a topic own it. Create content clusters that cover every angle of your expertise area. If you're a web design agency, publish authoritative content about UX design, conversion optimization, page speed, accessibility, and design trends. AI engines recognize topical depth and reward it.`
       },
       {
         type: 'heading',
@@ -336,7 +336,7 @@ const blogPosts = [
       },
       {
         type: 'paragraph',
-        content: `When users ask AI for recommendations, review data often influences the response. Encourage satisfied clients to leave detailed reviews on Google Business Profile, industry directories, and social platforms. Respond to all reviews professionally — both positive and negative.`
+        content: `When users ask AI for recommendations, review data often influences the response. Encourage satisfied clients to leave detailed reviews on Google Business Profile, industry directories, and social platforms. Respond to all reviews professionally both positive and negative.`
       },
       {
         type: 'heading',
@@ -349,7 +349,7 @@ const blogPosts = [
       },
       {
         type: 'callout',
-        content: 'Key Insight: GEO isn\'t about gaming AI systems — it\'s about making your brand so authoritative, well-documented, and widely recognized that AI has no choice but to recommend you.'
+        content: 'Key Insight: GEO isn\'t about gaming AI systems it\'s about making your brand so authoritative, well-documented, and widely recognized that AI has no choice but to recommend you.'
       },
       {
         type: 'heading',
@@ -358,7 +358,7 @@ const blogPosts = [
       },
       {
         type: 'paragraph',
-        content: `GEO and SEO aren't mutually exclusive — they amplify each other. Good SEO practices (quality content, technical excellence, backlinks) feed into GEO visibility. And GEO-optimized content (comprehensive, well-cited, structured) naturally performs better in traditional search. The smartest businesses invest in both simultaneously.`
+        content: `GEO and SEO aren't mutually exclusive they amplify each other. Good SEO practices (quality content, technical excellence, backlinks) feed into GEO visibility. And GEO-optimized content (comprehensive, well-cited, structured) naturally performs better in traditional search. The smartest businesses invest in both simultaneously.`
       },
       {
         type: 'heading',
@@ -367,7 +367,7 @@ const blogPosts = [
       },
       {
         type: 'paragraph',
-        content: `The businesses that start optimizing for AI search engines now will have a massive advantage as AI-first search continues to grow. Start by auditing your current AI visibility — search for your brand and key services on ChatGPT, Perplexity, and Gemini. Then systematically implement the strategies above. The future of search is generative, and the time to prepare is today.`
+        content: `The businesses that start optimizing for AI search engines now will have a massive advantage as AI-first search continues to grow. Start by auditing your current AI visibility search for your brand and key services on ChatGPT, Perplexity, and Gemini. Then systematically implement the strategies above. The future of search is generative, and the time to prepare is today.`
       },
       {
         type: 'source',
@@ -376,7 +376,7 @@ const blogPosts = [
       },
       {
         type: 'source',
-        text: 'Google Search Central — Structured Data Guidelines',
+        text: 'Google Search Central Structured Data Guidelines',
         url: 'https://developers.google.com/search/docs/appearance/structured-data'
       }
     ]
@@ -385,7 +385,7 @@ const blogPosts = [
   {
     id: 'aeo-answer-engine-optimization-guide',
     title: 'AEO Explained: How to Optimize for Answer Engines and Featured Snippets',
-    subtitle: 'Featured snippets, People Also Ask, and voice search — master the art of being the direct answer to your customers\' questions.',
+    subtitle: 'Featured snippets, People Also Ask, and voice search master the art of being the direct answer to your customers\' questions.',
     author: 'Galaxy Marketing Team',
     date: '2026-03-15',
     readTime: '11 min read',
@@ -396,7 +396,7 @@ const blogPosts = [
     sections: [
       {
         type: 'intro',
-        content: `Over 65% of Google searches now end without a click — the answer appears right on the search results page. Answer Engine Optimization (AEO) is the strategy that positions your business as the definitive answer to the questions your customers are asking. If you're not optimizing for answer boxes, featured snippets, and "People Also Ask" results, you're leaving massive visibility on the table.`
+        content: `Over 65% of Google searches now end without a click the answer appears right on the search results page. Answer Engine Optimization (AEO) is the strategy that positions your business as the definitive answer to the questions your customers are asking. If you're not optimizing for answer boxes, featured snippets, and "People Also Ask" results, you're leaving massive visibility on the table.`
       },
       {
         type: 'heading',
@@ -405,7 +405,7 @@ const blogPosts = [
       },
       {
         type: 'paragraph',
-        content: `AEO is the practice of structuring and optimizing your content so that search engines — and AI assistants — select it as the direct answer to user queries. This includes Google's Featured Snippets (position zero), People Also Ask boxes, Knowledge Panels, voice search responses, and AI Overview citations.`
+        content: `AEO is the practice of structuring and optimizing your content so that search engines and AI assistants select it as the direct answer to user queries. This includes Google's Featured Snippets (position zero), People Also Ask boxes, Knowledge Panels, voice search responses, and AI Overview citations.`
       },
       {
         type: 'paragraph',
@@ -420,7 +420,7 @@ const blogPosts = [
         type: 'image',
         src: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800&q=80',
         alt: 'Close-up of search results page showing various answer formats',
-        caption: 'Google displays answers in multiple formats — each requires a different optimization approach'
+        caption: 'Google displays answers in multiple formats each requires a different optimization approach'
       },
       {
         type: 'heading',
@@ -433,7 +433,7 @@ const blogPosts = [
       },
       {
         type: 'source',
-        text: 'Google Search Central — Featured Snippets Documentation',
+        text: 'Google Search Central Featured Snippets Documentation',
         url: 'https://developers.google.com/search/docs/appearance/featured-snippets'
       },
       {
@@ -510,7 +510,7 @@ const blogPosts = [
       },
       {
         type: 'source',
-        text: 'Google Search Central — FAQ Structured Data',
+        text: 'Google Search Central FAQ Structured Data',
         url: 'https://developers.google.com/search/docs/appearance/structured-data/faqpage'
       },
       {
@@ -541,7 +541,7 @@ const blogPosts = [
       {
         type: 'list',
         items: [
-          'Write in clear, authoritative language — avoid jargon when a simpler explanation works',
+          'Write in clear, authoritative language avoid jargon when a simpler explanation works',
           'Keep paragraph snippets between 40-60 words for optimal extraction',
           'Update existing content regularly to maintain freshness signals',
           'Use schema markup consistently across all content pages',
@@ -558,20 +558,20 @@ const blogPosts = [
       },
       {
         type: 'paragraph',
-        content: `AEO, SEO, and GEO are three pillars of modern search visibility. SEO gets you ranked. AEO gets you featured as the direct answer. GEO gets you recommended by AI. Together, they create a comprehensive visibility strategy that ensures your business appears wherever your customers are searching — whether that's a Google search bar, a voice assistant, or an AI chatbot.`
+        content: `AEO, SEO, and GEO are three pillars of modern search visibility. SEO gets you ranked. AEO gets you featured as the direct answer. GEO gets you recommended by AI. Together, they create a comprehensive visibility strategy that ensures your business appears wherever your customers are searching whether that's a Google search bar, a voice assistant, or an AI chatbot.`
       },
       {
         type: 'paragraph',
-        content: `The most successful businesses in 2026 don't choose between these strategies — they integrate all three into a unified digital presence approach. Content that ranks well (SEO), answers questions directly (AEO), and is cited by AI (GEO) is the gold standard of modern digital marketing.`
+        content: `The most successful businesses in 2026 don't choose between these strategies they integrate all three into a unified digital presence approach. Content that ranks well (SEO), answers questions directly (AEO), and is cited by AI (GEO) is the gold standard of modern digital marketing.`
       },
       {
         type: 'source',
-        text: 'Google Search Central — Search Appearance Documentation',
+        text: 'Google Search Central Search Appearance Documentation',
         url: 'https://developers.google.com/search/docs/appearance'
       },
       {
         type: 'source',
-        text: 'W3C — Web Accessibility Initiative (WAI)',
+        text: 'W3C Web Accessibility Initiative (WAI)',
         url: 'https://www.w3.org/WAI/'
       }
     ]
@@ -591,11 +591,11 @@ const blogPosts = [
     sections: [
       {
         type: 'intro',
-        content: `The average website conversion rate across all industries is just 2.35%. But the top 10% of websites convert at 11.45% or higher. What separates them isn't just aesthetics — it's intentional, data-backed design decisions that guide visitors toward action. Here are 10 principles that the highest-converting websites share.`
+        content: `The average website conversion rate across all industries is just 2.35%. But the top 10% of websites convert at 11.45% or higher. What separates them isn't just aesthetics it's intentional, data-backed design decisions that guide visitors toward action. Here are 10 principles that the highest-converting websites share.`
       },
       {
         type: 'source',
-        text: 'WordStream — Conversion Rate Benchmarks Study',
+        text: 'WordStream Conversion Rate Benchmarks Study',
         url: 'https://www.wordstream.com/blog/ws/2014/03/17/what-is-a-good-conversion-rate'
       },
       {
@@ -611,7 +611,7 @@ const blogPosts = [
       },
       {
         type: 'paragraph',
-        content: `Google research shows that as page load time increases from 1 to 3 seconds, the probability of bounce increases by 32%. From 1 to 5 seconds, it increases by 90%. Speed isn't just a technical metric — it's your first impression. The highest-converting websites load in under 2 seconds.`
+        content: `Google research shows that as page load time increases from 1 to 3 seconds, the probability of bounce increases by 32%. From 1 to 5 seconds, it increases by 90%. Speed isn't just a technical metric it's your first impression. The highest-converting websites load in under 2 seconds.`
       },
       {
         type: 'list',
@@ -625,7 +625,7 @@ const blogPosts = [
       },
       {
         type: 'source',
-        text: 'Google — Mobile Page Speed Benchmarks',
+        text: 'Google Mobile Page Speed Benchmarks',
         url: 'https://www.thinkwithgoogle.com/marketing-strategies/app-and-mobile/mobile-page-speed-new-industry-benchmarks/'
       },
       {
@@ -635,7 +635,7 @@ const blogPosts = [
       },
       {
         type: 'paragraph',
-        content: `Users scan websites in predictable patterns — primarily the F-pattern for text-heavy pages and the Z-pattern for landing pages. Effective visual hierarchy guides the eye from headline to value proposition to call-to-action in a natural flow. Use size, color contrast, and whitespace to establish clear priority between elements.`
+        content: `Users scan websites in predictable patterns primarily the F-pattern for text-heavy pages and the Z-pattern for landing pages. Effective visual hierarchy guides the eye from headline to value proposition to call-to-action in a natural flow. Use size, color contrast, and whitespace to establish clear priority between elements.`
       },
       {
         type: 'heading',
@@ -644,7 +644,7 @@ const blogPosts = [
       },
       {
         type: 'paragraph',
-        content: `The paradox of choice is real in web design. Pages with a single, clear call-to-action convert significantly better than those with multiple competing CTAs. Every page should have one primary goal — whether that's booking a call, filling out a form, or making a purchase. Supporting content should guide visitors toward that single action.`
+        content: `The paradox of choice is real in web design. Pages with a single, clear call-to-action convert significantly better than those with multiple competing CTAs. Every page should have one primary goal whether that's booking a call, filling out a form, or making a purchase. Supporting content should guide visitors toward that single action.`
       },
       {
         type: 'callout',
@@ -663,11 +663,11 @@ const blogPosts = [
       },
       {
         type: 'paragraph',
-        content: `92% of consumers read online reviews before making a purchase decision, according to research from BrightLocal. Placing social proof — testimonials, review ratings, client logos, case study results — above the fold dramatically increases trust and conversion rates. The best social proof is specific: "Increased our revenue by 340% in 6 months" beats "Great service!" every time.`
+        content: `92% of consumers read online reviews before making a purchase decision, according to research from BrightLocal. Placing social proof testimonials, review ratings, client logos, case study results above the fold dramatically increases trust and conversion rates. The best social proof is specific: "Increased our revenue by 340% in 6 months" beats "Great service!" every time.`
       },
       {
         type: 'source',
-        text: 'BrightLocal — Consumer Review Survey',
+        text: 'BrightLocal Consumer Review Survey',
         url: 'https://www.brightlocal.com/research/local-consumer-review-survey/'
       },
       {
@@ -681,7 +681,7 @@ const blogPosts = [
       },
       {
         type: 'source',
-        text: 'StatCounter — Global Device Market Share Statistics',
+        text: 'StatCounter Global Device Market Share Statistics',
         url: 'https://gs.statcounter.com/platform-comparison-chart'
       },
       {
@@ -691,7 +691,7 @@ const blogPosts = [
       },
       {
         type: 'paragraph',
-        content: `White space (negative space) isn't empty space — it's a design element. Research from the Human Factors International showed that white space around text increases comprehension by almost 20%. Premium brands use generous white space to convey quality and focus attention on key messages. Don't crowd your layout — let your content breathe.`
+        content: `White space (negative space) isn't empty space it's a design element. Research from the Human Factors International showed that white space around text increases comprehension by almost 20%. Premium brands use generous white space to convey quality and focus attention on key messages. Don't crowd your layout let your content breathe.`
       },
       {
         type: 'heading',
@@ -719,11 +719,11 @@ const blogPosts = [
       },
       {
         type: 'paragraph',
-        content: `15% of the world's population lives with some form of disability. Accessible websites don't just comply with legal requirements — they convert better for everyone. Proper color contrast, keyboard navigation, screen reader compatibility, and clear form labels improve usability across the board. The WCAG 2.2 guidelines are the gold standard.`
+        content: `15% of the world's population lives with some form of disability. Accessible websites don't just comply with legal requirements they convert better for everyone. Proper color contrast, keyboard navigation, screen reader compatibility, and clear form labels improve usability across the board. The WCAG 2.2 guidelines are the gold standard.`
       },
       {
         type: 'source',
-        text: 'World Health Organization — Disability Fact Sheet',
+        text: 'World Health Organization Disability Fact Sheet',
         url: 'https://www.who.int/news-room/fact-sheets/detail/disability-and-health'
       },
       {
@@ -733,7 +733,7 @@ const blogPosts = [
       },
       {
         type: 'paragraph',
-        content: `Beyond testimonials, trust is built through consistent design quality, professional photography, SSL certificates (the padlock icon), privacy policies, clear contact information, and recognizable payment or security badges. Every element either builds or erodes trust — there is no neutral.`
+        content: `Beyond testimonials, trust is built through consistent design quality, professional photography, SSL certificates (the padlock icon), privacy policies, clear contact information, and recognizable payment or security badges. Every element either builds or erodes trust there is no neutral.`
       },
       {
         type: 'heading',
@@ -742,7 +742,7 @@ const blogPosts = [
       },
       {
         type: 'paragraph',
-        content: `The highest-converting websites are never "done." They continuously test headlines, CTA colors, page layouts, and content placement through A/B testing. Even small changes can yield significant results — Amazon famously attributed a 1% revenue increase (worth millions) to a 100ms improvement in page load time. Build a culture of testing, not guessing.`
+        content: `The highest-converting websites are never "done." They continuously test headlines, CTA colors, page layouts, and content placement through A/B testing. Even small changes can yield significant results Amazon famously attributed a 1% revenue increase (worth millions) to a 100ms improvement in page load time. Build a culture of testing, not guessing.`
       },
       {
         type: 'heading',
@@ -751,11 +751,11 @@ const blogPosts = [
       },
       {
         type: 'paragraph',
-        content: `Great website design isn't about following trends — it's about following data. The 10 principles above aren't just best practices; they're backed by real-world testing and research across millions of websites. Implement them systematically, measure your results, and continuously optimize. Your website should be your hardest-working salesperson — available 24/7, perfectly on-message, and relentlessly focused on conversion.`
+        content: `Great website design isn't about following trends it's about following data. The 10 principles above aren't just best practices; they're backed by real-world testing and research across millions of websites. Implement them systematically, measure your results, and continuously optimize. Your website should be your hardest-working salesperson available 24/7, perfectly on-message, and relentlessly focused on conversion.`
       },
       {
         type: 'source',
-        text: 'Nielsen Norman Group — UX Research and Design Guidelines',
+        text: 'Nielsen Norman Group UX Research and Design Guidelines',
         url: 'https://www.nngroup.com'
       },
       {
@@ -784,7 +784,7 @@ const blogPosts = [
       },
       {
         type: 'source',
-        text: 'Content Marketing Institute — Annual B2B Research Report',
+        text: 'Content Marketing Institute Annual B2B Research Report',
         url: 'https://contentmarketinginstitute.com/research/'
       },
       {
@@ -827,7 +827,7 @@ const blogPosts = [
       },
       {
         type: 'paragraph',
-        content: `Before creating a single piece of content, you need to understand your audience at a granular level. This goes beyond demographics — you need to understand their questions, pain points, decision-making process, and the exact language they use to describe their problems.`
+        content: `Before creating a single piece of content, you need to understand your audience at a granular level. This goes beyond demographics you need to understand their questions, pain points, decision-making process, and the exact language they use to describe their problems.`
       },
       {
         type: 'list',
@@ -835,7 +835,7 @@ const blogPosts = [
           'Survey existing customers about their biggest challenges',
           'Analyze search queries (Google Search Console data)',
           'Read industry forums, Reddit threads, and community discussions',
-          'Study competitor content gaps — what isn\'t being covered?',
+          'Study competitor content gaps what isn\'t being covered?',
           'Interview your sales team about frequently asked questions'
         ]
       },
@@ -908,7 +908,7 @@ const blogPosts = [
       },
       {
         type: 'source',
-        text: 'Litmus — Email Marketing ROI Report',
+        text: 'Litmus Email Marketing ROI Report',
         url: 'https://www.litmus.com/resources/email-marketing-roi'
       },
       {
@@ -947,7 +947,7 @@ const blogPosts = [
       },
       {
         type: 'source',
-        text: 'Backlinko — Content Study: Long-Form vs Short-Form',
+        text: 'Backlinko Content Study: Long-Form vs Short-Form',
         url: 'https://backlinko.com/content-study'
       },
       {
@@ -961,7 +961,7 @@ const blogPosts = [
       },
       {
         type: 'source',
-        text: 'Wyzowl — State of Video Marketing Survey',
+        text: 'Wyzowl State of Video Marketing Survey',
         url: 'https://www.wyzowl.com/video-marketing-statistics/'
       },
       {
@@ -971,7 +971,7 @@ const blogPosts = [
       },
       {
         type: 'paragraph',
-        content: `Case studies are the most powerful decision-stage content format. The key is specificity — include exact metrics, timelines, and methodology. "We increased organic traffic by 312% in 8 months" is infinitely more compelling than "We helped them grow their traffic." Include client quotes, before/after data, and clear methodology.`
+        content: `Case studies are the most powerful decision-stage content format. The key is specificity include exact metrics, timelines, and methodology. "We increased organic traffic by 312% in 8 months" is infinitely more compelling than "We helped them grow their traffic." Include client quotes, before/after data, and clear methodology.`
       },
       {
         type: 'heading',
@@ -980,16 +980,16 @@ const blogPosts = [
       },
       {
         type: 'paragraph',
-        content: `Content marketing is a compounding investment. Unlike paid advertising, which stops delivering the moment you stop paying, great content continues generating traffic, leads, and revenue for years. A blog post written today could be generating leads in 2028. Start with the Content-Revenue Framework, commit to quality over quantity, and measure what matters. The businesses that win at content marketing aren't the ones publishing the most — they're the ones publishing the most strategically.`
+        content: `Content marketing is a compounding investment. Unlike paid advertising, which stops delivering the moment you stop paying, great content continues generating traffic, leads, and revenue for years. A blog post written today could be generating leads in 2028. Start with the Content-Revenue Framework, commit to quality over quantity, and measure what matters. The businesses that win at content marketing aren't the ones publishing the most they're the ones publishing the most strategically.`
       },
       {
         type: 'source',
-        text: 'Content Marketing Institute — Content Strategy Research',
+        text: 'Content Marketing Institute Content Strategy Research',
         url: 'https://contentmarketinginstitute.com/research/'
       },
       {
         type: 'source',
-        text: 'Google Search Central — Creating Helpful Content',
+        text: 'Google Search Central Creating Helpful Content',
         url: 'https://developers.google.com/search/docs/fundamentals/creating-helpful-content'
       }
     ]

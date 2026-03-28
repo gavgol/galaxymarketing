@@ -1,11 +1,11 @@
-// Scheduled Blog Posts — Galaxy Marketing — Batch 4
+// Scheduled Blog Posts Galaxy Marketing Batch 4
 // 16 posts scheduled Aug 17 – Sep 28, 2026
-// Each post has a date — only show posts where date <= today
+// Each post has a date only show posts where date <= today
 
 const scheduledBatch4 = [
 
   // ═══════════════════════════════════════════════════════
-  // WEEK 1 — Aug 17, Aug 19
+  // WEEK 1 Aug 17, Aug 19
   // ═══════════════════════════════════════════════════════
 
   {
@@ -22,11 +22,11 @@ const scheduledBatch4 = [
     sections: [
       {
         type: 'intro',
-        content: `According to the Content Marketing Institute, 64% of the most successful content marketers have a documented content strategy — yet only 19% of all marketers say their organization's content marketing is "very successful." The difference almost always comes down to planning. A 3-month content calendar transforms reactive, last-minute posting into a strategic system that compounds results over time.`
+        content: `According to the Content Marketing Institute, 64% of the most successful content marketers have a documented content strategy yet only 19% of all marketers say their organization's content marketing is "very successful." The difference almost always comes down to planning. A 3-month content calendar transforms reactive, last-minute posting into a strategic system that compounds results over time.`
       },
       {
         type: 'source',
-        text: 'Content Marketing Institute — B2B Content Marketing Research',
+        text: 'Content Marketing Institute B2B Content Marketing Research',
         url: 'https://contentmarketinginstitute.com/articles/b2b-content-marketing-research/'
       },
       {
@@ -36,7 +36,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Planning one month ahead is too short — you can't see seasonal patterns or coordinate campaigns. Planning six months ahead is too long — the market shifts and your plan becomes stale. Three months gives you enough runway to create themed content series, align with sales cycles, and react to trends without overhauling your entire plan.`
+        content: `Planning one month ahead is too short you can't see seasonal patterns or coordinate campaigns. Planning six months ahead is too long the market shifts and your plan becomes stale. Three months gives you enough runway to create themed content series, align with sales cycles, and react to trends without overhauling your entire plan.`
       },
       {
         type: 'heading',
@@ -51,7 +51,7 @@ const scheduledBatch4 = [
         type: 'list',
         items: [
           'Export your top pages by traffic and conversions from Analytics',
-          'Identify queries you rank positions 5–20 for in Search Console — these are quick wins',
+          'Identify queries you rank positions 5–20 for in Search Console these are quick wins',
           'Flag any content older than 18 months for potential refresh',
           'Note competitor topics you haven\'t covered yet',
           'List seasonal events relevant to your industry in the next 90 days'
@@ -83,7 +83,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'source',
-        text: 'Harvard Business Review — The Art of Strategic Planning',
+        text: 'Harvard Business Review The Art of Strategic Planning',
         url: 'https://hbr.org/2020/11/getting-strategy-right'
       },
       {
@@ -99,7 +99,7 @@ const scheduledBatch4 = [
         type: 'list',
         ordered: true,
         items: [
-          'Week 1: Outline all posts for the month — titles, key points, target keywords',
+          'Week 1: Outline all posts for the month titles, key points, target keywords',
           'Week 2: Write first drafts in focused writing blocks (no editing allowed)',
           'Week 3: Edit, add images, create social media snippets',
           'Week 4: Schedule everything, then start outlining the next month'
@@ -134,7 +134,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `At the end of each month, review performance metrics against your goals. Which content pillars drove the most traffic? Which formats had the best engagement? Which topics generated leads? Use this data to adjust the remaining two months of your plan. A content calendar is a living document — rigidity kills results.`
+        content: `At the end of each month, review performance metrics against your goals. Which content pillars drove the most traffic? Which formats had the best engagement? Which topics generated leads? Use this data to adjust the remaining two months of your plan. A content calendar is a living document rigidity kills results.`
       },
       {
         type: 'heading',
@@ -145,10 +145,10 @@ const scheduledBatch4 = [
         type: 'list',
         items: [
           'A documented content strategy is the #1 differentiator between successful and struggling content programs',
-          'Three months is the ideal planning horizon — long enough for strategy, short enough for agility',
+          'Three months is the ideal planning horizon long enough for strategy, short enough for agility',
           'Content pillars prevent random publishing and build topical authority',
           'Batch creation dramatically reduces the time and mental energy required for consistent output',
-          'Review and adjust monthly — your calendar should evolve with your data'
+          'Review and adjust monthly your calendar should evolve with your data'
         ]
       }
     ]
@@ -168,11 +168,11 @@ const scheduledBatch4 = [
     sections: [
       {
         type: 'intro',
-        content: `Google processes over 8.5 billion searches per day, and the vast majority of those queries are the same ones people searched last month, last year, and five years ago. "How to tie a tie," "best CRM for small business," "how to fix a leaky faucet" — these searches don't expire. Content that answers them doesn't expire either. That's the power of evergreen content: a single well-crafted article can generate traffic for years without additional investment.`
+        content: `Google processes over 8.5 billion searches per day, and the vast majority of those queries are the same ones people searched last month, last year, and five years ago. "How to tie a tie," "best CRM for small business," "how to fix a leaky faucet" these searches don't expire. Content that answers them doesn't expire either. That's the power of evergreen content: a single well-crafted article can generate traffic for years without additional investment.`
       },
       {
         type: 'source',
-        text: 'Google Search Central — Creating Helpful Content',
+        text: 'Google Search Central Creating Helpful Content',
         url: 'https://developers.google.com/search/docs/fundamentals/creating-helpful-content'
       },
       {
@@ -182,7 +182,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Evergreen content remains relevant and accurate long after its publication date. It addresses fundamental questions, teaches timeless skills, or provides reference material that doesn't depend on current events. The opposite — "topical" content — covers news, trends, seasonal events, or time-sensitive announcements that lose relevance quickly.`
+        content: `Evergreen content remains relevant and accurate long after its publication date. It addresses fundamental questions, teaches timeless skills, or provides reference material that doesn't depend on current events. The opposite "topical" content covers news, trends, seasonal events, or time-sensitive announcements that lose relevance quickly.`
       },
       {
         type: 'heading',
@@ -208,11 +208,11 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `The Content Marketing Institute reports that compounding blog posts — those that grow in traffic over time rather than spiking and declining — make up roughly 10% of all blog posts but generate 38% of overall traffic. One evergreen post that ranks on page one can deliver more total traffic over 3 years than 50 trending posts combined.`
+        content: `The Content Marketing Institute reports that compounding blog posts those that grow in traffic over time rather than spiking and declining make up roughly 10% of all blog posts but generate 38% of overall traffic. One evergreen post that ranks on page one can deliver more total traffic over 3 years than 50 trending posts combined.`
       },
       {
         type: 'source',
-        text: 'Content Marketing Institute — Creating Evergreen Content',
+        text: 'Content Marketing Institute Creating Evergreen Content',
         url: 'https://contentmarketinginstitute.com/articles/evergreen-content/'
       },
       {
@@ -282,7 +282,7 @@ const scheduledBatch4 = [
         type: 'list',
         items: [
           'Evergreen content compounds traffic over time instead of spiking and fading',
-          'Roughly 10% of blog posts generate 38% of total traffic — and they\'re almost always evergreen',
+          'Roughly 10% of blog posts generate 38% of total traffic and they\'re almost always evergreen',
           'Choose topics with stable, year-round search demand',
           'Avoid date-specific language and commit to regular content refreshes',
           'Build an 80/20 evergreen-to-topical ratio for sustainable traffic growth'
@@ -292,7 +292,7 @@ const scheduledBatch4 = [
   },
 
   // ═══════════════════════════════════════════════════════
-  // WEEK 2 — Aug 21, Aug 24, Aug 26
+  // WEEK 2 Aug 21, Aug 24, Aug 26
   // ═══════════════════════════════════════════════════════
 
   {
@@ -309,11 +309,11 @@ const scheduledBatch4 = [
     sections: [
       {
         type: 'intro',
-        content: `Nielsen Norman Group research consistently shows that users trust peer recommendations over branded content. User-generated content — reviews, testimonials, social media posts, photos, and videos created by real customers — carries an authenticity that no amount of professional copywriting can replicate. For businesses, UGC is both the most trusted and most cost-effective form of marketing.`
+        content: `Nielsen Norman Group research consistently shows that users trust peer recommendations over branded content. User-generated content reviews, testimonials, social media posts, photos, and videos created by real customers carries an authenticity that no amount of professional copywriting can replicate. For businesses, UGC is both the most trusted and most cost-effective form of marketing.`
       },
       {
         type: 'source',
-        text: 'Nielsen Norman Group — The Concept of Social Proof',
+        text: 'Nielsen Norman Group The Concept of Social Proof',
         url: 'https://www.nngroup.com/articles/social-proof-ux/'
       },
       {
@@ -323,7 +323,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `People are hardwired to trust the experiences of others. This is the psychological principle of social proof — when we're uncertain, we look at what others have done to guide our decisions. A glowing review from a real customer, complete with a photo of the actual product in their home, eliminates the "will it really look like that?" hesitation that studio photography can't address.`
+        content: `People are hardwired to trust the experiences of others. This is the psychological principle of social proof when we're uncertain, we look at what others have done to guide our decisions. A glowing review from a real customer, complete with a photo of the actual product in their home, eliminates the "will it really look like that?" hesitation that studio photography can't address.`
       },
       {
         type: 'heading',
@@ -350,10 +350,10 @@ const scheduledBatch4 = [
         ordered: true,
         items: [
           'Send a follow-up email 3–5 days after purchase or service completion',
-          'Make the review process as frictionless as possible — direct links to your Google Business Profile or review platform',
+          'Make the review process as frictionless as possible direct links to your Google Business Profile or review platform',
           'Respond to every review (positive and negative) to show you\'re engaged',
           'Display reviews prominently on your website near conversion points',
-          'Never offer incentives for positive reviews — this violates Google\'s policies and FTC guidelines'
+          'Never offer incentives for positive reviews this violates Google\'s policies and FTC guidelines'
         ]
       },
       {
@@ -374,9 +374,9 @@ const scheduledBatch4 = [
         type: 'list',
         items: [
           'Define a clear, simple prompt: "Share a photo of your [product] in action using #YourBrandTag"',
-          'Feature the best submissions on your website and social channels — recognition is a powerful motivator',
+          'Feature the best submissions on your website and social channels recognition is a powerful motivator',
           'Create a dedicated landing page or gallery showcasing UGC',
-          'Make participation easy — don\'t require lengthy forms or complex submissions',
+          'Make participation easy don\'t require lengthy forms or complex submissions',
           'Engage with every submission, even those you don\'t feature'
         ]
       },
@@ -391,7 +391,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'source',
-        text: 'Content Marketing Institute — User-Generated Content Strategy',
+        text: 'Content Marketing Institute User-Generated Content Strategy',
         url: 'https://contentmarketinginstitute.com/articles/user-generated-content-strategy/'
       },
       {
@@ -416,7 +416,7 @@ const scheduledBatch4 = [
         type: 'list',
         items: [
           'User-generated content is trusted more than branded content because of the social proof principle',
-          'Reviews are the foundation — build a systematic process for generating and managing them',
+          'Reviews are the foundation build a systematic process for generating and managing them',
           'UGC campaigns should motivate through recognition and community, not just prizes',
           'Always get explicit permission before using customer content commercially',
           'Place UGC at key decision points on your website for maximum conversion impact'
@@ -439,11 +439,11 @@ const scheduledBatch4 = [
     sections: [
       {
         type: 'intro',
-        content: `Dark mode has evolved from a developer preference to a mainstream user expectation. Every major operating system, browser, and social platform now supports it natively. The CSS prefers-color-scheme media query, standardized by the W3C, gives web developers a clean, reliable way to detect user preference and adapt automatically. For businesses, offering dark mode isn't just about aesthetics — it's about respecting user choice and improving accessibility.`
+        content: `Dark mode has evolved from a developer preference to a mainstream user expectation. Every major operating system, browser, and social platform now supports it natively. The CSS prefers-color-scheme media query, standardized by the W3C, gives web developers a clean, reliable way to detect user preference and adapt automatically. For businesses, offering dark mode isn't just about aesthetics it's about respecting user choice and improving accessibility.`
       },
       {
         type: 'source',
-        text: 'MDN Web Docs — prefers-color-scheme',
+        text: 'MDN Web Docs prefers-color-scheme',
         url: 'https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme'
       },
       {
@@ -462,7 +462,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `On OLED and AMOLED displays — now standard on most flagship phones and increasingly common in laptops — dark mode genuinely saves battery life. Unlike LCD screens that use a backlight, OLED screens light each pixel individually. A true black (#000000) pixel on an OLED screen uses zero power. A dark-themed website on an OLED phone can reduce display power consumption significantly compared to a white background.`
+        content: `On OLED and AMOLED displays now standard on most flagship phones and increasingly common in laptops dark mode genuinely saves battery life. Unlike LCD screens that use a backlight, OLED screens light each pixel individually. A true black (#000000) pixel on an OLED screen uses zero power. A dark-themed website on an OLED phone can reduce display power consumption significantly compared to a white background.`
       },
       {
         type: 'image',
@@ -481,12 +481,12 @@ const scheduledBatch4 = [
       },
       {
         type: 'source',
-        text: 'web.dev — prefers-color-scheme: Hello darkness, my old friend',
+        text: 'web.dev prefers-color-scheme: Hello darkness, my old friend',
         url: 'https://web.dev/articles/prefers-color-scheme'
       },
       {
         type: 'callout',
-        content: `Start with CSS custom properties: define --bg-primary, --text-primary, --accent, etc. on :root for light mode, then override inside @media (prefers-color-scheme: dark). Every color in your stylesheet should reference these variables — never hardcode colors.`
+        content: `Start with CSS custom properties: define --bg-primary, --text-primary, --accent, etc. on :root for light mode, then override inside @media (prefers-color-scheme: dark). Every color in your stylesheet should reference these variables never hardcode colors.`
       },
       {
         type: 'heading',
@@ -504,11 +504,11 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Dark mode introduces unique accessibility challenges. The W3C Web Content Accessibility Guidelines (WCAG) require a minimum contrast ratio of 4.5:1 for normal text and 3:1 for large text — and this applies in both light and dark modes. Common mistakes include using pure white (#FFFFFF) text on pure black (#000000) backgrounds, which creates excessive contrast that causes visual vibration and eye strain for some users.`
+        content: `Dark mode introduces unique accessibility challenges. The W3C Web Content Accessibility Guidelines (WCAG) require a minimum contrast ratio of 4.5:1 for normal text and 3:1 for large text and this applies in both light and dark modes. Common mistakes include using pure white (#FFFFFF) text on pure black (#000000) backgrounds, which creates excessive contrast that causes visual vibration and eye strain for some users.`
       },
       {
         type: 'source',
-        text: 'W3C — Web Content Accessibility Guidelines (WCAG) 2.1',
+        text: 'W3C Web Content Accessibility Guidelines (WCAG) 2.1',
         url: 'https://www.w3.org/TR/WCAG21/'
       },
       {
@@ -521,7 +521,7 @@ const scheduledBatch4 = [
         items: [
           'Use dark gray (#121212 to #1E1E1E) instead of pure black for backgrounds',
           'Use off-white (#E0E0E0 to #F0F0F0) instead of pure white for body text',
-          'Desaturate brand colors slightly — vivid colors on dark backgrounds appear to glow',
+          'Desaturate brand colors slightly vivid colors on dark backgrounds appear to glow',
           'Increase the weight of body text by one step (e.g., 400 → 500) to compensate for halation',
           'Test all color combinations with a WCAG contrast checker in both modes',
           'Ensure focus indicators, error states, and links remain visible in dark mode'
@@ -553,10 +553,10 @@ const scheduledBatch4 = [
       {
         type: 'list',
         items: [
-          'Dark mode is a user expectation — implement it with CSS custom properties and prefers-color-scheme',
+          'Dark mode is a user expectation implement it with CSS custom properties and prefers-color-scheme',
           'OLED screens make dark mode a genuine battery-saving feature',
           'Always provide a manual toggle that overrides OS preference',
-          'Avoid pure black and pure white — use dark grays and off-whites for comfortable reading',
+          'Avoid pure black and pure white use dark grays and off-whites for comfortable reading',
           'Test accessibility contrast ratios in both light and dark modes'
         ]
       }
@@ -577,11 +577,11 @@ const scheduledBatch4 = [
     sections: [
       {
         type: 'intro',
-        content: `Nielsen Norman Group research on user behavior shows that the average webpage visit lasts under a minute, with the most critical engagement happening in the first 10 seconds. Your hero section — the large, prominent area at the top of your homepage — is the single most influential design element on your entire website. It sets the tone, communicates your value proposition, and either encourages scrolling or triggers a bounce.`
+        content: `Nielsen Norman Group research on user behavior shows that the average webpage visit lasts under a minute, with the most critical engagement happening in the first 10 seconds. Your hero section the large, prominent area at the top of your homepage is the single most influential design element on your entire website. It sets the tone, communicates your value proposition, and either encourages scrolling or triggers a bounce.`
       },
       {
         type: 'source',
-        text: 'Nielsen Norman Group — How Long Do Users Stay on Web Pages?',
+        text: 'Nielsen Norman Group How Long Do Users Stay on Web Pages?',
         url: 'https://www.nngroup.com/articles/how-long-do-users-stay-on-web-pages/'
       },
       {
@@ -620,11 +620,11 @@ const scheduledBatch4 = [
       {
         type: 'list',
         items: [
-          'Split hero: Text on one side, image/video on the other — ideal for service businesses',
-          'Full-screen background video: Creates immersive first impressions — best for brands with strong visual identity',
-          'Centered text with gradient or abstract background: Clean and modern — works for SaaS and tech',
-          'Product showcase: Hero image featuring the actual product — essential for e-commerce',
-          'Social proof hero: Headline backed by customer logos, ratings, or testimonials — builds instant trust'
+          'Split hero: Text on one side, image/video on the other ideal for service businesses',
+          'Full-screen background video: Creates immersive first impressions best for brands with strong visual identity',
+          'Centered text with gradient or abstract background: Clean and modern works for SaaS and tech',
+          'Product showcase: Hero image featuring the actual product essential for e-commerce',
+          'Social proof hero: Headline backed by customer logos, ratings, or testimonials builds instant trust'
         ]
       },
       {
@@ -638,7 +638,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'source',
-        text: 'web.dev — Optimize Largest Contentful Paint',
+        text: 'web.dev Optimize Largest Contentful Paint',
         url: 'https://web.dev/articles/optimize-lcp'
       },
       {
@@ -648,7 +648,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Your hero section is typically your Largest Contentful Paint (LCP) element — the metric Google uses to measure perceived load speed. A hero image that takes 4 seconds to load creates a terrible first impression regardless of how beautiful it is. Optimize hero images with modern formats (WebP/AVIF), proper sizing, and the fetchpriority="high" attribute. Target an LCP under 2.5 seconds.`
+        content: `Your hero section is typically your Largest Contentful Paint (LCP) element the metric Google uses to measure perceived load speed. A hero image that takes 4 seconds to load creates a terrible first impression regardless of how beautiful it is. Optimize hero images with modern formats (WebP/AVIF), proper sizing, and the fetchpriority="high" attribute. Target an LCP under 2.5 seconds.`
       },
       {
         type: 'heading',
@@ -657,7 +657,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `On mobile, your hero section must work in a much smaller viewport. Headlines need to be shorter, images must be optimized for portrait orientation, and CTA buttons need to be thumb-friendly (at least 44x44 pixels). Consider using a different image crop or simpler composition for mobile. Test on real devices — what looks powerful on a 27-inch monitor may be illegible on a 5.5-inch phone.`
+        content: `On mobile, your hero section must work in a much smaller viewport. Headlines need to be shorter, images must be optimized for portrait orientation, and CTA buttons need to be thumb-friendly (at least 44x44 pixels). Consider using a different image crop or simpler composition for mobile. Test on real devices what looks powerful on a 27-inch monitor may be illegible on a 5.5-inch phone.`
       },
       {
         type: 'callout',
@@ -674,7 +674,7 @@ const scheduledBatch4 = [
           'Your hero section has about 5–10 seconds to communicate value and prevent a bounce',
           'Every hero needs four elements: headline, sub-headline, CTA, and supporting visual',
           'Focus headlines on outcomes for the visitor, not features of your service',
-          'Optimize hero images for performance — they\'re typically your LCP element',
+          'Optimize hero images for performance they\'re typically your LCP element',
           'Design mobile-first and test on real devices'
         ]
       }
@@ -682,7 +682,7 @@ const scheduledBatch4 = [
   },
 
   // ═══════════════════════════════════════════════════════
-  // WEEK 3 — Aug 31, Sep 2, Sep 4
+  // WEEK 3 Aug 31, Sep 2, Sep 4
   // ═══════════════════════════════════════════════════════
 
   {
@@ -699,11 +699,11 @@ const scheduledBatch4 = [
     sections: [
       {
         type: 'intro',
-        content: `Users who scroll to your footer are among your most engaged visitors. Nielsen Norman Group eye-tracking studies show that users who reach the bottom of a page have already consumed your content and are actively looking for their next step — contact information, additional navigation, or trust signals. A thoughtfully designed footer converts these engaged visitors rather than letting them bounce.`
+        content: `Users who scroll to your footer are among your most engaged visitors. Nielsen Norman Group eye-tracking studies show that users who reach the bottom of a page have already consumed your content and are actively looking for their next step contact information, additional navigation, or trust signals. A thoughtfully designed footer converts these engaged visitors rather than letting them bounce.`
       },
       {
         type: 'source',
-        text: 'Nielsen Norman Group — Footers 101: Design Patterns and When to Use Each',
+        text: 'Nielsen Norman Group Footers 101: Design Patterns and When to Use Each',
         url: 'https://www.nngroup.com/articles/footers/'
       },
       {
@@ -739,7 +739,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Mega footers — large, multi-column footer sections — provide additional navigation and link equity. They're particularly valuable for large websites with deep content architectures. Organize a mega footer into clear columns: Services, Industries, Resources, Company, Contact. This structure helps both users and search engines discover important pages that might be buried in your site hierarchy.`
+        content: `Mega footers large, multi-column footer sections provide additional navigation and link equity. They're particularly valuable for large websites with deep content architectures. Organize a mega footer into clear columns: Services, Industries, Resources, Company, Contact. This structure helps both users and search engines discover important pages that might be buried in your site hierarchy.`
       },
       {
         type: 'image',
@@ -754,11 +754,11 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Footer links pass link equity to the pages they point to. Since the footer appears on every page, footer links receive link equity from your entire site. Use this strategically by linking to important conversion pages, location pages (for local SEO), and cornerstone content. However, avoid stuffing the footer with keyword-rich links — Google has specifically warned against this in their webmaster guidelines.`
+        content: `Footer links pass link equity to the pages they point to. Since the footer appears on every page, footer links receive link equity from your entire site. Use this strategically by linking to important conversion pages, location pages (for local SEO), and cornerstone content. However, avoid stuffing the footer with keyword-rich links Google has specifically warned against this in their webmaster guidelines.`
       },
       {
         type: 'source',
-        text: 'web.dev — Links Best Practices',
+        text: 'web.dev Links Best Practices',
         url: 'https://web.dev/articles/link-best-practices'
       },
       {
@@ -779,7 +779,7 @@ const scheduledBatch4 = [
         type: 'list',
         items: [
           'Use a darker background to visually separate the footer from content',
-          'Maintain adequate spacing — cramped footers feel unprofessional',
+          'Maintain adequate spacing cramped footers feel unprofessional',
           'Make phone numbers and emails clickable (tel: and mailto: links)',
           'Ensure footer links are accessible with sufficient contrast ratios',
           'Include a "Back to top" button for long pages',
@@ -798,11 +798,11 @@ const scheduledBatch4 = [
       {
         type: 'list',
         items: [
-          'Users who reach your footer are highly engaged — give them clear next steps',
+          'Users who reach your footer are highly engaged give them clear next steps',
           'Footer links appear on every page and pass significant link equity',
           'Include contact info, navigation, trust badges, and a conversion element (like a newsletter signup)',
           'Mega footers help large sites with deep content architectures',
-          'Avoid keyword-stuffed footer links — Google explicitly penalizes this'
+          'Avoid keyword-stuffed footer links Google explicitly penalizes this'
         ]
       }
     ]
@@ -822,11 +822,11 @@ const scheduledBatch4 = [
     sections: [
       {
         type: 'intro',
-        content: `Restaurant searches are one of the most common local search categories. "Restaurants near me" is one of the most searched phrases globally, and nearly all of these searches happen on mobile devices from hungry people ready to spend money — right now. For restaurants, ranking in Google's local pack isn't just marketing — it's the difference between full tables and empty ones.`
+        content: `Restaurant searches are one of the most common local search categories. "Restaurants near me" is one of the most searched phrases globally, and nearly all of these searches happen on mobile devices from hungry people ready to spend money right now. For restaurants, ranking in Google's local pack isn't just marketing it's the difference between full tables and empty ones.`
       },
       {
         type: 'source',
-        text: 'Google Business Profile Help — Edit Your Business Profile',
+        text: 'Google Business Profile Help Edit Your Business Profile',
         url: 'https://support.google.com/business/answer/3039617'
       },
       {
@@ -836,7 +836,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `For restaurants, Google Business Profile (GBP) is even more important than your website. When someone searches for a restaurant, they see the map pack — three businesses with reviews, photos, hours, and a direct link to directions. Your GBP is what appears there. Complete every field: menu link, reservation link, hours for each day (including holiday hours), attributes (outdoor seating, delivery, Wi-Fi), and a detailed description.`
+        content: `For restaurants, Google Business Profile (GBP) is even more important than your website. When someone searches for a restaurant, they see the map pack three businesses with reviews, photos, hours, and a direct link to directions. Your GBP is what appears there. Complete every field: menu link, reservation link, hours for each day (including holiday hours), attributes (outdoor seating, delivery, Wi-Fi), and a detailed description.`
       },
       {
         type: 'heading',
@@ -845,7 +845,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Google reports that businesses with photos receive significantly more requests for directions and more click-throughs to their websites than those without. For restaurants, this is critical. Upload professional photos of your dishes, interior, exterior (so people can recognize the building), and team. Add new photos weekly — GBP rewards fresh visual content with better visibility.`
+        content: `Google reports that businesses with photos receive significantly more requests for directions and more click-throughs to their websites than those without. For restaurants, this is critical. Upload professional photos of your dishes, interior, exterior (so people can recognize the building), and team. Add new photos weekly GBP rewards fresh visual content with better visibility.`
       },
       {
         type: 'image',
@@ -860,11 +860,11 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Schema.org provides a dedicated Restaurant type that helps Google understand your business. Implementing structured data for your restaurant allows rich results to appear in search — including your cuisine type, price range, hours, address, and aggregated review ratings. This structured data makes your listing more informative and clickable in search results.`
+        content: `Schema.org provides a dedicated Restaurant type that helps Google understand your business. Implementing structured data for your restaurant allows rich results to appear in search including your cuisine type, price range, hours, address, and aggregated review ratings. This structured data makes your listing more informative and clickable in search results.`
       },
       {
         type: 'source',
-        text: 'Schema.org — Restaurant Type',
+        text: 'Schema.org Restaurant Type',
         url: 'https://schema.org/Restaurant'
       },
       {
@@ -892,7 +892,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Many restaurants make their menus available only as PDF downloads or embedded images. This is an SEO disaster — search engines can't easily read PDFs or text in images. Create an HTML menu page with real text. Describe dishes naturally and include ingredient lists. When someone searches "gluten-free pizza in [city]," your HTML menu page can rank — a PDF menu cannot.`
+        content: `Many restaurants make their menus available only as PDF downloads or embedded images. This is an SEO disaster search engines can't easily read PDFs or text in images. Create an HTML menu page with real text. Describe dishes naturally and include ingredient lists. When someone searches "gluten-free pizza in [city]," your HTML menu page can rank a PDF menu cannot.`
       },
       {
         type: 'callout',
@@ -905,7 +905,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Reviews are the lifeblood of restaurant SEO. A restaurant with 200 reviews and a 4.3 rating will almost always outrank one with 15 reviews and a 4.8 rating. Volume and recency matter enormously. Train your staff to naturally encourage reviews — a simple "If you enjoyed your meal, we'd love a Google review" at the end of service can transform your review count over a few months.`
+        content: `Reviews are the lifeblood of restaurant SEO. A restaurant with 200 reviews and a 4.3 rating will almost always outrank one with 15 reviews and a 4.8 rating. Volume and recency matter enormously. Train your staff to naturally encourage reviews a simple "If you enjoyed your meal, we'd love a Google review" at the end of service can transform your review count over a few months.`
       },
       {
         type: 'heading',
@@ -925,7 +925,7 @@ const scheduledBatch4 = [
         type: 'list',
         items: [
           'Google Business Profile is more important than your website for restaurant discovery',
-          'Upload professional food photos weekly — visual content drives foot traffic',
+          'Upload professional food photos weekly visual content drives foot traffic',
           'Implement Restaurant schema markup for rich search results',
           'Replace PDF menus with HTML text menus that search engines can crawl',
           'Prioritize review volume and recency over perfect ratings'
@@ -948,11 +948,11 @@ const scheduledBatch4 = [
     sections: [
       {
         type: 'intro',
-        content: `Marketing a law firm, accounting practice, or consulting business is fundamentally different from marketing a retail product. Your clients are making high-stakes decisions — choosing the wrong lawyer or accountant can cost them thousands or change the course of their life. Google recognizes this through its "Your Money or Your Life" (YMYL) classification, holding these websites to higher standards for Experience, Expertise, Authoritativeness, and Trustworthiness (E-E-A-T).`
+        content: `Marketing a law firm, accounting practice, or consulting business is fundamentally different from marketing a retail product. Your clients are making high-stakes decisions choosing the wrong lawyer or accountant can cost them thousands or change the course of their life. Google recognizes this through its "Your Money or Your Life" (YMYL) classification, holding these websites to higher standards for Experience, Expertise, Authoritativeness, and Trustworthiness (E-E-A-T).`
       },
       {
         type: 'source',
-        text: 'Google Search Central — Creating Helpful, Reliable, People-First Content',
+        text: 'Google Search Central Creating Helpful, Reliable, People-First Content',
         url: 'https://developers.google.com/search/docs/fundamentals/creating-helpful-content'
       },
       {
@@ -962,7 +962,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Google's Quality Rater Guidelines classify content that could significantly impact a person's health, financial stability, safety, or well-being as "Your Money or Your Life." Legal advice, financial planning, tax guidance, and business consulting all fall squarely into this category. This means Google applies stricter quality standards to these websites — thin content, anonymous authors, or lack of credentials will actively harm your rankings.`
+        content: `Google's Quality Rater Guidelines classify content that could significantly impact a person's health, financial stability, safety, or well-being as "Your Money or Your Life." Legal advice, financial planning, tax guidance, and business consulting all fall squarely into this category. This means Google applies stricter quality standards to these websites thin content, anonymous authors, or lack of credentials will actively harm your rankings.`
       },
       {
         type: 'source',
@@ -1000,7 +1000,7 @@ const scheduledBatch4 = [
         type: 'image',
         src: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80',
         alt: 'Professional handshake in a modern office setting',
-        caption: 'Trust is the foundation of professional services marketing — every website element should build it'
+        caption: 'Trust is the foundation of professional services marketing every website element should build it'
       },
       {
         type: 'heading',
@@ -1009,7 +1009,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `The content strategy for professional services is fundamentally educational. Your prospective clients are searching for answers to questions about their situation. The firm that provides the clearest, most authoritative answer earns their trust — and eventually their business. Focus on FAQ-style content that addresses the exact questions clients ask during initial consultations.`
+        content: `The content strategy for professional services is fundamentally educational. Your prospective clients are searching for answers to questions about their situation. The firm that provides the clearest, most authoritative answer earns their trust and eventually their business. Focus on FAQ-style content that addresses the exact questions clients ask during initial consultations.`
       },
       {
         type: 'list',
@@ -1028,7 +1028,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Professional services typically involve long sales cycles and high-value engagements. Your lead generation strategy should reflect this. Offer valuable resources (guides, checklists, worksheets) in exchange for contact information. Make your contact forms short — name, email, and a brief description of their situation. Offer multiple contact methods: phone, email, and form. Some clients prefer to call; others prefer the lower commitment of a form submission.`
+        content: `Professional services typically involve long sales cycles and high-value engagements. Your lead generation strategy should reflect this. Offer valuable resources (guides, checklists, worksheets) in exchange for contact information. Make your contact forms short name, email, and a brief description of their situation. Offer multiple contact methods: phone, email, and form. Some clients prefer to call; others prefer the lower commitment of a form submission.`
       },
       {
         type: 'callout',
@@ -1042,7 +1042,7 @@ const scheduledBatch4 = [
       {
         type: 'list',
         items: [
-          'Professional services websites are held to YMYL standards — E-E-A-T is non-negotiable',
+          'Professional services websites are held to YMYL standards E-E-A-T is non-negotiable',
           'Every piece of content needs a named, credentialed author with a linked bio page',
           'Focus content strategy on answering the exact questions clients ask during consultations',
           'Case studies, detailed practice area pages, and educational content build trust',
@@ -1053,13 +1053,13 @@ const scheduledBatch4 = [
   },
 
   // ═══════════════════════════════════════════════════════
-  // WEEK 4 — Sep 7, Sep 9
+  // WEEK 4 Sep 7, Sep 9
   // ═══════════════════════════════════════════════════════
 
   {
     id: 'product-photography-ecommerce-images-sell',
     title: 'Product Photography for E-Commerce: Images That Sell Online',
-    subtitle: 'In e-commerce, customers can\'t touch, try on, or test your products. Photography is your substitute — and it either sells or kills the sale.',
+    subtitle: 'In e-commerce, customers can\'t touch, try on, or test your products. Photography is your substitute and it either sells or kills the sale.',
     author: 'Galaxy Marketing Team',
     date: '2026-09-07',
     readTime: '11 min read',
@@ -1074,7 +1074,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'source',
-        text: 'Google Search Central — E-Commerce Best Practices',
+        text: 'Google Search Central E-Commerce Best Practices',
         url: 'https://developers.google.com/search/docs/specialty/ecommerce'
       },
       {
@@ -1084,7 +1084,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Every product needs both types of photography. Studio shots — clean, white background images with consistent lighting — serve the functional role: showing the product clearly, accurately, and from multiple angles. Lifestyle shots — products photographed in real-world contexts — serve the emotional role: helping customers imagine the product in their life. Your primary product image should be a studio shot; lifestyle images come in the gallery.`
+        content: `Every product needs both types of photography. Studio shots clean, white background images with consistent lighting serve the functional role: showing the product clearly, accurately, and from multiple angles. Lifestyle shots products photographed in real-world contexts serve the emotional role: helping customers imagine the product in their life. Your primary product image should be a studio shot; lifestyle images come in the gallery.`
       },
       {
         type: 'image',
@@ -1099,7 +1099,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `A single product photo is never enough. Customers want to see every angle: front, back, sides, top, and bottom. They want close-up detail shots of textures, materials, stitching, labels, and unique features. Include a scale reference — photograph the product next to a common object or in someone's hand so buyers understand the actual size. Products with 5+ images consistently show higher conversion rates than those with fewer.`
+        content: `A single product photo is never enough. Customers want to see every angle: front, back, sides, top, and bottom. They want close-up detail shots of textures, materials, stitching, labels, and unique features. Include a scale reference photograph the product next to a common object or in someone's hand so buyers understand the actual size. Products with 5+ images consistently show higher conversion rates than those with fewer.`
       },
       {
         type: 'heading',
@@ -1121,7 +1121,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'source',
-        text: 'web.dev — Use WebP Images',
+        text: 'web.dev Use WebP Images',
         url: 'https://web.dev/articles/serve-images-webp'
       },
       {
@@ -1161,12 +1161,12 @@ const scheduledBatch4 = [
       {
         type: 'list',
         items: [
-          'Using manufacturer stock photos — customers see these on every other site selling the same product',
+          'Using manufacturer stock photos customers see these on every other site selling the same product',
           'Inconsistent backgrounds and lighting across the product catalog',
-          'Only one image per product — always provide at least 4–5 angles',
+          'Only one image per product always provide at least 4–5 angles',
           'Uncompressed images that destroy page load times',
-          'Missing alt text — every image should have descriptive alt text',
-          'No lifestyle context — studio shots alone feel clinical and uninspiring'
+          'Missing alt text every image should have descriptive alt text',
+          'No lifestyle context studio shots alone feel clinical and uninspiring'
         ]
       },
       {
@@ -1201,11 +1201,11 @@ const scheduledBatch4 = [
     sections: [
       {
         type: 'intro',
-        content: `Healthcare is the highest-stakes category in Google's "Your Money or Your Life" classification. When someone searches for medical symptoms, treatment options, or providers, the information they find can directly impact their health and wellbeing. Google holds healthcare content to the strictest E-E-A-T standards — and so should the organizations creating it. A healthcare website must simultaneously build patient trust, comply with regulations, and demonstrate medical expertise.`
+        content: `Healthcare is the highest-stakes category in Google's "Your Money or Your Life" classification. When someone searches for medical symptoms, treatment options, or providers, the information they find can directly impact their health and wellbeing. Google holds healthcare content to the strictest E-E-A-T standards and so should the organizations creating it. A healthcare website must simultaneously build patient trust, comply with regulations, and demonstrate medical expertise.`
       },
       {
         type: 'source',
-        text: 'Google Search Central — Creating Helpful, Reliable, People-First Content',
+        text: 'Google Search Central Creating Helpful, Reliable, People-First Content',
         url: 'https://developers.google.com/search/docs/fundamentals/creating-helpful-content'
       },
       {
@@ -1215,7 +1215,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Google's Quality Rater Guidelines explicitly list health and medical information as a top YMYL category. This means your healthcare website is evaluated under the highest quality standards. Pages with medical advice must demonstrate clear expertise — authored or reviewed by licensed medical professionals, citing peer-reviewed sources, and presenting balanced, accurate information. Websites that fail these standards will struggle to rank regardless of their technical SEO.`
+        content: `Google's Quality Rater Guidelines explicitly list health and medical information as a top YMYL category. This means your healthcare website is evaluated under the highest quality standards. Pages with medical advice must demonstrate clear expertise authored or reviewed by licensed medical professionals, citing peer-reviewed sources, and presenting balanced, accurate information. Websites that fail these standards will struggle to rank regardless of their technical SEO.`
       },
       {
         type: 'heading',
@@ -1224,11 +1224,11 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `The Health Insurance Portability and Accountability Act (HIPAA) has direct implications for healthcare websites. Any form that collects patient health information — appointment requests, symptom questionnaires, patient intake forms — must be transmitted and stored in compliance with HIPAA regulations. This means SSL encryption (HTTPS) is mandatory, form data must be stored on HIPAA-compliant servers, and any third-party tools (chat widgets, analytics, CRM) that touch patient data must have Business Associate Agreements (BAAs) in place.`
+        content: `The Health Insurance Portability and Accountability Act (HIPAA) has direct implications for healthcare websites. Any form that collects patient health information appointment requests, symptom questionnaires, patient intake forms must be transmitted and stored in compliance with HIPAA regulations. This means SSL encryption (HTTPS) is mandatory, form data must be stored on HIPAA-compliant servers, and any third-party tools (chat widgets, analytics, CRM) that touch patient data must have Business Associate Agreements (BAAs) in place.`
       },
       {
         type: 'source',
-        text: 'HHS.gov — HIPAA for Professionals',
+        text: 'HHS.gov HIPAA for Professionals',
         url: 'https://www.hhs.gov/hipaa/for-professionals/index.html'
       },
       {
@@ -1260,10 +1260,10 @@ const scheduledBatch4 = [
         items: [
           'Cite peer-reviewed studies and medical journals for all clinical claims',
           'Include a "Last Reviewed" date on all medical content pages',
-          'Present treatment options neutrally — avoid promoting one treatment as superior without evidence',
+          'Present treatment options neutrally avoid promoting one treatment as superior without evidence',
           'Include appropriate disclaimers ("This information is for educational purposes and does not replace professional medical advice")',
           'Use plain language (aim for a 6th–8th grade reading level) while maintaining medical accuracy',
-          'Keep content current — outdated medical information is dangerous and a ranking liability'
+          'Keep content current outdated medical information is dangerous and a ranking liability'
         ]
       },
       {
@@ -1273,7 +1273,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Healthcare websites must be accessible to users with disabilities — not just as a best practice, but often as a legal requirement under the ADA. This is especially important for healthcare because your audience disproportionately includes people with visual, auditory, motor, and cognitive impairments. Follow WCAG 2.1 AA standards at minimum. Ensure all forms are keyboard-navigable, all images have descriptive alt text, all videos have captions, and contrast ratios meet minimum standards.`
+        content: `Healthcare websites must be accessible to users with disabilities not just as a best practice, but often as a legal requirement under the ADA. This is especially important for healthcare because your audience disproportionately includes people with visual, auditory, motor, and cognitive impairments. Follow WCAG 2.1 AA standards at minimum. Ensure all forms are keyboard-navigable, all images have descriptive alt text, all videos have captions, and contrast ratios meet minimum standards.`
       },
       {
         type: 'heading',
@@ -1291,7 +1291,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Healthcare website visitors typically want to do one of three things: find a provider, book an appointment, or get information about a condition. Make these three paths immediately obvious and accessible. Online scheduling should be available on every provider and service page. Phone numbers should be click-to-call and prominently displayed. Reduce friction at every step — healthcare decisions are stressful enough without confusing navigation.`
+        content: `Healthcare website visitors typically want to do one of three things: find a provider, book an appointment, or get information about a condition. Make these three paths immediately obvious and accessible. Online scheduling should be available on every provider and service page. Phone numbers should be click-to-call and prominently displayed. Reduce friction at every step healthcare decisions are stressful enough without confusing navigation.`
       },
       {
         type: 'heading',
@@ -1301,8 +1301,8 @@ const scheduledBatch4 = [
       {
         type: 'list',
         items: [
-          'Healthcare is the highest-stakes YMYL category — E-E-A-T must be demonstrated, not claimed',
-          'HIPAA compliance affects forms, analytics, third-party tools, and hosting — not just EHR systems',
+          'Healthcare is the highest-stakes YMYL category E-E-A-T must be demonstrated, not claimed',
+          'HIPAA compliance affects forms, analytics, third-party tools, and hosting not just EHR systems',
           'Every medical content page needs a named, credentialed author or medical reviewer',
           'Accessibility is both an ethical obligation and a legal requirement for healthcare',
           'Optimize the three primary patient journeys: find a provider, book an appointment, learn about conditions'
@@ -1312,7 +1312,7 @@ const scheduledBatch4 = [
   },
 
   // ═══════════════════════════════════════════════════════
-  // WEEK 5 — Sep 14, Sep 16, Sep 18
+  // WEEK 5 Sep 14, Sep 16, Sep 18
   // ═══════════════════════════════════════════════════════
 
   {
@@ -1333,7 +1333,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'source',
-        text: 'National Association of Realtors — Real Estate in a Digital Age Report',
+        text: 'National Association of Realtors Real Estate in a Digital Age Report',
         url: 'https://www.nar.realtor/research-and-statistics/research-reports/real-estate-in-a-digital-age'
       },
       {
@@ -1343,7 +1343,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `IDX (Internet Data Exchange) feeds pull MLS listings onto your website, giving visitors access to current property data. But here's the SEO problem: every agent using the same MLS has the same listings with the same descriptions. Google sees this as duplicate content and typically ranks only the most authoritative version — usually Zillow, Realtor.com, or Redfin. Your IDX pages alone won't rank. You need original content layers on top of the IDX data.`
+        content: `IDX (Internet Data Exchange) feeds pull MLS listings onto your website, giving visitors access to current property data. But here's the SEO problem: every agent using the same MLS has the same listings with the same descriptions. Google sees this as duplicate content and typically ranks only the most authoritative version usually Zillow, Realtor.com, or Redfin. Your IDX pages alone won't rank. You need original content layers on top of the IDX data.`
       },
       {
         type: 'heading',
@@ -1352,7 +1352,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Create comprehensive neighborhood guides that no national portal can replicate. You live and work in these areas — use that firsthand experience. Cover school information, local restaurants and shops, parks and recreation, commute times to major employers, community events, and neighborhood character. These pages target "living in [neighborhood]" and "moving to [city]" searches that capture buyers early in their journey.`
+        content: `Create comprehensive neighborhood guides that no national portal can replicate. You live and work in these areas use that firsthand experience. Cover school information, local restaurants and shops, parks and recreation, commute times to major employers, community events, and neighborhood character. These pages target "living in [neighborhood]" and "moving to [city]" searches that capture buyers early in their journey.`
       },
       {
         type: 'image',
@@ -1389,7 +1389,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'source',
-        text: 'Schema.org — RealEstateListing Type',
+        text: 'Schema.org RealEstateListing Type',
         url: 'https://schema.org/RealEstateListing'
       },
       {
@@ -1399,7 +1399,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Build a hierarchical location page structure: State → City → Neighborhood → Property Type. For example: "Texas Homes for Sale" → "Austin Homes for Sale" → "Downtown Austin Homes" → "Downtown Austin Condos." Each page should have unique, substantial content — not just filtered listing results. This architecture captures searches at every geographic granularity.`
+        content: `Build a hierarchical location page structure: State → City → Neighborhood → Property Type. For example: "Texas Homes for Sale" → "Austin Homes for Sale" → "Downtown Austin Homes" → "Downtown Austin Condos." Each page should have unique, substantial content not just filtered listing results. This architecture captures searches at every geographic granularity.`
       },
       {
         type: 'heading',
@@ -1408,11 +1408,11 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Beyond neighborhood guides, create content targeting the full buyer and seller journey. Write market update posts with your analysis of local trends. Create "what to know about buying/selling in [city]" guides. Answer common questions about the local market. This positions you as the local authority — exactly what Google's E-E-A-T framework rewards.`
+        content: `Beyond neighborhood guides, create content targeting the full buyer and seller journey. Write market update posts with your analysis of local trends. Create "what to know about buying/selling in [city]" guides. Answer common questions about the local market. This positions you as the local authority exactly what Google's E-E-A-T framework rewards.`
       },
       {
         type: 'callout',
-        content: `The agents who dominate local search aren't the ones with the most IDX listings — they're the ones with the most original, locally-expert content. Your market knowledge is your moat. Turn it into content.`
+        content: `The agents who dominate local search aren't the ones with the most IDX listings they're the ones with the most original, locally-expert content. Your market knowledge is your moat. Turn it into content.`
       },
       {
         type: 'heading',
@@ -1422,7 +1422,7 @@ const scheduledBatch4 = [
       {
         type: 'list',
         items: [
-          '97% of homebuyers search online — but IDX feeds alone create duplicate content that won\'t rank',
+          '97% of homebuyers search online but IDX feeds alone create duplicate content that won\'t rank',
           'Neighborhood guides are your SEO differentiator against national portals',
           'Implement RealEstateListing and RealEstateAgent schema markup',
           'Build hierarchical location pages from state down to property type',
@@ -1446,11 +1446,11 @@ const scheduledBatch4 = [
     sections: [
       {
         type: 'intro',
-        content: `Most startups don't fail because of their product — they fail because they can't find customers efficiently. Harvard Business Review research on startup failure consistently identifies poor marketing and lack of market demand as top reasons. The challenge for early-stage companies is stark: you need to acquire customers fast, but you have limited budget, no brand recognition, and no existing audience. This guide is the playbook.`
+        content: `Most startups don't fail because of their product they fail because they can't find customers efficiently. Harvard Business Review research on startup failure consistently identifies poor marketing and lack of market demand as top reasons. The challenge for early-stage companies is stark: you need to acquire customers fast, but you have limited budget, no brand recognition, and no existing audience. This guide is the playbook.`
       },
       {
         type: 'source',
-        text: 'Harvard Business Review — Why Startups Fail',
+        text: 'Harvard Business Review Why Startups Fail',
         url: 'https://hbr.org/2021/05/why-start-ups-fail'
       },
       {
@@ -1469,7 +1469,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Your first marketing asset should be a single, focused landing page — not a full website. This page has one goal: convert visitors into signups, waitlist subscribers, or demo requests. It needs a clear headline, a brief explanation of the problem you solve, 2–3 key benefits, social proof (even early testimonials from beta users), and a prominent call-to-action. Build it in a weekend, not a month.`
+        content: `Your first marketing asset should be a single, focused landing page not a full website. This page has one goal: convert visitors into signups, waitlist subscribers, or demo requests. It needs a clear headline, a brief explanation of the problem you solve, 2–3 key benefits, social proof (even early testimonials from beta users), and a prominent call-to-action. Build it in a weekend, not a month.`
       },
       {
         type: 'image',
@@ -1490,7 +1490,7 @@ const scheduledBatch4 = [
           'Sub-headline: Who it\'s for and what specific problem it solves',
           '3 benefit blocks: Key outcomes (not features) with icons or illustrations',
           'Social proof: Early testimonials, beta user logos, or waitlist count',
-          'CTA: One clear action — "Join the Waitlist," "Request Early Access," "Get Started Free"',
+          'CTA: One clear action "Join the Waitlist," "Request Early Access," "Get Started Free"',
           'FAQ section: Address the top 3–5 objections preemptively'
         ]
       },
@@ -1505,7 +1505,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'source',
-        text: 'Google for Startups — Resources',
+        text: 'Google for Startups Resources',
         url: 'https://startup.google.com/resources/'
       },
       {
@@ -1515,7 +1515,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Growth hacking isn't about tricks — it's about finding creative, low-cost, high-impact ways to acquire users. Referral programs that reward existing users for bringing in new ones. Integrations with platforms your target audience already uses. Creating free tools or calculators that attract your ideal customers. Writing data-driven content based on original research in your industry.`
+        content: `Growth hacking isn't about tricks it's about finding creative, low-cost, high-impact ways to acquire users. Referral programs that reward existing users for bringing in new ones. Integrations with platforms your target audience already uses. Creating free tools or calculators that attract your ideal customers. Writing data-driven content based on original research in your industry.`
       },
       {
         type: 'heading',
@@ -1524,7 +1524,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Startups drown in vanity metrics — page views, social followers, email opens. Focus on the metrics that directly correlate with revenue: conversion rate (visitors → signups), activation rate (signups → active users), and customer acquisition cost (total marketing spend ÷ new customers). If you can only track three numbers, track these.`
+        content: `Startups drown in vanity metrics page views, social followers, email opens. Focus on the metrics that directly correlate with revenue: conversion rate (visitors → signups), activation rate (signups → active users), and customer acquisition cost (total marketing spend ÷ new customers). If you can only track three numbers, track these.`
       },
       {
         type: 'callout',
@@ -1539,9 +1539,9 @@ const scheduledBatch4 = [
         type: 'list',
         items: [
           'Articulate your value proposition in one sentence before spending on marketing',
-          'Build a focused MVP landing page, not a full website — ship it in a weekend',
+          'Build a focused MVP landing page, not a full website ship it in a weekend',
           'Focus on one or two channels where your target customers already spend time',
-          'Growth hacking means creative, low-cost acquisition — not shortcuts',
+          'Growth hacking means creative, low-cost acquisition not shortcuts',
           'Track conversion rate, activation rate, and customer acquisition cost above all else'
         ]
       }
@@ -1551,7 +1551,7 @@ const scheduledBatch4 = [
   {
     id: 'content-hub-dominates-search',
     title: 'How to Create a Content Hub That Dominates Search',
-    subtitle: 'A well-structured content hub doesn\'t just rank individual pages — it builds topical authority that lifts your entire site\'s search performance.',
+    subtitle: 'A well-structured content hub doesn\'t just rank individual pages it builds topical authority that lifts your entire site\'s search performance.',
     author: 'Galaxy Marketing Team',
     date: '2026-09-18',
     readTime: '11 min read',
@@ -1562,11 +1562,11 @@ const scheduledBatch4 = [
     sections: [
       {
         type: 'intro',
-        content: `Google's algorithms have evolved from matching keywords to understanding topics. A site that covers a topic comprehensively — with a central pillar page linked to multiple supporting articles — signals topical authority in a way that isolated blog posts never can. This is the hub-and-spoke model, and it's the architecture behind virtually every website that dominates competitive search categories.`
+        content: `Google's algorithms have evolved from matching keywords to understanding topics. A site that covers a topic comprehensively with a central pillar page linked to multiple supporting articles signals topical authority in a way that isolated blog posts never can. This is the hub-and-spoke model, and it's the architecture behind virtually every website that dominates competitive search categories.`
       },
       {
         type: 'source',
-        text: 'Google Search Central — How Search Works',
+        text: 'Google Search Central How Search Works',
         url: 'https://developers.google.com/search/docs/fundamentals/how-search-works'
       },
       {
@@ -1576,7 +1576,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `A content hub is a centralized collection of content organized around a core topic. At its center is a pillar page — a comprehensive, long-form resource that covers the topic broadly. Radiating out from the pillar are spoke articles — focused pieces that dive deep into specific subtopics. Every spoke links back to the pillar, and the pillar links out to every spoke. This creates a self-reinforcing network of topical relevance.`
+        content: `A content hub is a centralized collection of content organized around a core topic. At its center is a pillar page a comprehensive, long-form resource that covers the topic broadly. Radiating out from the pillar are spoke articles focused pieces that dive deep into specific subtopics. Every spoke links back to the pillar, and the pillar links out to every spoke. This creates a self-reinforcing network of topical relevance.`
       },
       {
         type: 'heading',
@@ -1585,7 +1585,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Think of your pillar page as a textbook chapter and your spoke articles as the sections within it. The pillar covers "SEO" broadly — what it is, why it matters, key categories. The spokes cover each subtopic in depth: "Technical SEO," "On-Page SEO," "Link Building," "Local SEO," etc. Each spoke is a standalone article that can rank independently, while also reinforcing the authority of the pillar page.`
+        content: `Think of your pillar page as a textbook chapter and your spoke articles as the sections within it. The pillar covers "SEO" broadly what it is, why it matters, key categories. The spokes cover each subtopic in depth: "Technical SEO," "On-Page SEO," "Link Building," "Local SEO," etc. Each spoke is a standalone article that can rank independently, while also reinforcing the authority of the pillar page.`
       },
       {
         type: 'image',
@@ -1600,11 +1600,11 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Before writing a single word, map out your entire hub. Start with the core topic and brainstorm every subtopic, question, and angle your audience might search for. Use keyword research to validate demand and identify gaps your competitors haven't covered. Organize subtopics into logical clusters. This topical map becomes your content roadmap — a visual representation of every piece you need to create.`
+        content: `Before writing a single word, map out your entire hub. Start with the core topic and brainstorm every subtopic, question, and angle your audience might search for. Use keyword research to validate demand and identify gaps your competitors haven't covered. Organize subtopics into logical clusters. This topical map becomes your content roadmap a visual representation of every piece you need to create.`
       },
       {
         type: 'source',
-        text: 'Moz — Topic Clusters and Pillar Pages',
+        text: 'Moz Topic Clusters and Pillar Pages',
         url: 'https://moz.com/blog/topic-clusters-seo'
       },
       {
@@ -1620,7 +1620,7 @@ const scheduledBatch4 = [
           'Brainstorm 15–30 related subtopics using keyword research, customer questions, and competitor analysis',
           'Group subtopics into 4–6 logical clusters',
           'Identify the primary keyword for each piece',
-          'Map internal linking relationships — every spoke connects to the pillar and to related spokes',
+          'Map internal linking relationships every spoke connects to the pillar and to related spokes',
           'Prioritize by search volume, business value, and competitive difficulty'
         ]
       },
@@ -1653,7 +1653,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Track the performance of your hub holistically, not just individual pages. Monitor total organic traffic across all hub pages, average ranking position for core topic keywords, internal link click-through rates, and engagement metrics across the hub. A successful hub shows rising rankings across the entire topic cluster — not just one or two pages.`
+        content: `Track the performance of your hub holistically, not just individual pages. Monitor total organic traffic across all hub pages, average ranking position for core topic keywords, internal link click-through rates, and engagement metrics across the hub. A successful hub shows rising rankings across the entire topic cluster not just one or two pages.`
       },
       {
         type: 'heading',
@@ -1665,8 +1665,8 @@ const scheduledBatch4 = [
         items: [
           'Content hubs build topical authority that lifts rankings across your entire site',
           'The hub-and-spoke model connects a comprehensive pillar page to focused spoke articles',
-          'Map your entire topic before writing — create 15–30 subtopics organized into logical clusters',
-          'Internal linking is what transforms individual articles into a hub — every piece connects to related pieces',
+          'Map your entire topic before writing create 15–30 subtopics organized into logical clusters',
+          'Internal linking is what transforms individual articles into a hub every piece connects to related pieces',
           'Measure hub performance holistically across all pages, not just individual post metrics'
         ]
       }
@@ -1674,7 +1674,7 @@ const scheduledBatch4 = [
   },
 
   // ═══════════════════════════════════════════════════════
-  // WEEK 6 — Sep 21, Sep 23, Sep 28
+  // WEEK 6 Sep 21, Sep 23, Sep 28
   // ═══════════════════════════════════════════════════════
 
   {
@@ -1691,11 +1691,11 @@ const scheduledBatch4 = [
     sections: [
       {
         type: 'intro',
-        content: `Design decisions are not purely aesthetic — they're psychological. Every font size, color choice, whitespace ratio, and element placement triggers cognitive responses that influence how visitors perceive your brand, process information, and make decisions. Nielsen Norman Group's decades of user research consistently show that understanding cognitive biases and psychological principles separates designs that convert from designs that just look good.`
+        content: `Design decisions are not purely aesthetic they're psychological. Every font size, color choice, whitespace ratio, and element placement triggers cognitive responses that influence how visitors perceive your brand, process information, and make decisions. Nielsen Norman Group's decades of user research consistently show that understanding cognitive biases and psychological principles separates designs that convert from designs that just look good.`
       },
       {
         type: 'source',
-        text: 'Nielsen Norman Group — Cognitive Biases in UX',
+        text: 'Nielsen Norman Group Cognitive Biases in UX',
         url: 'https://www.nngroup.com/articles/cognitive-biases/'
       },
       {
@@ -1705,7 +1705,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Anchoring is the cognitive bias where people rely heavily on the first piece of information they encounter. In web design, this is why pricing pages often show the most expensive plan first — it "anchors" the visitor's perception of value, making the mid-tier option feel like a bargain. Anchoring also applies to statistics ("Join 50,000+ customers"), original prices with discounts ("Was $199, now $99"), and social proof numbers placed prominently above the fold.`
+        content: `Anchoring is the cognitive bias where people rely heavily on the first piece of information they encounter. In web design, this is why pricing pages often show the most expensive plan first it "anchors" the visitor's perception of value, making the mid-tier option feel like a bargain. Anchoring also applies to statistics ("Join 50,000+ customers"), original prices with discounts ("Was $199, now $99"), and social proof numbers placed prominently above the fold.`
       },
       {
         type: 'heading',
@@ -1714,7 +1714,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Humans are social creatures who look to others' behavior for guidance, especially when uncertain. This is why testimonials, reviews, customer logos, and "popular choice" badges are so effective. The key is placement and specificity. "Trusted by businesses worldwide" is weak. "Trusted by 12,847 marketing teams including HubSpot, Salesforce, and Shopify" is powerful — specific numbers and recognizable names activate social proof more strongly.`
+        content: `Humans are social creatures who look to others' behavior for guidance, especially when uncertain. This is why testimonials, reviews, customer logos, and "popular choice" badges are so effective. The key is placement and specificity. "Trusted by businesses worldwide" is weak. "Trusted by 12,847 marketing teams including HubSpot, Salesforce, and Shopify" is powerful specific numbers and recognizable names activate social proof more strongly.`
       },
       {
         type: 'image',
@@ -1733,7 +1733,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'source',
-        text: 'Harvard Business Review — The Big Idea: The New Psychology of Strategic Leadership',
+        text: 'Harvard Business Review The Big Idea: The New Psychology of Strategic Leadership',
         url: 'https://hbr.org/2009/02/the-big-idea-the-new-psychology-of-strategic-leadership'
       },
       {
@@ -1752,7 +1752,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Hick's Law states that the time it takes to make a decision increases logarithmically with the number of choices. Too many navigation items, too many CTA buttons, too many product options — each additional choice adds cognitive load and reduces the likelihood of any action. Simplify: limit primary navigation to 5–7 items, have one clear CTA per section, and use progressive disclosure to reveal complexity only when the user is ready.`
+        content: `Hick's Law states that the time it takes to make a decision increases logarithmically with the number of choices. Too many navigation items, too many CTA buttons, too many product options each additional choice adds cognitive load and reduces the likelihood of any action. Simplify: limit primary navigation to 5–7 items, have one clear CTA per section, and use progressive disclosure to reveal complexity only when the user is ready.`
       },
       {
         type: 'heading',
@@ -1761,7 +1761,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `While "red means urgency" and "blue means trust" are oversimplified generalizations, color does influence perception and behavior. More important than individual color meanings is contrast. Your CTA button should have maximum contrast with its background. Trust signals should use subdued, professional colors. Error messages should use red — not because of psychology, but because it's a learned convention. Consistency in your color system matters more than any individual color choice.`
+        content: `While "red means urgency" and "blue means trust" are oversimplified generalizations, color does influence perception and behavior. More important than individual color meanings is contrast. Your CTA button should have maximum contrast with its background. Trust signals should use subdued, professional colors. Error messages should use red not because of psychology, but because it's a learned convention. Consistency in your color system matters more than any individual color choice.`
       },
       {
         type: 'heading',
@@ -1770,11 +1770,11 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Eye-tracking studies consistently show that users scan web pages in an F-shaped pattern — reading the first line, then scanning down the left side with occasional horizontal reads. Design your pages with this in mind: place the most important information in the first paragraph, use descriptive headings that can be scanned vertically, and put critical elements (CTAs, phone numbers) in the natural eye path rather than buried in the middle of the page.`
+        content: `Eye-tracking studies consistently show that users scan web pages in an F-shaped pattern reading the first line, then scanning down the left side with occasional horizontal reads. Design your pages with this in mind: place the most important information in the first paragraph, use descriptive headings that can be scanned vertically, and put critical elements (CTAs, phone numbers) in the natural eye path rather than buried in the middle of the page.`
       },
       {
         type: 'callout',
-        content: `Practical application: Place your CTA buttons where the eye naturally rests — at the end of compelling content sections, not floating in isolation. A CTA immediately following a strong testimonial or a clear benefit statement will convert better than one placed arbitrarily.`
+        content: `Practical application: Place your CTA buttons where the eye naturally rests at the end of compelling content sections, not floating in isolation. A CTA immediately following a strong testimonial or a clear benefit statement will convert better than one placed arbitrarily.`
       },
       {
         type: 'heading',
@@ -1784,11 +1784,11 @@ const scheduledBatch4 = [
       {
         type: 'list',
         items: [
-          'Anchoring sets price and value expectations — show the most expensive option first',
-          'Social proof requires specificity — real numbers and recognizable names activate trust',
+          'Anchoring sets price and value expectations show the most expensive option first',
+          'Social proof requires specificity real numbers and recognizable names activate trust',
           'Loss aversion makes "what you\'ll lose" framing twice as powerful as "what you\'ll gain"',
           'The Von Restorff effect means your CTA must visually stand out from everything else',
-          'Hick\'s Law demands simplicity — fewer choices lead to more conversions'
+          'Hick\'s Law demands simplicity fewer choices lead to more conversions'
         ]
       }
     ]
@@ -1808,11 +1808,11 @@ const scheduledBatch4 = [
     sections: [
       {
         type: 'intro',
-        content: `Think With Google research shows that customers who engage with a brand across multiple channels have a significantly higher lifetime value than single-channel customers. Yet most businesses operate their channels in silos — the website team doesn't coordinate with social media, email campaigns don't align with blog content, and the in-store experience feels disconnected from the digital one. Multi-channel marketing closes these gaps.`
+        content: `Think With Google research shows that customers who engage with a brand across multiple channels have a significantly higher lifetime value than single-channel customers. Yet most businesses operate their channels in silos the website team doesn't coordinate with social media, email campaigns don't align with blog content, and the in-store experience feels disconnected from the digital one. Multi-channel marketing closes these gaps.`
       },
       {
         type: 'source',
-        text: 'Think With Google — Marketing Strategies',
+        text: 'Think With Google Marketing Strategies',
         url: 'https://www.thinkwithgoogle.com/marketing-strategies/'
       },
       {
@@ -1822,7 +1822,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Multi-channel marketing means being present on multiple platforms. Omnichannel marketing means those platforms work together as one seamless experience. Multi-channel is having a website, social media, and email. Omnichannel is when a customer abandons their cart on mobile, gets a personalized email reminder, and finds their cart waiting when they return on desktop. The goal is omnichannel — but you have to master multi-channel first.`
+        content: `Multi-channel marketing means being present on multiple platforms. Omnichannel marketing means those platforms work together as one seamless experience. Multi-channel is having a website, social media, and email. Omnichannel is when a customer abandons their cart on mobile, gets a personalized email reminder, and finds their cart waiting when they return on desktop. The goal is omnichannel but you have to master multi-channel first.`
       },
       {
         type: 'heading',
@@ -1831,7 +1831,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Brand consistency starts with a documented brand voice, visual identity, and core messaging framework. Your value proposition should be recognizable whether someone encounters it on your homepage, in an Instagram post, in an email, or on a Google ad. This doesn't mean saying the exact same words everywhere — it means adapting your core message to each channel's format while maintaining the same underlying promise and personality.`
+        content: `Brand consistency starts with a documented brand voice, visual identity, and core messaging framework. Your value proposition should be recognizable whether someone encounters it on your homepage, in an Instagram post, in an email, or on a Google ad. This doesn't mean saying the exact same words everywhere it means adapting your core message to each channel's format while maintaining the same underlying promise and personality.`
       },
       {
         type: 'image',
@@ -1874,7 +1874,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'source',
-        text: 'Harvard Business Review — The New Science of Customer Emotions',
+        text: 'Harvard Business Review The New Science of Customer Emotions',
         url: 'https://hbr.org/2015/11/the-new-science-of-customer-emotions'
       },
       {
@@ -1933,7 +1933,7 @@ const scheduledBatch4 = [
   {
     id: 'ultimate-guide-google-eeat',
     title: 'The Ultimate Guide to Google\'s E-E-A-T: Experience, Expertise, Authoritativeness, Trust',
-    subtitle: 'E-E-A-T isn\'t a ranking algorithm — it\'s the framework Google\'s quality raters use to evaluate every page on the web. Understanding it is essential to ranking in competitive niches.',
+    subtitle: 'E-E-A-T isn\'t a ranking algorithm it\'s the framework Google\'s quality raters use to evaluate every page on the web. Understanding it is essential to ranking in competitive niches.',
     author: 'Galaxy Marketing Team',
     date: '2026-09-28',
     readTime: '14 min read',
@@ -1944,11 +1944,11 @@ const scheduledBatch4 = [
     sections: [
       {
         type: 'intro',
-        content: `In December 2022, Google updated its Search Quality Rater Guidelines to add a second "E" — Experience — to the existing E-A-T framework, creating E-E-A-T: Experience, Expertise, Authoritativeness, and Trustworthiness. These aren't direct ranking factors in the traditional sense — they're the criteria that Google's team of over 16,000 human quality raters use to evaluate search results and train Google's algorithms. Understanding E-E-A-T is understanding what Google considers quality content.`
+        content: `In December 2022, Google updated its Search Quality Rater Guidelines to add a second "E" Experience to the existing E-A-T framework, creating E-E-A-T: Experience, Expertise, Authoritativeness, and Trustworthiness. These aren't direct ranking factors in the traditional sense they're the criteria that Google's team of over 16,000 human quality raters use to evaluate search results and train Google's algorithms. Understanding E-E-A-T is understanding what Google considers quality content.`
       },
       {
         type: 'source',
-        text: 'Google Search Central — E-E-A-T and Quality Rater Guidelines',
+        text: 'Google Search Central E-E-A-T and Quality Rater Guidelines',
         url: 'https://developers.google.com/search/docs/fundamentals/creating-helpful-content'
       },
       {
@@ -1958,7 +1958,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Google employs thousands of Search Quality Raters worldwide who manually evaluate search results using a detailed 170+ page guidebook. Their ratings don't directly affect individual page rankings — instead, they help Google assess whether its algorithms are delivering quality results. When raters consistently flag certain types of pages as low quality, Google adjusts its algorithms to demote similar pages. The guidelines document is publicly available and is the closest thing to a Google-published definition of "quality content."`
+        content: `Google employs thousands of Search Quality Raters worldwide who manually evaluate search results using a detailed 170+ page guidebook. Their ratings don't directly affect individual page rankings instead, they help Google assess whether its algorithms are delivering quality results. When raters consistently flag certain types of pages as low quality, Google adjusts its algorithms to demote similar pages. The guidelines document is publicly available and is the closest thing to a Google-published definition of "quality content."`
       },
       {
         type: 'source',
@@ -1984,7 +1984,7 @@ const scheduledBatch4 = [
         items: [
           'Include original photos from real experiences (not stock photos)',
           'Share specific anecdotes and personal observations',
-          'Describe what worked and what didn\'t — nuanced opinions signal real experience',
+          'Describe what worked and what didn\'t nuanced opinions signal real experience',
           'Include details only someone with firsthand experience would know',
           'Create video content showing direct engagement with the topic'
         ]
@@ -1996,13 +1996,13 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Expertise is about the depth and accuracy of the content itself. For YMYL topics (health, finance, legal), expertise often means formal credentials — medical degrees, law licenses, financial certifications. For everyday topics, expertise can be demonstrated through depth of knowledge, practical guidance that works, and content that serves the reader's actual needs better than competing pages.`
+        content: `Expertise is about the depth and accuracy of the content itself. For YMYL topics (health, finance, legal), expertise often means formal credentials medical degrees, law licenses, financial certifications. For everyday topics, expertise can be demonstrated through depth of knowledge, practical guidance that works, and content that serves the reader's actual needs better than competing pages.`
       },
       {
         type: 'image',
         src: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80',
         alt: 'Author creating in-depth expert content at a professional desk',
-        caption: 'Expertise is demonstrated through depth, accuracy, and credentials — not just claims'
+        caption: 'Expertise is demonstrated through depth, accuracy, and credentials not just claims'
       },
       {
         type: 'heading',
@@ -2011,7 +2011,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Authoritativeness is about reputation. Is your website recognized as a leading source on this topic? Do other reputable sites link to and cite your content? Are your authors quoted in industry publications? Authoritativeness is the hardest E to build because it depends on external validation — mentions, backlinks, citations, and brand recognition. It's built over time through consistently publishing excellent content and earning coverage.`
+        content: `Authoritativeness is about reputation. Is your website recognized as a leading source on this topic? Do other reputable sites link to and cite your content? Are your authors quoted in industry publications? Authoritativeness is the hardest E to build because it depends on external validation mentions, backlinks, citations, and brand recognition. It's built over time through consistently publishing excellent content and earning coverage.`
       },
       {
         type: 'heading',
@@ -2026,7 +2026,7 @@ const scheduledBatch4 = [
           'Earn mentions and backlinks from authoritative sources in your field',
           'Build comprehensive resource pages that become go-to references',
           'Maintain active professional profiles (LinkedIn, industry associations)',
-          'Speak at conferences and webinars — publish slides and recordings on your site'
+          'Speak at conferences and webinars publish slides and recordings on your site'
         ]
       },
       {
@@ -2063,7 +2063,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `Your About page should tell the story of your organization, its mission, and why it's qualified to create content on these topics. Include founding date, team credentials, editorial standards, and your content review process. For YMYL sites, detail your editorial policy — who reviews content, how frequently it's updated, and how you ensure accuracy.`
+        content: `Your About page should tell the story of your organization, its mission, and why it's qualified to create content on these topics. Include founding date, team credentials, editorial standards, and your content review process. For YMYL sites, detail your editorial policy who reviews content, how frequently it's updated, and how you ensure accuracy.`
       },
       {
         type: 'heading',
@@ -2072,7 +2072,7 @@ const scheduledBatch4 = [
       },
       {
         type: 'paragraph',
-        content: `E-E-A-T standards vary by topic sensitivity. YMYL content (health, finance, legal, news) faces the strictest evaluation — formal credentials, peer review, cited sources, and transparent editorial policies are expected. Everyday topics (hobbies, entertainment, general how-to) have lower bars — personal experience and demonstrated knowledge may suffice. But all content benefits from E-E-A-T signals, regardless of topic.`
+        content: `E-E-A-T standards vary by topic sensitivity. YMYL content (health, finance, legal, news) faces the strictest evaluation formal credentials, peer review, cited sources, and transparent editorial policies are expected. Everyday topics (hobbies, entertainment, general how-to) have lower bars personal experience and demonstrated knowledge may suffice. But all content benefits from E-E-A-T signals, regardless of topic.`
       },
       {
         type: 'heading',
@@ -2082,11 +2082,11 @@ const scheduledBatch4 = [
       {
         type: 'list',
         items: [
-          'E-E-A-T is the framework Google\'s 16,000+ quality raters use to evaluate content — it directly shapes algorithm updates',
+          'E-E-A-T is the framework Google\'s 16,000+ quality raters use to evaluate content it directly shapes algorithm updates',
           'Experience (the newest E) rewards content from creators with firsthand, lived experience',
           'Expertise is demonstrated through depth, accuracy, and relevant credentials',
-          'Authoritativeness is built through external validation — backlinks, citations, and industry recognition',
-          'Trust is explicitly the most important factor — a page without trust always scores low regardless of other signals',
+          'Authoritativeness is built through external validation backlinks, citations, and industry recognition',
+          'Trust is explicitly the most important factor a page without trust always scores low regardless of other signals',
           'Implement E-E-A-T through author pages, transparent About pages, cited sources, and editorial standards'
         ]
       }
