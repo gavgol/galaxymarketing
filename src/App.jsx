@@ -806,12 +806,12 @@ const Protocol = () => {
 
   return (
     <section id="process" ref={containerRef} className="relative py-16 md:py-24 px-6 md:px-16">
-      <div className="max-w-7xl mx-auto mb-10 md:mb-16">
+      <div className="max-w-7xl mx-auto mb-[15vh] md:mb-16">
         <h2 className="text-3xl md:text-5xl font-sans font-bold tracking-tight mb-4 text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)] text-center md:text-left">A proven system <br /> <span className="font-sans font-light text-white/70">that delivers results.</span></h2>
       </div>
       <div className="max-w-5xl mx-auto">
         {steps.map((step, index) => (
-          <div key={index} className={`protocol-card sticky top-20 md:top-24 rounded-2xl md:rounded-[3rem] bg-surface border border-slate shadow-2xl overflow-hidden will-change-transform ${index < steps.length - 1 ? 'mb-[20vh] md:mb-[15vh]' : 'mb-0'}`} style={{ zIndex: index }}>
+          <div key={index} className={`protocol-card sticky top-20 md:top-24 rounded-2xl md:rounded-[3rem] bg-surface border border-slate shadow-2xl overflow-hidden will-change-transform ${index < steps.length - 1 ? 'mb-[25vh] md:mb-[15vh]' : 'mb-0'}`} style={{ zIndex: index }}>
             <div className="flex flex-col md:flex-row h-full min-h-[280px] md:min-h-[400px]">
               <div className="w-full md:w-1/3 relative overflow-hidden border-b md:border-b-0 md:border-r border-slate/30 min-h-[120px] md:min-h-0">
                 <img src={step.img} alt={step.title} className="absolute inset-0 w-full h-full object-cover opacity-30" loading="lazy" />
