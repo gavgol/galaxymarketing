@@ -90,7 +90,7 @@ const Blog = ({ posts }) => {
 
   return (
     <main className="relative z-10 min-h-screen pt-32 pb-24 px-6 md:px-16">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto bg-background/50 backdrop-blur-md rounded-3xl p-6 md:p-12 lg:p-16 border border-slate/10">
 
         {/* Header */}
         <div className="mb-16 max-w-3xl">

@@ -304,7 +304,7 @@ const BlogPost = ({ posts }) => {
 
         {/* Article Body */}
         <div className="px-6 md:px-16 mt-12">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto bg-background/50 backdrop-blur-md rounded-3xl p-6 md:p-12 lg:p-16 border border-slate/10">
 
             {/* Share bar */}
             <div className="flex items-center justify-between mb-12 pb-6 border-b border-slate/20">
