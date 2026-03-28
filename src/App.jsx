@@ -31,7 +31,16 @@ const Loader = ({ progress, visible }) => (
   </div>
 );
 
-/* ── Global Space Background — removed, now each section manages its own bg ── */
+/* ── Global Space Background — fixed behind entire site with slow drift animation ── */
+const GlobalSpaceBg = () => (
+  <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
+    <div className="absolute inset-[-20%] w-[140%] h-[140%] animate-space-drift">
+      <img src="/space-bg-sections.jpeg" alt="" className="w-full h-full object-cover" />
+    </div>
+    {/* Subtle global darkening for text readability */}
+    <div className="absolute inset-0 bg-background/40"></div>
+  </div>
+);
 
 /* ── Reduced Motion ── */
 const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -118,12 +127,11 @@ const Navbar = () => {
 
   useEffect(() => {
     const showNav = () => {
+      if (!navRef.current) return;
       if (window.scrollY > 100) {
-        navRef.current.classList.add('bg-background/80', 'backdrop-blur-xl', 'border-slate/50');
-        navRef.current.classList.remove('bg-background/80', 'border-transparent');
+        navRef.current.classList.add('nav-scrolled');
       } else {
-        navRef.current.classList.remove('bg-background/80', 'backdrop-blur-xl', 'border-slate/50');
-        navRef.current.classList.add('bg-background/80', 'border-transparent');
+        navRef.current.classList.remove('nav-scrolled');
       }
     };
     window.addEventListener('scroll', showNav);
@@ -146,7 +154,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav ref={navRef} className="fixed top-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between px-6 py-3 rounded-full border border-transparent transition-all duration-500 w-[90%] max-w-6xl">
+      <nav ref={navRef} className="fixed top-0 md:top-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between px-6 py-3 md:rounded-full border border-transparent transition-all duration-500 w-full md:w-[90%] max-w-6xl bg-background/60 backdrop-blur-md md:bg-transparent md:backdrop-blur-none">
         <Link to="/" onClick={scrollToTop} className="text-xl font-sans font-bold tracking-tight flex items-center gap-2 cursor-pointer">
           GALAXY<span className="text-primary">.</span>
         </Link>
@@ -171,26 +179,36 @@ const Navbar = () => {
         </div>
 
         {/* Mobile hamburger */}
-        <button onClick={() => setMobileOpen(!mobileOpen)} aria-label={mobileOpen ? 'Close menu' : 'Open menu'} aria-expanded={mobileOpen} className="md:hidden text-textMain p-2 cursor-pointer">
+        <button onClick={() => setMobileOpen(!mobileOpen)} aria-label={mobileOpen ? 'Close menu' : 'Open menu'} aria-expanded={mobileOpen} className="md:hidden text-textMain p-2 cursor-pointer relative z-50">
           {mobileOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </nav>
 
-      {/* Mobile menu */}
-      <div role="dialog" aria-label="Mobile navigation" className={`fixed inset-0 z-40 bg-background/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 transition-all duration-500 ${mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-        {links.map(link => (
-          link.isRoute ? (
-            <Link key={link.id} to={`/${link.id}`} onClick={() => setMobileOpen(false)} className="text-2xl font-sans font-medium text-textMain hover:text-primary transition-colors cursor-pointer">
-              {link.label}
-            </Link>
-          ) : (
-            <button key={link.id} onClick={() => handleNav(link.id)} className="text-2xl font-sans font-medium text-textMain hover:text-primary transition-colors cursor-pointer">
-              {link.label}
-            </button>
-          )
-        ))}
-        <MagneticButton variant="primary" className="mt-4" href="#contact" onClick={() => setMobileOpen(false)}>Get a Free Quote</MagneticButton>
+      {/* Mobile menu — compact dropdown under nav */}
+      <div
+        role="dialog"
+        aria-label="Mobile navigation"
+        className={`fixed top-20 left-1/2 -translate-x-1/2 z-40 w-[90%] max-w-sm bg-background/95 backdrop-blur-xl rounded-2xl border border-white/[0.08] shadow-2xl overflow-hidden transition-all duration-300 md:hidden ${mobileOpen ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-95 pointer-events-none'}`}
+      >
+        <div className="py-3">
+          {links.map(link => (
+            link.isRoute ? (
+              <Link key={link.id} to={`/${link.id}`} onClick={() => setMobileOpen(false)} className="block px-6 py-3 text-sm font-sans font-medium text-textMain hover:text-primary hover:bg-white/[0.03] transition-all cursor-pointer">
+                {link.label}
+              </Link>
+            ) : (
+              <button key={link.id} onClick={() => handleNav(link.id)} className="block w-full text-left px-6 py-3 text-sm font-sans font-medium text-textMain hover:text-primary hover:bg-white/[0.03] transition-all cursor-pointer">
+                {link.label}
+              </button>
+            )
+          ))}
+          <div className="px-6 pt-2 pb-4">
+            <MagneticButton variant="primary" className="w-full py-3 text-sm" href="#contact" onClick={() => setMobileOpen(false)}>Get a Free Quote</MagneticButton>
+          </div>
+        </div>
       </div>
+      {/* Backdrop */}
+      {mobileOpen && <div className="fixed inset-0 z-30 md:hidden" onClick={() => setMobileOpen(false)}></div>}
     </>
   );
 };
@@ -326,7 +344,7 @@ const ScrollVideoHero = ({ onFramesLoaded }) => {
             </p>
             <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-sans font-bold leading-[1.05] tracking-tight mb-2 text-white">
               Get Found. <br />
-              <span className="block font-serif italic text-white/80 text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] mt-2">Get Chosen.</span>
+              <span className="block font-sans font-light text-white/80 text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] mt-2">Get Chosen.</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-xl mx-auto mt-6 sm:mt-10 font-sans leading-relaxed">
               We build websites that rank, get recommended by AI, and convert.
@@ -346,212 +364,12 @@ const ScrollVideoHero = ({ onFramesLoaded }) => {
   );
 };
 
-/* ── Hero Mockups (kept for reference, unused) ── */
-const HeroMockups = () => {
-  const containerRef = useRef(null);
-
-  return (
-    <div ref={containerRef} className="relative w-full h-full min-h-[450px] lg:min-h-[550px]" style={{ perspective: '1200px' }}>
-
-      {/* ── Main Browser Window ── */}
-      <div className="mockup-item mockup-float-1 absolute top-[2%] left-[0%] w-[78%] z-10" style={{ transform: 'rotateY(-4deg) rotateX(2deg)' }}>
-        <div className="rounded-2xl border border-white/[0.08] shadow-[0_20px_80px_-15px_rgba(201,168,76,0.15),0_0_0_1px_rgba(255,255,255,0.05)] overflow-hidden" style={{ background: 'linear-gradient(145deg, #1C1C28 0%, #13131D 100%)' }}>
-          {/* Browser chrome */}
-          <div className="flex items-center gap-2.5 px-4 py-3 border-b border-white/[0.06]" style={{ background: 'linear-gradient(180deg, #1A1A26 0%, #16161F 100%)' }}>
-            <div className="flex gap-2">
-              <div className="w-3 h-3 rounded-full bg-[#FF5F57] shadow-[0_0_6px_rgba(255,95,87,0.4)]"></div>
-              <div className="w-3 h-3 rounded-full bg-[#FEBC2E] shadow-[0_0_6px_rgba(254,188,46,0.4)]"></div>
-              <div className="w-3 h-3 rounded-full bg-[#28C840] shadow-[0_0_6px_rgba(40,200,64,0.4)]"></div>
-            </div>
-            <div className="flex-1 mx-4 bg-black/30 rounded-lg px-4 py-1.5 text-[10px] font-mono text-textMuted/60 flex items-center gap-2 border border-white/[0.04]">
-              <div className="w-3 h-3 rounded-full bg-emerald-500/20 flex items-center justify-center">
-                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400"></div>
-              </div>
-              sleekpredators.com
-            </div>
-            <div className="flex gap-1.5">
-              <div className="w-6 h-5 rounded bg-white/[0.04] border border-white/[0.06]"></div>
-              <div className="w-6 h-5 rounded bg-white/[0.04] border border-white/[0.06]"></div>
-            </div>
-          </div>
-
-          {/* Website screen — rich dark dashboard-style site */}
-          <div className="relative p-5 min-h-[200px]" style={{ background: 'linear-gradient(180deg, #0E0E16 0%, #0A0A12 100%)' }}>
-            {/* Shimmer overlay */}
-            <div className="screen-shimmer absolute inset-0 opacity-[0.03] pointer-events-none" style={{ background: 'linear-gradient(90deg, transparent 30%, rgba(201,168,76,0.5) 50%, transparent 70%)', backgroundSize: '200% 100%' }}></div>
-
-            {/* Nav */}
-            <div className="flex items-center justify-between mb-5">
-              <div className="flex items-center gap-2">
-                <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center">
-                  <span className="text-[6px] font-bold text-background">SP</span>
-                </div>
-                <span className="text-[10px] font-semibold text-textMain/90 tracking-tight">Sleek Predators</span>
-              </div>
-              <div className="flex gap-4 items-center">
-                <div className="w-6 h-[3px] rounded bg-textMuted/20"></div>
-                <div className="w-6 h-[3px] rounded bg-textMuted/20"></div>
-                <div className="w-6 h-[3px] rounded bg-textMuted/20"></div>
-                <div className="w-12 h-5 rounded-full bg-primary/80 flex items-center justify-center">
-                  <span className="text-[6px] font-bold text-background">SHOP</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Hero area with gradient */}
-            <div className="relative rounded-xl overflow-hidden mb-4" style={{ background: 'linear-gradient(135deg, #1a1520 0%, #0D0D18 40%, #1a150a 100%)' }}>
-              <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/10 to-transparent"></div>
-              <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-primary/5 to-transparent"></div>
-              <div className="p-5 relative z-10">
-                <div className="text-[7px] font-mono text-primary tracking-[0.2em] uppercase mb-2">Premium Collection</div>
-                <div className="text-[16px] font-bold text-textMain/95 leading-tight mb-1">Product Design</div>
-                <div className="text-[16px] font-bold text-textMain/40 leading-tight font-serif italic mb-3">Excellence</div>
-                <div className="flex gap-2">
-                  <div className="w-14 h-5 rounded-full bg-primary flex items-center justify-center">
-                    <span className="text-[6px] font-bold text-background">EXPLORE</span>
-                  </div>
-                  <div className="w-14 h-5 rounded-full border border-white/10 flex items-center justify-center">
-                    <span className="text-[6px] text-textMuted">LOOKBOOK</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Product cards */}
-            <div className="grid grid-cols-3 gap-2">
-              {[
-                { gradient: 'from-amber-900/30 via-primary/10 to-transparent', price: '$1,200' },
-                { gradient: 'from-slate-700/40 via-slate-800/20 to-transparent', price: '$890' },
-                { gradient: 'from-primary/20 via-amber-900/10 to-transparent', price: '$2,100' },
-              ].map((card, i) => (
-                <div key={i} className="rounded-lg overflow-hidden border border-white/[0.06]" style={{ background: 'linear-gradient(180deg, #141420 0%, #0D0D16 100%)' }}>
-                  <div className={`aspect-square bg-gradient-to-br ${card.gradient} flex items-center justify-center`}>
-                    <div className="w-8 h-8 rounded-lg bg-white/[0.04] border border-white/[0.08] backdrop-blur-sm"></div>
-                  </div>
-                  <div className="p-2">
-                    <div className="w-12 h-1 bg-textMain/15 rounded mb-1"></div>
-                    <div className="text-[7px] font-mono text-primary/70">{card.price}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* ── Floating Card — Portfolio Piece ── */}
-      <div className="mockup-item mockup-float-2 absolute top-[8%] right-[-2%] w-[42%] z-20" style={{ transform: 'rotateY(5deg) rotateX(-3deg)' }}>
-        <div className="rounded-2xl border border-white/[0.08] shadow-[0_25px_60px_-12px_rgba(0,0,0,0.5)] overflow-hidden backdrop-blur-sm" style={{ background: 'linear-gradient(160deg, #1E1E2C 0%, #14141F 100%)' }}>
-          <div className="p-4">
-            <div className="flex items-center justify-between mb-3">
-              <div className="text-[8px] font-mono text-primary uppercase tracking-[0.15em]">Polished Portfolio</div>
-              <div className="flex gap-1">
-                <div className="w-4 h-4 rounded-full bg-white/[0.04] border border-white/[0.08]"></div>
-                <div className="w-4 h-4 rounded-full bg-white/[0.04] border border-white/[0.08]"></div>
-              </div>
-            </div>
-
-            {/* Rich gradient thumbnail */}
-            <div className="rounded-xl aspect-[4/3] mb-3 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #2a1f10 0%, #1a1028 50%, #0a1a20 100%)' }}>
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-purple-500/10"></div>
-              <div className="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t from-black/40 to-transparent"></div>
-              {/* Fake UI elements inside */}
-              <div className="absolute top-3 left-3">
-                <div className="w-8 h-8 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center">
-                  <div className="w-3 h-3 rounded-full bg-primary/60"></div>
-                </div>
-              </div>
-              <div className="absolute bottom-3 left-3 right-3">
-                <div className="w-20 h-1.5 bg-white/30 rounded mb-1.5"></div>
-                <div className="w-14 h-1 bg-white/15 rounded"></div>
-              </div>
-              <div className="absolute top-3 right-3 w-12 h-5 rounded-full bg-primary/70 flex items-center justify-center">
-                <span className="text-[6px] font-bold text-background">LIVE</span>
-              </div>
-            </div>
-
-            <div className="flex items-center justify-between">
-              <div>
-                <div className="text-[10px] font-semibold text-textMain/80 mb-0.5">Artisan Coffee Co.</div>
-                <div className="text-[8px] text-textMuted/50 font-mono">E-Commerce Redesign</div>
-              </div>
-              <div className="flex items-center gap-1.5 bg-emerald-500/10 border border-emerald-500/20 px-2 py-1 rounded-full">
-                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></div>
-                <span className="text-[7px] font-mono text-emerald-400">+340% Sales</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* ── Floating Card — Analytics Dashboard ── */}
-      <div className="mockup-item mockup-float-3 absolute bottom-[0%] right-[0%] w-[55%] z-30" style={{ transform: 'rotateY(3deg) rotateX(-2deg)' }}>
-        <div className="rounded-2xl border border-primary/10 shadow-[0_30px_80px_-20px_rgba(201,168,76,0.12),0_0_40px_-10px_rgba(201,168,76,0.05)] overflow-hidden backdrop-blur-sm" style={{ background: 'linear-gradient(160deg, #1A1A28 0%, #111119 100%)' }}>
-          <div className="p-4">
-            <div className="flex items-center justify-between mb-4">
-              <div>
-                <div className="text-[8px] font-mono text-primary uppercase tracking-[0.15em] mb-1">Growth Dashboard</div>
-                <div className="text-[14px] font-bold text-textMain/90">$48,250</div>
-                <div className="text-[8px] text-textMuted/50 font-mono">Revenue this month</div>
-              </div>
-              <div className="flex flex-col items-end gap-1">
-                <div className="flex items-center gap-1 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-full">
-                  <TrendingUp size={8} className="text-emerald-400" />
-                  <span className="text-[8px] font-mono text-emerald-400 font-semibold">+127%</span>
-                </div>
-                <span className="text-[7px] text-textMuted/40 font-mono">vs last month</span>
-              </div>
-            </div>
-
-            {/* Chart with gradient fill */}
-            <div className="relative h-16 mb-3">
-              <svg viewBox="0 0 200 60" className="w-full h-full" preserveAspectRatio="none">
-                <defs>
-                  <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#C9A84C" stopOpacity="0.3" />
-                    <stop offset="100%" stopColor="#C9A84C" stopOpacity="0" />
-                  </linearGradient>
-                  <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
-                    <stop offset="0%" stopColor="#C9A84C" stopOpacity="0.5" />
-                    <stop offset="50%" stopColor="#C9A84C" stopOpacity="1" />
-                    <stop offset="100%" stopColor="#C9A84C" stopOpacity="0.8" />
-                  </linearGradient>
-                </defs>
-                <path d="M0,55 C20,50 30,45 50,40 C70,35 80,42 100,30 C120,18 130,25 150,15 C170,5 180,10 200,3 L200,60 L0,60 Z" fill="url(#chartGrad)" />
-                <path d="M0,55 C20,50 30,45 50,40 C70,35 80,42 100,30 C120,18 130,25 150,15 C170,5 180,10 200,3" fill="none" stroke="url(#lineGrad)" strokeWidth="2" strokeLinecap="round" />
-                <circle cx="200" cy="3" r="3" fill="#C9A84C" className="animate-pulse" />
-              </svg>
-            </div>
-
-            {/* Mini stats row */}
-            <div className="grid grid-cols-3 gap-2">
-              {[
-                { label: 'Visitors', value: '24.8K', color: 'text-primary' },
-                { label: 'Leads', value: '1,247', color: 'text-emerald-400' },
-                { label: 'Conv. Rate', value: '5.03%', color: 'text-sky-400' },
-              ].map((s, i) => (
-                <div key={i} className="bg-white/[0.02] border border-white/[0.05] rounded-lg p-2 text-center">
-                  <div className={`text-[10px] font-bold ${s.color}`}>{s.value}</div>
-                  <div className="text-[7px] text-textMuted/40 font-mono uppercase tracking-wider">{s.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Glow effects */}
-      <div className="absolute top-[30%] left-[20%] w-[60%] h-[50%] bg-primary/6 blur-[120px] rounded-full pointer-events-none"></div>
-      <div className="absolute bottom-[10%] right-[10%] w-[40%] h-[40%] bg-primary/4 blur-[80px] rounded-full pointer-events-none"></div>
-    </div>
-  );
-};
+/* HeroMockups removed */
 
 /* ── Hero ── */
 const Hero = () => {
   const containerRef = useRef(null);
-  const gradientRef = useRef(null);
-  const videoElRef = useRef(null);
+  const videoRef = useRef(null);
 
   useGSAP(() => {
     const rm = prefersReducedMotion();
@@ -559,69 +377,121 @@ const Hero = () => {
       y: rm ? 10 : 40, opacity: 0,
       duration: rm ? 0.5 : 1, stagger: 0.15, ease: 'power3.out', delay: 0.2
     });
-    gsap.to(gradientRef.current, { backgroundPosition: '200% 200%', duration: rm ? 40 : 20, repeat: -1, yoyo: true, ease: 'sine.inOut' });
   }, { scope: containerRef });
 
+  // Play video once, then stay on last frame (dashboard)
+  useEffect(() => {
+    const vid = videoRef.current;
+    if (!vid) return;
+    vid.playbackRate = 0.8;
+    const handleEnded = () => {
+      // Pause on last frame — dashboard stays visible and "alive"
+      vid.currentTime = vid.duration - 0.1;
+      vid.pause();
+    };
+    vid.addEventListener('ended', handleEnded);
+    return () => vid.removeEventListener('ended', handleEnded);
+  }, []);
 
   return (
-    <section ref={containerRef} className="relative w-full flex items-center pt-28 pb-16 md:pt-32 md:pb-20 px-6 md:px-16 overflow-hidden min-h-dvh">
-      {/* Video background with starfield canvas underneath */}
-      <div className="absolute inset-0 z-0">
+    <section ref={containerRef} className="relative w-full flex items-center pt-24 pb-8 md:pt-32 md:pb-20 px-6 md:px-16 overflow-hidden min-h-dvh">
+      {/* Video background — visible on all screens */}
+      <div className="absolute inset-0 z-[1]">
         <video
+          ref={videoRef}
           autoPlay
           muted
           playsInline
-          ref={(el) => {
-            videoElRef.current = el;
-            if (el) el.playbackRate = 0.7;
-          }}
-          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
-          src="/hero-video.mp4"
+          className="absolute inset-0 w-full h-full object-cover opacity-40 hero-video-mask"
+          src="/hf_20260328_121348_99915d41-7b29-4e5b-bf60-8593d3ce29db.mp4"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/60 to-background"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/40 to-background/60"></div>
-        <div
-          ref={gradientRef}
-          className="absolute inset-0 bg-gradient-to-tr from-background/80 via-primary/5 to-background/90 mix-blend-overlay"
-          style={{ backgroundSize: '300% 300%', backgroundPosition: '0% 0%' }}
-        ></div>
+        {/* Top fade only — bottom blends smoothly into space bg */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-transparent pointer-events-none"></div>
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto">
-        <div className="max-w-2xl">
-          <p className="hero-text text-primary font-mono text-sm tracking-widest mb-6 uppercase flex items-center gap-3">
-            <span className="h-[1px] w-8 bg-primary"></span>
+        <div className="max-w-2xl mx-auto md:mx-0 text-center md:text-left">
+          <p className="hero-text text-primary font-mono text-[10px] sm:text-sm tracking-widest mb-6 uppercase flex items-center justify-center md:justify-start gap-2 sm:gap-3 whitespace-nowrap">
+            <span className="h-[1px] w-6 sm:w-8 bg-primary"></span>
             Web Design &bull; SEO &bull; AI Visibility
           </p>
-          <h1 className="hero-text text-5xl md:text-7xl lg:text-[5.5rem] font-sans font-bold leading-[1.05] tracking-tight mb-2">
+          <h1 className="hero-text text-5xl md:text-7xl lg:text-[5.5rem] font-sans font-bold leading-[1.05] tracking-tight mb-2 text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.9)]">
             Get Found. <br />
-            <span className="hero-text block font-serif italic text-textMuted text-5xl md:text-7xl lg:text-[6rem] mt-2">Get Chosen.</span>
+            <span className="hero-text block font-sans font-light text-white/80 text-5xl md:text-7xl lg:text-[6rem] mt-2">Get Chosen.</span>
           </h1>
-          <p className="hero-text text-lg md:text-xl text-textMuted max-w-xl mt-10 font-sans leading-relaxed">
-            We build websites that don't just look incredible — they rank on Google, get recommended by ChatGPT, Gemini, and Perplexity, and turn every visitor into a customer. <span className="text-textMain/90 font-medium">SEO + GEO + AEO — the full visibility stack.</span>
+          <p className="hero-text text-lg md:text-xl text-white/80 max-w-xl mx-auto md:mx-0 mt-10 font-sans leading-relaxed drop-shadow-[0_1px_8px_rgba(0,0,0,0.8)]">
+            We build websites that rank on Google, get recommended by ChatGPT, Gemini, and Perplexity, and turn every visitor into a customer. <span className="text-white font-medium">SEO + GEO + AEO — the full visibility stack</span>
           </p>
-          <div className="hero-text mt-10 flex flex-col sm:flex-row items-start gap-5">
+          <div className="hero-text mt-10 flex flex-col sm:flex-row items-center md:items-start justify-center md:justify-start gap-5">
             <MagneticButton href="#contact">Start Your Project <ArrowRight size={18} /></MagneticButton>
             <MagneticButton variant="outline" href="#results">See Our Results <BarChart3 size={18} /></MagneticButton>
           </div>
-          <div className="hero-text mt-8 flex flex-wrap items-center gap-4 text-xs font-mono text-textMuted/70">
-            <div className="flex items-center gap-2 bg-surface/50 border border-slate/30 px-4 py-2 rounded-full">
+          <div className="hero-text mt-8 flex flex-wrap items-center justify-center md:justify-start gap-4 text-xs font-mono text-white/70">
+            <div className="flex items-center gap-2 bg-background/60 backdrop-blur-sm border border-white/10 px-4 py-2 rounded-full">
               <span className="h-1.5 w-1.5 bg-primary rounded-full animate-pulse"></span>
               150+ Websites Launched
             </div>
-            <div className="flex items-center gap-2 bg-surface/50 border border-slate/30 px-4 py-2 rounded-full">
+            <div className="flex items-center gap-2 bg-background/60 backdrop-blur-sm border border-white/10 px-4 py-2 rounded-full">
               <TrendingUp size={12} className="text-primary" />
               Avg. 3x Traffic Growth
             </div>
-            <div className="flex items-center gap-2 bg-surface/50 border border-slate/30 px-4 py-2 rounded-full">
+            <div className="flex items-center gap-2 bg-background/60 backdrop-blur-sm border border-white/10 px-4 py-2 rounded-full">
               <Bot size={12} className="text-primary" />
               AI-Optimized
             </div>
           </div>
         </div>
-
       </div>
     </section>
+  );
+};
+
+/* ── Philosophy Typewriter ── */
+const PhilosophyTypewriter = () => {
+  const lines = [
+    'Not just page one of Google...',
+    'We get you into ChatGPT answers, Gemini recommendations, and Perplexity results too.',
+    "That's the difference between being found and being invisible",
+  ];
+  const fullText = lines.join('\n');
+  const [displayed, setDisplayed] = useState('');
+  const ref = useRef(null);
+  const startedRef = useRef(false);
+  const [done, setDone] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting && !startedRef.current) {
+        startedRef.current = true;
+        let i = 0;
+        const int = setInterval(() => {
+          i++;
+          if (i > fullText.length) {
+            clearInterval(int);
+            setDone(true);
+            return;
+          }
+          setDisplayed(fullText.slice(0, i));
+        }, 18);
+      }
+    }, { threshold: 0.3 });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [fullText]);
+
+  const renderedLines = displayed.split('\n');
+
+  return (
+    <div ref={ref} className="phil-word mt-10 text-white/80 max-w-3xl mx-auto font-sans text-xl md:text-2xl leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] space-y-4 min-h-[6rem]">
+      {renderedLines.map((line, i) => (
+        <p key={i} className={line ? 'opacity-100' : 'opacity-0'}>
+          {line}
+          {i === renderedLines.length - 1 && !done && <span className="inline-block w-2 h-6 bg-primary ml-1 animate-pulse align-middle"></span>}
+        </p>
+      ))}
+    </div>
   );
 };
 
@@ -641,33 +511,31 @@ const Philosophy = () => {
   }, { scope: textRef });
 
   return (
-    <section id="philosophy" ref={textRef} className="relative py-40 border-t border-slate/30 overflow-hidden">
-      {/* Space background only for this section */}
-      <div className="absolute inset-0 pointer-events-none">
-        <img src="/space-bg.jpg" alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-background/60"></div>
-      </div>
+    <section id="philosophy" ref={textRef} className="relative py-20 md:py-32 overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-16 text-center">
-        <h2 className="text-xl md:text-3xl font-sans font-normal text-textMuted mb-8 flex flex-wrap justify-center gap-2">
+        <h2 className="text-xl md:text-3xl font-sans font-normal text-white/70 mb-8 flex flex-wrap justify-center gap-2 drop-shadow-[0_1px_8px_rgba(0,0,0,0.8)]">
           {"Google changed. AI is answering the questions now.".split(' ').map((w, i) => <span key={i} className="phil-word inline-block">{w}</span>)}
         </h2>
-        <div className="text-4xl md:text-7xl font-sans font-bold leading-tight flex flex-wrap justify-center items-center gap-3 md:gap-5 mt-8">
+        <div className="text-4xl md:text-7xl font-sans font-bold leading-tight flex flex-wrap justify-center items-center gap-3 md:gap-5 mt-8 text-white drop-shadow-[0_2px_15px_rgba(0,0,0,0.9)]">
           {"Your business needs to be".split(' ').map((w, i) => <span key={i} className="phil-word inline-block">{w}</span>)}
-          <span className="phil-word font-serif italic text-primary block w-full mt-4 text-5xl md:text-8xl">everywhere.</span>
+          <span className="phil-word font-sans font-light text-primary block w-full mt-4 text-5xl md:text-8xl drop-shadow-[0_2px_15px_rgba(0,0,0,0.7)]">everywhere.</span>
         </div>
-        <p className="phil-word mt-16 text-textMuted/60 max-w-2xl mx-auto font-mono text-sm leading-relaxed">
-          Not just page one of Google — but in ChatGPT answers, Gemini recommendations, and Perplexity results. We optimize for all of them. That's the difference between being found and being invisible.
-        </p>
+        <PhilosophyTypewriter />
       </div>
     </section>
   );
 };
 
 /* ── Interactive Cards ── */
-const CardShuffler = () => {
-  const [cards, setCards] = useState(['Google SEO', 'AI Visibility (GEO)', 'Answer Engines (AEO)']);
+const CardSEO = () => {
+  const [active, setActive] = useState(0);
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const items = [
+    { icon: Search, label: 'Google SEO', desc: 'Page 1 rankings' },
+    { icon: Bot, label: 'GEO', desc: 'AI recommendations' },
+    { icon: Brain, label: 'AEO', desc: 'Answer engines' },
+  ];
 
   useEffect(() => {
     const el = ref.current;
@@ -679,45 +547,33 @@ const CardShuffler = () => {
 
   useEffect(() => {
     if (!isVisible) return;
-    const int = setInterval(() => {
-      setCards(prev => {
-        const newArr = [...prev];
-        const last = newArr.pop();
-        newArr.unshift(last);
-        return newArr;
-      });
-    }, prefersReducedMotion() ? 4000 : 3000);
+    const int = setInterval(() => setActive(p => (p + 1) % 3), 2500);
     return () => clearInterval(int);
   }, [isVisible]);
 
   return (
-    <div ref={ref} className="relative h-48 w-full flex items-center justify-center">
-      {cards.map((text, i) => {
-        const yOffset = i * -15;
-        const scale = 1 - (i * 0.05);
-        const opacity = 1 - (i * 0.3);
-        const zIndex = 10 - i;
-        return (
-          <div
-            key={text}
-            className="absolute bg-surface border border-slate rounded-2xl w-full max-w-[200px] p-5 shadow-2xl transition-all duration-1000 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
-            style={{ transform: `translateY(${yOffset}px) scale(${scale})`, opacity, zIndex }}
-          >
-            <div className="flex flex-col items-center gap-3 text-center">
-              <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                <TrendingUp size={14} />
-              </div>
-              <p className="font-mono text-xs">{text}</p>
+    <div ref={ref} className="h-48 w-full bg-white/[0.04] border border-white/[0.08] rounded-2xl p-6 flex flex-col justify-between">
+      <div className="flex items-center gap-2 text-xs text-textMuted font-mono uppercase">
+        <Globe size={12} className="text-primary" />
+        Visibility stack
+      </div>
+      <div className="space-y-2">
+        {items.map((item, i) => (
+          <div key={i} className={`flex items-center gap-3 p-2.5 rounded-lg transition-all duration-500 ${i === active ? 'bg-primary/10 border border-primary/20' : 'bg-transparent border border-transparent'}`}>
+            <item.icon size={16} className={`transition-colors duration-500 ${i === active ? 'text-primary' : 'text-textMuted/40'}`} />
+            <div className="flex-1">
+              <span className={`font-mono text-xs transition-colors duration-500 ${i === active ? 'text-white' : 'text-textMuted/60'}`}>{item.label}</span>
             </div>
+            <span className={`text-[10px] font-mono transition-all duration-500 ${i === active ? 'text-primary opacity-100' : 'opacity-0'}`}>{item.desc}</span>
           </div>
-        )
-      })}
+        ))}
+      </div>
     </div>
-  )
+  );
 };
 
 const CardTypewriter = () => {
-  const text = "Your website is live. Google indexed it in 4 hours. ChatGPT is already recommending you to local customers.";
+  const text = "Your website is live, Google indexed it in 4 hours and ChatGPT is already recommending you to local customers";
   const [display, setDisplay] = useState('');
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -742,7 +598,7 @@ const CardTypewriter = () => {
   }, [isVisible]);
 
   return (
-    <div ref={ref} className="h-48 w-full bg-surface border border-slate rounded-2xl p-6 flex flex-col font-mono relative overflow-hidden">
+    <div ref={ref} className="h-48 w-full bg-white/[0.04] border border-white/[0.08] rounded-2xl p-6 flex flex-col font-mono relative overflow-hidden">
       <div className="flex items-center gap-2 text-xs text-textMuted mb-6 uppercase">
         <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse"></span>
         Building your site
@@ -754,72 +610,95 @@ const CardTypewriter = () => {
   )
 };
 
-const CardScheduler = () => {
-  const containerRef = useRef(null);
+const CardGrowth = () => {
+  const [counts, setCounts] = useState([0, 0, 0]);
+  const ref = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
-  useGSAP(() => {
-    const rm = prefersReducedMotion();
-    const tl = gsap.timeline({ repeat: -1 });
-    tl.set('.cursor-svg', { x: -20, y: -20, scale: 1, opacity: 0 })
-      .to('.cursor-svg', { opacity: 1, duration: 0.3 })
-      .to('.cursor-svg', { x: 74, y: 34, duration: rm ? 0.5 : 1, ease: 'power2.inOut', delay: 0.2 })
-      .to('.cursor-svg', { scale: 0.8, duration: 0.1 })
-      .to('.day-cell', { backgroundColor: '#C9A84C', color: '#000', duration: 0.2 }, '<')
-      .to('.cursor-svg', { scale: 1, duration: 0.1 })
-      .to('.cursor-svg', { x: 180, y: 80, duration: rm ? 0.5 : 1, ease: 'power2.inOut', delay: 0.5 })
-      .to('.cursor-svg', { opacity: 0, duration: 0.3 })
-      .to('.day-cell', { backgroundColor: 'transparent', color: '#A0A0AA', duration: 0.5 });
-  }, { scope: containerRef });
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(([entry]) => setIsVisible(entry.isIntersecting), { threshold: 0.1 });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
+    const targets = [340, 127, 89];
+    const duration = 2000;
+    const steps = 40;
+    let step = 0;
+    const int = setInterval(() => {
+      step++;
+      const progress = Math.min(step / steps, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCounts(targets.map(t => Math.round(t * eased)));
+      if (step >= steps) clearInterval(int);
+    }, duration / steps);
+    return () => clearInterval(int);
+  }, [isVisible]);
 
   return (
-    <div ref={containerRef} className="h-48 w-full bg-surface border border-slate rounded-2xl p-6 relative">
-      <div className="grid grid-cols-7 gap-1">
-        {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((d, i) => (
-          <div key={i} className={`h-8 rounded-md flex items-center justify-center text-xs font-mono bg-background text-textMuted transition-colors duration-300 ${i === 3 ? 'day-cell' : ''}`}>
-            {d}
+    <div ref={ref} className="h-48 w-full bg-white/[0.04] border border-white/[0.08] rounded-2xl p-6 flex flex-col justify-between">
+      <div className="flex items-center gap-2 text-xs text-textMuted font-mono uppercase">
+        <Rocket size={12} className="text-primary" />
+        Growth metrics
+      </div>
+      <div className="space-y-3">
+        {[
+          { label: 'Traffic growth', value: `+${counts[0]}%`, color: 'bg-primary' },
+          { label: 'Lead increase', value: `+${counts[1]}%`, color: 'bg-emerald-400' },
+          { label: 'Conversion rate', value: `${(counts[2] / 10).toFixed(1)}%`, color: 'bg-sky-400' },
+        ].map((m, i) => (
+          <div key={i}>
+            <div className="flex justify-between text-[10px] font-mono text-textMuted mb-1">
+              <span>{m.label}</span>
+              <span className="text-white/80">{m.value}</span>
+            </div>
+            <div className="h-1.5 rounded-full bg-white/[0.06]">
+              <div className={`h-full rounded-full ${m.color} transition-all duration-1000`} style={{ width: `${Math.min(100, (counts[i] / [340, 127, 89][i]) * 100)}%` }}></div>
+            </div>
           </div>
         ))}
       </div>
-      <div className="absolute bottom-6 right-6">
-        <div className="bg-primary/5 text-primary border border-primary/20 px-3 py-1.5 rounded-full text-[10px] font-mono uppercase tracking-widest">Launch</div>
-      </div>
-      <MousePointer2 className="cursor-svg absolute top-6 left-6 text-white w-5 h-5 stroke-[1.5]" style={{ filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.5))' }} />
     </div>
-  )
+  );
 };
 
 /* ── Features ── */
 const Features = () => {
   return (
-    <section id="services" className="relative py-32 px-6 md:px-16 max-w-7xl mx-auto border-t border-slate/20">
-      <div className="mb-24 md:text-center flex flex-col items-center">
-        <h2 className="text-3xl md:text-5xl font-sans font-bold tracking-tight mb-6">
+    <section id="services" className="relative py-16 md:py-32 px-6 md:px-16 mx-auto max-w-7xl">
+      <div className="mb-12 md:mb-24 text-center flex flex-col items-center">
+        <h2 className="text-3xl md:text-5xl font-sans font-bold tracking-tight mb-6 text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]">
           The only agency you'll ever need.
         </h2>
-        <p className="text-textMuted max-w-2xl font-sans text-lg md:text-xl leading-relaxed">
-          Beautiful design. First-page rankings. AI recommendations. We don't just build websites — we build your entire digital presence so customers find you everywhere they search.
-        </p>
+        <div className="text-white/70 max-w-3xl font-sans text-lg md:text-xl leading-relaxed drop-shadow-[0_1px_6px_rgba(0,0,0,0.6)] space-y-2">
+          <p>Beautiful design, first page rankings, and AI recommendations</p>
+          <p>We build your entire digital presence<br />so customers find you everywhere they search</p>
+        </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-        <div className="group rounded-[2rem] bg-background border border-slate/40 p-8 hover:border-primary/30 transition-colors duration-500">
-          <CardShuffler />
+        <div className="group rounded-[2rem] bg-background/50 backdrop-blur-md border border-white/[0.08] p-8 hover:border-primary/30 transition-colors duration-500">
+          <CardSEO />
           <div className="mt-12 text-center">
             <h3 className="text-lg font-sans font-semibold mb-3">SEO + GEO + AEO</h3>
-            <p className="text-textMuted text-sm leading-relaxed">Rank on Google. Get recommended by AI. Own the answer box. We cover traditional SEO, Generative Engine Optimization, and Answer Engine Optimization — so every search leads to you.</p>
+            <p className="text-white/70 text-sm leading-relaxed">Rank on Google, get recommended by AI, and own the answer box. We cover traditional SEO, Generative Engine Optimization, and Answer Engine Optimization so every search leads to you</p>
           </div>
         </div>
-        <div className="group rounded-[2rem] bg-background border border-slate/40 p-8 hover:border-primary/30 transition-colors duration-500">
+        <div className="group rounded-[2rem] bg-background/50 backdrop-blur-md border border-white/[0.08] p-8 hover:border-primary/30 transition-colors duration-500">
           <CardTypewriter />
           <div className="mt-12 text-center">
             <h3 className="text-lg font-sans font-semibold mb-3">Web Design That Converts</h3>
-            <p className="text-textMuted text-sm leading-relaxed">Custom, lightning-fast websites engineered for one thing: turning visitors into paying customers. Every pixel, every interaction is designed with your bottom line in mind.</p>
+            <p className="text-white/70 text-sm leading-relaxed">Custom, lightning fast websites built for one thing: turning visitors into paying customers. Every pixel and every interaction is designed with your bottom line in mind</p>
           </div>
         </div>
-        <div className="group rounded-[2rem] bg-background border border-slate/40 p-8 hover:border-primary/30 transition-colors duration-500">
-          <CardScheduler />
+        <div className="group rounded-[2rem] bg-background/50 backdrop-blur-md border border-white/[0.08] p-8 hover:border-primary/30 transition-colors duration-500">
+          <CardGrowth />
           <div className="mt-12 text-center">
             <h3 className="text-lg font-sans font-semibold mb-3">Launch & Scale Strategy</h3>
-            <p className="text-textMuted text-sm leading-relaxed">From first meeting to going live — and beyond. We manage the full journey with ongoing optimization, content strategy, and performance tracking that drives real growth.</p>
+            <p className="text-white/70 text-sm leading-relaxed">From first meeting to going live and beyond. We manage the full journey with ongoing optimization, content strategy, and performance tracking that drives real growth</p>
           </div>
         </div>
       </div>
@@ -850,15 +729,17 @@ const Stats = () => {
   ];
 
   return (
-    <section ref={containerRef} className="py-20 px-6 md:px-16 border-t border-slate/20 bg-[#08080B]">
-      <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
-        {stats.map((stat, i) => (
-          <div key={i} className="stat-item text-center">
-            <stat.icon size={24} className="text-primary mx-auto mb-4 opacity-60" />
-            <div className="text-4xl md:text-5xl font-sans font-bold text-textMain mb-2">{stat.value}</div>
-            <div className="font-mono text-xs uppercase tracking-widest text-textMuted">{stat.label}</div>
-          </div>
-        ))}
+    <section ref={containerRef} className="relative py-12 md:py-16 px-6 md:px-16">
+      <div className="max-w-5xl mx-auto bg-background/50 backdrop-blur-md rounded-[2rem] border border-white/[0.06] p-10 md:p-14">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {stats.map((stat, i) => (
+            <div key={i} className="stat-item text-center">
+              <stat.icon size={24} className="text-primary mx-auto mb-4 opacity-60" />
+              <div className="text-4xl md:text-5xl font-sans font-bold text-white mb-2">{stat.value}</div>
+              <div className="font-mono text-xs uppercase tracking-widest text-white/60">{stat.label}</div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -867,21 +748,21 @@ const Stats = () => {
 /* ── Selectivity ── */
 const Selectivity = () => {
   return (
-    <section id="results" className="py-40 px-6 md:px-16 max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 lg:gap-24">
+    <section id="results" className="relative py-16 md:py-24 px-6 md:px-16 mx-auto max-w-7xl">
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-20">
         <div className="lg:col-span-3">
-          <h2 className="text-3xl md:text-5xl font-sans font-bold tracking-tight mb-12 text-textMain/90">Your competitors are still <br /><span className="font-serif italic text-primary">stuck on page two.</span></h2>
-          <ul className="space-y-8 font-mono text-sm tracking-wide text-textMuted">
-            <li className="flex items-start gap-5"><Rocket size={20} className="text-primary mt-0.5 shrink-0" /> <span className="pt-0.5 leading-relaxed">Startups that need a stunning first impression and instant credibility online</span></li>
-            <li className="flex items-start gap-5"><TrendingUp size={20} className="text-primary mt-0.5 shrink-0" /> <span className="pt-0.5 leading-relaxed">Growing businesses tired of paying for ads — ready for organic traffic that compounds</span></li>
-            <li className="flex items-start gap-5"><Bot size={20} className="text-primary mt-0.5 shrink-0" /> <span className="pt-0.5 leading-relaxed">Forward-thinkers who want AI models like ChatGPT and Gemini to recommend their business</span></li>
-            <li className="flex items-start gap-5"><Palette size={20} className="text-primary mt-0.5 shrink-0" /> <span className="pt-0.5 leading-relaxed">Brands that know a premium website isn't a cost — it's their highest-ROI investment</span></li>
+          <h2 className="text-3xl md:text-5xl font-sans font-bold tracking-tight mb-12 text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] text-center lg:text-left">Your competitors are still <br /><span className="font-sans font-light text-primary">stuck on page two.</span></h2>
+          <ul className="space-y-8 font-mono text-sm tracking-wide text-textMain/80">
+            <li className="flex items-start gap-5 bg-background/50 backdrop-blur-sm rounded-xl p-4 border border-white/[0.05]"><Rocket size={20} className="text-primary mt-0.5 shrink-0" /> <span className="pt-0.5 leading-relaxed">Startups that need a stunning first impression and instant credibility online</span></li>
+            <li className="flex items-start gap-5 bg-background/50 backdrop-blur-sm rounded-xl p-4 border border-white/[0.05]"><TrendingUp size={20} className="text-primary mt-0.5 shrink-0" /> <span className="pt-0.5 leading-relaxed">Growing businesses tired of paying for ads, ready for organic traffic that compounds</span></li>
+            <li className="flex items-start gap-5 bg-background/50 backdrop-blur-sm rounded-xl p-4 border border-white/[0.05]"><Bot size={20} className="text-primary mt-0.5 shrink-0" /> <span className="pt-0.5 leading-relaxed">Forward-thinkers who want AI models like ChatGPT and Gemini to recommend their business</span></li>
+            <li className="flex items-start gap-5 bg-background/50 backdrop-blur-sm rounded-xl p-4 border border-white/[0.05]"><Palette size={20} className="text-primary mt-0.5 shrink-0" /> <span className="pt-0.5 leading-relaxed">Brands that know a premium website isn't a cost, it's their highest ROI investment</span></li>
           </ul>
         </div>
-        <div className="lg:col-span-2 flex flex-col justify-center bg-[#08080B] p-10 md:p-14 border border-slate/40 rounded-[2rem] shadow-xl">
+        <div className="lg:col-span-2 flex flex-col justify-center bg-background/70 backdrop-blur-md p-10 md:p-14 border border-slate/40 rounded-[2rem] shadow-xl">
           <div className="font-mono text-xs uppercase text-primary tracking-widest mb-8 border-b border-primary/20 pb-4">Why clients choose us</div>
-          <p className="font-sans text-lg text-textMuted/90 leading-relaxed font-light">
-            We don't just make it pretty — we make it profitable. Every site is engineered for Google rankings, AI visibility, and conversion from day one. While others build brochure sites, we build revenue engines.
+          <p className="font-sans text-lg text-white/70 leading-relaxed font-light">
+            We make it profitable. Every site is engineered for Google rankings, AI visibility, and conversion from day one. While others build brochure sites, we build revenue engines
           </p>
         </div>
       </div>
@@ -916,30 +797,35 @@ const Protocol = () => {
   }, { scope: containerRef });
 
   const steps = [
-    { num: '01', title: 'Discover', desc: 'We dig into your business, your competitors, and your audience. We analyze what\'s working, what\'s broken, and where the biggest opportunities are — in Google and in AI search engines.', icon: Search },
-    { num: '02', title: 'Design', desc: 'Your website gets a custom design built around conversion psychology. Not a template with your logo slapped on — a strategic, user-tested experience that guides visitors to take action.', icon: Palette },
-    { num: '03', title: 'Develop & Optimize', desc: 'Clean, blazing-fast code. Structured data for AI crawlers. Schema markup for rich snippets. Technical SEO baked into every page. Your site launches ready to rank — on Google and in AI answers.', icon: Code },
-    { num: '04', title: 'Grow & Dominate', desc: 'Launch is just the beginning. We deploy content strategy, link building, GEO optimization, and ongoing performance monitoring. Your traffic grows. Your leads compound. Your competitors wonder what happened.', icon: TrendingUp }
+    { num: '01', title: 'Discover', desc: 'We dig into your business, your competitors, and your audience to find what\'s working, what\'s broken, and where the biggest opportunities are in Google and AI search engines', icon: Search, img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80' },
+    { num: '02', title: 'Design', desc: 'Your website gets a custom design built around conversion psychology, not a template with your logo slapped on but a strategic, user tested experience that guides visitors to take action', icon: Palette, img: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=600&q=80' },
+    { num: '03', title: 'Develop & Optimize', desc: 'Clean, blazing fast code with structured data for AI crawlers, schema markup for rich snippets, and technical SEO baked into every page so your site launches ready to rank on Google and in AI answers', icon: Code, img: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&q=80' },
+    { num: '04', title: 'Grow & Dominate', desc: 'Launch is just the beginning. We deploy content strategy, link building, GEO optimization, and ongoing performance monitoring so your traffic grows, your leads compound, and your competitors wonder what happened', icon: TrendingUp, img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80' }
   ];
 
   return (
-    <section id="process" ref={containerRef} className="py-24 px-6 md:px-16 bg-[#08080B]">
-      <div className="max-w-7xl mx-auto mb-20">
-        <h2 className="text-3xl md:text-5xl font-sans font-bold tracking-tight mb-4">A proven system <br /> <span className="font-serif italic text-textMuted">that delivers results.</span></h2>
+    <section id="process" ref={containerRef} className="relative py-16 md:py-24 px-6 md:px-16">
+      <div className="max-w-7xl mx-auto mb-10 md:mb-16">
+        <h2 className="text-3xl md:text-5xl font-sans font-bold tracking-tight mb-4 text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)] text-center md:text-left">A proven system <br /> <span className="font-sans font-light text-white/70">that delivers results.</span></h2>
       </div>
-      <div className="max-w-5xl mx-auto pb-[10vh]">
+      <div className="max-w-5xl mx-auto">
         {steps.map((step, index) => (
-          <div key={index} className="protocol-card sticky top-24 rounded-[2.5rem] md:rounded-[3rem] bg-surface border border-slate shadow-2xl overflow-hidden will-change-transform mb-[40vh]" style={{ zIndex: index }}>
-            <div className="flex flex-col md:flex-row h-full min-h-[400px]">
-              <div className="w-full md:w-1/3 bg-background/80 p-10 md:p-12 pl-10 flex flex-col justify-between border-b md:border-b-0 md:border-r border-slate/30">
-                <span className="font-mono text-primary text-4xl">({step.num})</span>
-                <div className="h-32 w-full flex items-center justify-center opacity-40 mt-8 md:mt-0">
-                  <step.icon size={56} className="text-primary" />
+          <div key={index} className={`protocol-card sticky top-20 md:top-24 rounded-2xl md:rounded-[3rem] bg-surface border border-slate shadow-2xl overflow-hidden will-change-transform ${index < steps.length - 1 ? 'mb-[8vh] md:mb-[15vh]' : 'mb-0'}`} style={{ zIndex: index }}>
+            <div className="flex flex-col md:flex-row h-full min-h-[280px] md:min-h-[400px]">
+              <div className="w-full md:w-1/3 relative overflow-hidden border-b md:border-b-0 md:border-r border-slate/30 min-h-[120px] md:min-h-0">
+                <img src={step.img} alt={step.title} className="absolute inset-0 w-full h-full object-cover opacity-30" loading="lazy" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
+                <div className="relative p-6 md:p-12 flex flex-row md:flex-col justify-between items-center md:items-start h-full">
+                  <span className="font-mono text-primary text-2xl md:text-4xl">({step.num})</span>
+                  <div className="w-12 h-12 md:h-32 md:w-full flex items-center justify-center opacity-60">
+                    <step.icon size={36} className="text-primary md:hidden" />
+                    <step.icon size={56} className="text-primary hidden md:block" />
+                  </div>
                 </div>
               </div>
-              <div className="w-full md:w-2/3 p-10 md:p-16 flex flex-col justify-center">
-                <h3 className="text-3xl md:text-5xl font-sans font-bold tracking-tight mb-6">{step.title}</h3>
-                <p className="text-textMuted text-lg md:text-xl leading-relaxed max-w-lg">{step.desc}</p>
+              <div className="w-full md:w-2/3 p-6 md:p-16 flex flex-col justify-center text-center md:text-left">
+                <h3 className="text-2xl md:text-5xl font-sans font-bold tracking-tight mb-4 md:mb-6">{step.title}</h3>
+                <p className="text-white/70 text-sm md:text-xl leading-relaxed max-w-lg">{step.desc}</p>
               </div>
             </div>
           </div>
@@ -951,11 +837,12 @@ const Protocol = () => {
 
 /* ── Trust Signal ── */
 const TrustSignal = () => (
-  <section className="py-40 px-6 flex justify-center text-center bg-background border-t border-slate/20">
+  <section className="relative py-10 md:py-16 px-6 flex justify-center text-center">
     <div className="max-w-4xl">
-      <p className="font-serif italic text-4xl md:text-6xl text-textMain/90 leading-[1.3] mb-16">
-        "The best time to future-proof your online presence was yesterday. The second best time is right now."
-      </p>
+      <div className="font-sans font-light text-3xl md:text-5xl text-white leading-[1.3] mb-8 drop-shadow-[0_2px_15px_rgba(0,0,0,0.8)] space-y-2">
+        <p>"The best time to future proof your online presence was yesterday.</p>
+        <p>The second best time is right now."</p>
+      </div>
       <div className="font-mono text-sm tracking-widest text-primary uppercase">Galaxy Marketing Philosophy</div>
     </div>
   </section>
@@ -1026,44 +913,43 @@ const ContactForm = () => {
   const inputClasses = 'w-full bg-background/80 border border-slate/40 rounded-xl px-5 py-4 text-textMain font-sans text-sm placeholder:text-textMuted/60 focus:outline-none focus:border-primary/60 transition-colors duration-300';
 
   return (
-    <section id="contact" ref={containerRef} className="py-32 px-6 md:px-16 bg-[#050508] border-t border-slate/20">
+    <section id="contact" ref={containerRef} className="relative py-16 md:py-32 px-6 md:px-16">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-16">
 
           {/* Left — Info */}
-          <div className="contact-anim">
-            <h2 className="text-4xl md:text-6xl font-sans font-bold tracking-tight mb-8 leading-[1.1]">
-              Ready to stop being <br /><span className="font-serif italic text-primary">invisible online?</span>
+          <div className="contact-anim md:col-span-2">
+            <h2 className="text-4xl md:text-6xl font-sans font-bold tracking-tight mb-8 leading-[1.1] text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)] text-center md:text-left">
+              Ready to stop being <br /><span className="font-sans font-light text-primary">invisible online?</span>
             </h2>
-            <p className="text-textMuted text-lg leading-relaxed mb-12 max-w-md">
-              Tell us about your business and goals. We'll send you a free audit showing exactly where you're losing traffic — and how we'll fix it. No fluff, no obligation.
+            <p className="text-white/70 text-lg leading-relaxed mb-12 max-w-md drop-shadow-[0_1px_6px_rgba(0,0,0,0.6)] text-center md:text-left mx-auto md:mx-0">
+              Tell us about your business and goals and we'll send you a free audit showing exactly where you're losing traffic and how to fix it
             </p>
 
-            <div className="space-y-6">
-              <a href="mailto:hello@galaxymarketing.com" className="flex items-center gap-4 text-textMuted hover:text-primary transition-colors group">
-                <div className="h-12 w-12 rounded-full bg-surface border border-slate/40 flex items-center justify-center group-hover:border-primary/40 transition-colors">
-                  <Mail size={18} className="text-primary" />
+            <div className="space-y-5 max-w-xs mx-auto md:mx-0">
+              <a href="mailto:hello@galaxymarketing.com" className="flex items-center gap-4 text-white hover:text-primary transition-colors group">
+                <div className="h-14 w-14 shrink-0 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <Mail size={22} className="text-primary" />
                 </div>
                 <div>
-                  <div className="font-mono text-xs uppercase tracking-widest text-textMuted/50 mb-1">Email</div>
-                  <div className="font-sans text-sm">hello@galaxymarketing.com</div>
+                  <div className="font-mono text-[10px] uppercase tracking-widest text-primary mb-0.5">Email</div>
+                  <div className="font-sans text-base font-medium">hello@galaxymarketing.com</div>
                 </div>
               </a>
-
-              <a href="tel:+1234567890" className="flex items-center gap-4 text-textMuted hover:text-primary transition-colors group">
-                <div className="h-12 w-12 rounded-full bg-surface border border-slate/40 flex items-center justify-center group-hover:border-primary/40 transition-colors">
-                  <Phone size={18} className="text-primary" />
+              <a href="tel:+1234567890" className="flex items-center gap-4 text-white hover:text-primary transition-colors group">
+                <div className="h-14 w-14 shrink-0 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <Phone size={22} className="text-primary" />
                 </div>
                 <div>
-                  <div className="font-mono text-xs uppercase tracking-widest text-textMuted/50 mb-1">Phone</div>
-                  <div className="font-sans text-sm">+1 (234) 567-890</div>
+                  <div className="font-mono text-[10px] uppercase tracking-widest text-primary mb-0.5">Phone</div>
+                  <div className="font-sans text-base font-medium">+1 (234) 567-890</div>
                 </div>
               </a>
             </div>
           </div>
 
           {/* Right — Form */}
-          <div className="contact-anim">
+          <div className="contact-anim md:col-span-3">
             {submitted ? (
               <div className="h-full flex flex-col items-center justify-center text-center bg-surface border border-slate/40 rounded-[2rem] p-12">
                 <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
@@ -1081,7 +967,7 @@ const ContactForm = () => {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="bg-surface border border-slate/40 rounded-[2rem] p-8 md:p-10 space-y-5" noValidate>
+              <form onSubmit={handleSubmit} className="bg-surface border border-slate/40 rounded-2xl md:rounded-[2rem] p-5 sm:p-8 md:p-10 space-y-4 sm:space-y-5" noValidate>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="name" className="sr-only">Your Name</label>
@@ -1163,7 +1049,7 @@ const ContactForm = () => {
                   <textarea
                     id="message"
                     name="message"
-                    placeholder="Tell us about your business — what you do, who your customers are, and what success looks like for you..."
+                    placeholder="Tell us about your business, what you do, who your customers are, and what success looks like for you..."
                     rows={5}
                     required
                     aria-required="true"
@@ -1176,7 +1062,7 @@ const ContactForm = () => {
                   />
                   {errors.message && <p id="message-error" role="alert" className="text-red-400 text-xs font-mono mt-1.5 ml-1">{errors.message}</p>}
                 </div>
-                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
                   <MagneticButton type="submit" variant="primary" className="w-full sm:w-auto">
                     {sending ? (
                       <span className="flex items-center gap-2">
@@ -1184,10 +1070,10 @@ const ContactForm = () => {
                         Sending...
                       </span>
                     ) : (
-                      <span className="flex items-center gap-2">Get My Free Audit <Send size={16} /></span>
+                      <span className="flex items-center gap-2 whitespace-nowrap">Get My Free Audit <Send size={16} /></span>
                     )}
                   </MagneticButton>
-                  <p className="text-textMuted/60 font-mono text-[10px] uppercase tracking-widest">
+                  <p className="text-textMuted/60 font-mono text-[10px] md:text-xs uppercase tracking-widest whitespace-nowrap">
                     Free audit &bull; No obligation &bull; 24h response
                   </p>
                 </div>
@@ -1203,12 +1089,12 @@ const ContactForm = () => {
 
 /* ── Footer ── */
 const Footer = () => (
-  <footer className="relative bg-background pt-20 pb-12 px-6 md:px-16 border-t border-slate/30" style={{ zIndex: 1 }}>
+  <footer className="relative bg-background/60 backdrop-blur-sm pt-20 pb-12 px-6 md:px-16">
     <div className="max-w-7xl mx-auto">
       <div className="border-b border-slate/30 pb-12 mb-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
         <div>
           <button onClick={scrollToTop} className="text-2xl font-sans font-bold tracking-tight text-textMain/80 cursor-pointer">GALAXY<span className="text-primary">.</span></button>
-          <p className="text-textMuted/60 text-sm mt-2 max-w-xs">Websites that rank on Google, get recommended by AI, and convert visitors into customers.</p>
+          <p className="text-white/50 text-sm mt-2 max-w-xs">Websites that rank on Google, get recommended by AI, and convert visitors into customers</p>
         </div>
         <div className="flex items-center gap-3 font-mono text-xs text-textMuted/80 bg-slate/20 px-4 py-2 rounded-full border border-slate/40">
           <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -1244,7 +1130,7 @@ const HomePage = () => (
   <main id="main-content">
     <Hero />
     <Philosophy />
-    <div className="relative bg-background" style={{ zIndex: 1 }}>
+    <div className="relative">
       <Stats />
       <Features />
       <Selectivity />
@@ -1260,6 +1146,7 @@ const App = () => {
   return (
     <div className="w-full min-h-screen relative text-textMain antialiased selection:bg-primary/20 selection:text-primary">
       <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:bg-primary focus:text-background focus:px-4 focus:py-2 focus:rounded-full focus:font-sans focus:text-sm">Skip to content</a>
+      <GlobalSpaceBg />
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />

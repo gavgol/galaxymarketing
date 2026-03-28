@@ -34,3 +34,37 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #C9A84C;
 }
+
+/* Nav scrolled state */
+.nav-scrolled {
+  background: rgba(7, 7, 16, 0.8) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Slow drifting space background animation */
+@keyframes space-drift {
+  0% { transform: translate(0%, 0%) scale(1); }
+  25% { transform: translate(-3%, -2%) scale(1.02); }
+  50% { transform: translate(-1%, -4%) scale(1.01); }
+  75% { transform: translate(-4%, -1%) scale(1.03); }
+  100% { transform: translate(0%, 0%) scale(1); }
+}
+
+.animate-space-drift {
+  animation: space-drift 60s ease-in-out infinite;
+}
+
+/* Hero video mask — mobile: fade from top, desktop: fade from left */
+.hero-video-mask {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 5%, rgba(0,0,0,0.4) 30%, black 60%);
+  mask-image: linear-gradient(to bottom, transparent 5%, rgba(0,0,0,0.4) 30%, black 60%);
+}
+
+@media (min-width: 768px) {
+  .hero-video-mask {
+    -webkit-mask-image: linear-gradient(to right, transparent 15%, rgba(0,0,0,0.3) 35%, rgba(0,0,0,0.8) 55%, black 75%);
+    mask-image: linear-gradient(to right, transparent 15%, rgba(0,0,0,0.3) 35%, rgba(0,0,0,0.8) 55%, black 75%);
+  }
+}
