@@ -260,7 +260,7 @@ const BlogPost = ({ posts }) => {
             alt={post.heroImageAlt}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-background/70" />
+          <div className="absolute inset-0 bg-background/90" />
 
           {/* Breadcrumb */}
           <div className="absolute top-8 left-0 right-0 px-6 md:px-16">
