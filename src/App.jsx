@@ -229,31 +229,43 @@ const Navbar = () => {
 const Hero = () => {
   const containerRef = useRef(null);
   const videoRef = useRef(null);
+  const [ready, setReady] = useState(false);
 
   useGSAP(() => {
+    if (!ready) return;
     const rm = prefersReducedMotion();
     gsap.from('.hero-text', {
       y: rm ? 10 : 40, opacity: 0,
       duration: rm ? 0.5 : 1, stagger: 0.15, ease: 'power3.out', delay: 0.2
     });
-  }, { scope: containerRef });
+  }, { scope: containerRef, dependencies: [ready] });
 
-  // Play video once, then stay on last frame (dashboard)
+  // Wait for video to be ready, then reveal everything together
   useEffect(() => {
     const vid = videoRef.current;
     if (!vid) return;
     vid.playbackRate = 0.8;
+
+    const reveal = () => setReady(true);
     const handleEnded = () => {
-      // Pause on last frame — dashboard stays visible and "alive"
       vid.currentTime = vid.duration - 0.1;
       vid.pause();
     };
+
+    // Reveal when video can play, or after 2s max (don't block on slow connections)
+    vid.addEventListener('canplay', reveal, { once: true });
     vid.addEventListener('ended', handleEnded);
-    return () => vid.removeEventListener('ended', handleEnded);
+    const fallback = setTimeout(reveal, 2000);
+
+    return () => {
+      vid.removeEventListener('canplay', reveal);
+      vid.removeEventListener('ended', handleEnded);
+      clearTimeout(fallback);
+    };
   }, []);
 
   return (
-    <section ref={containerRef} className="relative w-full flex items-center pt-24 pb-8 md:pt-32 md:pb-20 px-6 md:px-16 overflow-hidden min-h-dvh">
+    <section ref={containerRef} className={`relative w-full flex items-center pt-24 pb-8 md:pt-32 md:pb-20 px-6 md:px-16 overflow-hidden min-h-dvh transition-opacity duration-700 ${ready ? 'opacity-100' : 'opacity-0'}`}>
       {/* Video background — visible on all screens */}
       <div className="absolute inset-0 z-[1]">
         <video
