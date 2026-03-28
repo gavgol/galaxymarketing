@@ -273,18 +273,18 @@ const BlogPost = ({ posts }) => {
           </div>
 
           {/* Hero Content */}
-          <div className="absolute bottom-0 left-0 right-0 px-6 md:px-16 pb-12">
+          <div className="absolute bottom-0 left-0 right-0 px-6 md:px-16 pb-12" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.8)' }}>
             <div className="max-w-4xl mx-auto">
               <span className={`inline-block px-3 py-1 rounded-full text-xs font-mono font-medium border mb-6 ${categoryColors[post.category] || 'bg-primary/20 text-primary border-primary/30'}`}>
                 {post.category}
               </span>
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-sans font-bold text-textMain leading-tight mb-6">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-sans font-bold text-white leading-tight mb-6">
                 {post.title}
               </h1>
-              <p className="text-textMuted text-lg md:text-xl max-w-2xl leading-relaxed mb-6">
+              <p className="text-textMain/90 text-lg md:text-xl max-w-2xl leading-relaxed mb-6">
                 {post.subtitle}
               </p>
-              <div className="flex flex-wrap items-center gap-6 font-mono text-xs text-textMuted/70">
+              <div className="flex flex-wrap items-center gap-6 font-mono text-xs text-textMain/70">
                 <span className="flex items-center gap-1.5">
                   <Calendar size={12} />
                   {formatDate(post.date)}
