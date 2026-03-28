@@ -776,6 +776,7 @@ const Protocol = () => {
 
   useGSAP(() => {
     const rm = prefersReducedMotion();
+    const isMobile = window.innerWidth < 768;
     const cards = gsap.utils.toArray('.protocol-card');
     cards.forEach((card, index) => {
       const isLast = index === cards.length - 1;
@@ -787,8 +788,8 @@ const Protocol = () => {
           ease: 'power1.inOut',
           scrollTrigger: {
             trigger: cards[index + 1],
-            start: 'top 85%',
-            end: 'top 15%',
+            start: isMobile ? 'top 95%' : 'top 85%',
+            end: isMobile ? 'top 40%' : 'top 15%',
             scrub: true,
           }
         });
@@ -810,7 +811,7 @@ const Protocol = () => {
       </div>
       <div className="max-w-5xl mx-auto">
         {steps.map((step, index) => (
-          <div key={index} className={`protocol-card sticky top-20 md:top-24 rounded-2xl md:rounded-[3rem] bg-surface border border-slate shadow-2xl overflow-hidden will-change-transform ${index < steps.length - 1 ? 'mb-[8vh] md:mb-[15vh]' : 'mb-0'}`} style={{ zIndex: index }}>
+          <div key={index} className={`protocol-card sticky top-20 md:top-24 rounded-2xl md:rounded-[3rem] bg-surface border border-slate shadow-2xl overflow-hidden will-change-transform ${index < steps.length - 1 ? 'mb-[20vh] md:mb-[15vh]' : 'mb-0'}`} style={{ zIndex: index }}>
             <div className="flex flex-col md:flex-row h-full min-h-[280px] md:min-h-[400px]">
               <div className="w-full md:w-1/3 relative overflow-hidden border-b md:border-b-0 md:border-r border-slate/30 min-h-[120px] md:min-h-0">
                 <img src={step.img} alt={step.title} className="absolute inset-0 w-full h-full object-cover opacity-30" loading="lazy" />
