@@ -233,7 +233,7 @@ const BlogPost = ({ posts }) => {
 
   if (!post) {
     return (
-      <main className="min-h-screen pt-32 pb-24 px-6 md:px-16 text-center">
+      <main className="relative z-10 min-h-screen pt-32 pb-24 px-6 md:px-16 text-center">
         <div className="max-w-2xl mx-auto">
           <h1 className="text-4xl font-sans font-bold text-textMain mb-4">Article Not Found</h1>
           <p className="text-textMuted mb-8">The article you're looking for doesn't exist or has been moved.</p>
@@ -251,7 +251,7 @@ const BlogPost = ({ posts }) => {
   return (
     <>
       <ArticleSchema post={post} />
-      <main className="min-h-screen pt-28 pb-24">
+      <main className="relative z-10 min-h-screen pt-28 pb-24">
 
         {/* Hero */}
         <div className="relative h-[50vh] md:h-[60vh] overflow-hidden">

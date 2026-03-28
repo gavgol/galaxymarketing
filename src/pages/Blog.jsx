@@ -89,7 +89,7 @@ const Blog = ({ posts }) => {
   }, []);
 
   return (
-    <main className="min-h-screen pt-32 pb-24 px-6 md:px-16">
+    <main className="relative z-10 min-h-screen pt-32 pb-24 px-6 md:px-16">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
