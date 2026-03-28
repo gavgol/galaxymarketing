@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Clock, Calendar, Tag, Share2, Linkedin, ExternalLink, ChevronRight, BookOpen } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Clock, Calendar, Tag, Share2, Linkedin, ExternalLink, ChevronRight, BookOpen } from 'lucide-react';
 
 const formatDate = (dateStr) => {
   const date = new Date(dateStr);
