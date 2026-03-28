@@ -229,7 +229,34 @@ const BlogPost = ({ posts }) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [slug]);
+    if (post) {
+      document.title = `${post.title} | Galaxy Marketing Blog`;
+
+      // Update meta tags for social sharing (prerender will capture these)
+      const setMeta = (property, content) => {
+        let tag = document.querySelector(`meta[property="${property}"]`) || document.querySelector(`meta[name="${property}"]`);
+        if (!tag) {
+          tag = document.createElement('meta');
+          tag.setAttribute(property.startsWith('og:') || property.startsWith('article:') ? 'property' : 'name', property);
+          document.head.appendChild(tag);
+        }
+        tag.setAttribute('content', content);
+      };
+
+      const url = `https://galaxymarketingwa.vercel.app/blog/${post.id}`;
+      setMeta('description', post.subtitle);
+      setMeta('og:title', post.title);
+      setMeta('og:description', post.subtitle);
+      setMeta('og:image', post.heroImage);
+      setMeta('og:url', url);
+      setMeta('og:type', 'article');
+      setMeta('article:published_time', post.date);
+      setMeta('twitter:title', post.title);
+      setMeta('twitter:description', post.subtitle);
+      setMeta('twitter:image', post.heroImage);
+    }
+    return () => { document.title = 'Galaxy Marketing | Web Design & Digital Growth'; };
+  }, [slug, post]);
 
   if (!post) {
     return (

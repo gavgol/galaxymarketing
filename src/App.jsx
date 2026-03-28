@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useCallback, lazy, Suspense } from 'react';
+import React, { useEffect, useRef, useState, lazy, Suspense } from 'react';
 import { Routes, Route, useLocation, Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -10,27 +10,6 @@ const Blog = lazy(() => import('./pages/Blog.jsx'));
 const BlogPost = lazy(() => import('./pages/BlogPost.jsx'));
 
 gsap.registerPlugin(ScrollTrigger);
-
-/* ── Loader ── */
-const Loader = ({ progress, visible }) => (
-  <div
-    className="fixed inset-0 z-[9999] bg-background flex items-center justify-center transition-opacity duration-600"
-    style={{ opacity: visible ? 1 : 0, pointerEvents: visible ? 'auto' : 'none' }}
-  >
-    <div className="text-center">
-      <div className="font-sans text-3xl font-bold text-textMain mb-6 tracking-tight">
-        GALAXY <span className="text-primary">MARKETING</span>
-      </div>
-      <p className="font-mono text-xs text-textMuted uppercase tracking-[3px] mb-4">Loading</p>
-      <div className="w-48 h-[3px] rounded bg-slate/50 mx-auto">
-        <div
-          className="h-full rounded bg-primary transition-[width] duration-300"
-          style={{ width: `${progress}%` }}
-        />
-      </div>
-    </div>
-  </div>
-);
 
 /* ── Global Space Background — fixed behind entire site with slow drift animation ── */
 const GlobalSpaceBg = () => (
@@ -77,35 +56,67 @@ const MagneticButton = ({ children, variant = 'primary', className = '', onClick
     outline: 'bg-background/80 border border-slate text-textMain px-8 py-4 hover:border-primary',
   };
 
-  const handleClick = (e) => {
-    if (href) {
-      e.preventDefault();
-      if (href.startsWith('#')) {
-        scrollTo(href.slice(1));
-      } else {
-        window.open(href, '_blank', 'noopener');
-      }
-    }
-    if (onClick) onClick(e);
-  };
-
-  return (
-    <button
-      ref={btnRef}
-      type={type}
-      onClick={handleClick}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      className={`${baseClasses} ${variants[variant]} ${className}`}
-      style={{ transition: 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)' }}
-    >
-      <span className="relative z-10 flex items-center gap-2">{children}</span>
+  const hoverOverlay = (
+    <>
       {variant === 'primary' && (
         <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]"></div>
       )}
       {variant === 'outline' && (
         <div className="absolute inset-0 bg-primary/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]"></div>
       )}
+    </>
+  );
+
+  const sharedProps = {
+    ref: btnRef,
+    onMouseMove: handleMouseMove,
+    onMouseLeave: handleMouseLeave,
+    className: `${baseClasses} ${variants[variant]} ${className}`,
+    style: { transition: 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)' },
+  };
+
+  // Render <a> for links so crawlers can follow them
+  if (href && href.startsWith('#')) {
+    return (
+      <a
+        {...sharedProps}
+        href={href}
+        onClick={(e) => {
+          e.preventDefault();
+          scrollTo(href.slice(1));
+          if (onClick) onClick(e);
+        }}
+      >
+        <span className="relative z-10 flex items-center gap-2">{children}</span>
+        {hoverOverlay}
+      </a>
+    );
+  }
+
+  if (href) {
+    return (
+      <a
+        {...sharedProps}
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={onClick}
+      >
+        <span className="relative z-10 flex items-center gap-2">{children}</span>
+        {hoverOverlay}
+      </a>
+    );
+  }
+
+  // Render <button> only for non-link actions (form submit, etc.)
+  return (
+    <button
+      {...sharedProps}
+      type={type}
+      onClick={onClick}
+    >
+      <span className="relative z-10 flex items-center gap-2">{children}</span>
+      {hoverOverlay}
     </button>
   );
 };
@@ -214,159 +225,6 @@ const Navbar = () => {
   );
 };
 
-/* ── Scroll Video Hero — clean, fast, no cards ── */
-const FRAME_COUNT = 61;
-
-const ScrollVideoHero = ({ onFramesLoaded }) => {
-  const sectionRef = useRef(null);
-  const canvasRef = useRef(null);
-  const heroTextRef = useRef(null);
-  const overlayRef = useRef(null);
-  const framesRef = useRef([]);
-  const currentFrameRef = useRef(-1);
-  const ctxRef = useRef(null);
-  const allLoadedRef = useRef(false);
-
-  // Cover-fit drawing — always fills the viewport edge-to-edge
-  const drawFrame = useCallback((index) => {
-    const canvas = canvasRef.current;
-    const ctx = ctxRef.current;
-    const img = framesRef.current[index];
-    if (!canvas || !ctx || !img || !img.complete) return;
-
-    const cw = canvas.width, ch = canvas.height;
-    ctx.clearRect(0, 0, cw, ch);
-
-    // Cover-fit (fill viewport, crop overflow)
-    const imgRatio = img.naturalWidth / img.naturalHeight;
-    const canvasRatio = cw / ch;
-    let drawW, drawH;
-    if (canvasRatio > imgRatio) { drawW = cw; drawH = cw / imgRatio; }
-    else { drawH = ch; drawW = ch * imgRatio; }
-    ctx.drawImage(img, (cw - drawW) / 2, (ch - drawH) / 2, drawW, drawH);
-  }, []);
-
-  // Canvas resize — NO devicePixelRatio (1x = faster draws)
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    ctxRef.current = canvas.getContext('2d', { willReadFrequently: false });
-
-    const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      if (currentFrameRef.current >= 0) drawFrame(currentFrameRef.current);
-    };
-    resize();
-    window.addEventListener('resize', resize);
-    return () => window.removeEventListener('resize', resize);
-  }, [drawFrame]);
-
-  // Preload all frames
-  useEffect(() => {
-    let loaded = 0;
-    const imgs = [];
-    for (let i = 1; i <= FRAME_COUNT; i++) {
-      const img = new Image();
-      img.src = `/frames/frame_${String(i).padStart(4, '0')}.jpg`;
-      img.onload = () => {
-        loaded++;
-        onFramesLoaded(Math.round((loaded / FRAME_COUNT) * 100));
-        if (loaded === FRAME_COUNT) {
-          allLoadedRef.current = true;
-          currentFrameRef.current = 0;
-          drawFrame(0);
-        }
-      };
-      imgs.push(img);
-    }
-    framesRef.current = imgs;
-  }, [drawFrame, onFramesLoaded]);
-
-  // Scroll → frame mapping. Pure vanilla, no React state, requestAnimationFrame + passive
-  useEffect(() => {
-    let ticking = false;
-    const onScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          const section = sectionRef.current;
-          if (!section || !allLoadedRef.current) { ticking = false; return; }
-
-          const rect = section.getBoundingClientRect();
-          const scrollableHeight = section.offsetHeight - window.innerHeight;
-          const progress = Math.min(1, Math.max(0, -rect.top / scrollableHeight));
-
-          // Only redraw when frame changes
-          const frameIndex = Math.min(FRAME_COUNT - 1, Math.floor(progress * FRAME_COUNT));
-          if (frameIndex !== currentFrameRef.current) {
-            currentFrameRef.current = frameIndex;
-            drawFrame(frameIndex);
-          }
-
-          // Fade out hero text as scroll starts
-          const textOpacity = Math.max(0, 1 - progress * 8);
-          if (heroTextRef.current) {
-            heroTextRef.current.style.opacity = textOpacity;
-            heroTextRef.current.style.pointerEvents = textOpacity > 0.5 ? 'auto' : 'none';
-          }
-          if (overlayRef.current) {
-            overlayRef.current.style.opacity = textOpacity;
-          }
-
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, [drawFrame]);
-
-  return (
-    <section ref={sectionRef} className="relative" style={{ height: '200vh' }}>
-      <div className="sticky top-0 w-full overflow-hidden" style={{ height: '100vh' }}>
-        <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
-
-        {/* Dark overlay for text readability */}
-        <div
-          ref={overlayRef}
-          className="absolute inset-0 z-[5] pointer-events-none"
-          style={{
-            background: 'linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.7) 45%, rgba(0,0,0,0.5) 75%, rgba(0,0,0,0.15) 100%)',
-          }}
-        />
-
-        {/* Hero text */}
-        <div ref={heroTextRef} className="absolute inset-0 z-10 flex items-center justify-center">
-          <div className="text-center px-6 max-w-3xl">
-            <p className="text-primary font-mono text-xs sm:text-sm tracking-widest mb-4 sm:mb-6 uppercase flex items-center justify-center gap-3">
-              <span className="h-[1px] w-8 bg-primary"></span>
-              Web Design &bull; SEO &bull; AI Visibility
-            </p>
-            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-sans font-bold leading-[1.05] tracking-tight mb-2 text-white">
-              Get Found. <br />
-              <span className="block font-sans font-light text-white/80 text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] mt-2">Get Chosen.</span>
-            </h1>
-            <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-xl mx-auto mt-6 sm:mt-10 font-sans leading-relaxed">
-              We build websites that rank, get recommended by AI, and convert.
-            </p>
-            <div className="mt-6 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5">
-              <MagneticButton href="#contact">Start Your Project <ArrowRight size={18} /></MagneticButton>
-              <MagneticButton variant="outline" href="#results">See Our Results <BarChart3 size={18} /></MagneticButton>
-            </div>
-            <div className="mt-8 sm:mt-12 flex items-center justify-center gap-2 text-white/40 text-xs font-mono animate-bounce">
-              <span>Scroll to explore</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-/* HeroMockups removed */
-
 /* ── Hero ── */
 const Hero = () => {
   const containerRef = useRef(null);
@@ -404,7 +262,7 @@ const Hero = () => {
           muted
           playsInline
           className="absolute inset-0 w-full h-full object-cover opacity-40 hero-video-mask"
-          src="/hf_20260328_121348_99915d41-7b29-4e5b-bf60-8593d3ce29db.mp4"
+          src="/galaxy-hero.mp4"
         />
         {/* Top fade only — bottom blends smoothly into space bg */}
         <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-transparent pointer-events-none"></div>
@@ -905,11 +763,24 @@ const ContactForm = () => {
       return;
     }
     setSending(true);
-    setTimeout(() => {
-      setSending(false);
-      setSubmitted(true);
-      setErrors({});
-    }, 1500);
+    fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    })
+      .then(res => {
+        setSending(false);
+        if (res.ok) {
+          setSubmitted(true);
+          setErrors({});
+        } else {
+          setErrors({ message: 'Something went wrong. Please try again or email us directly.' });
+        }
+      })
+      .catch(() => {
+        setSending(false);
+        setErrors({ message: 'Network error. Please try again or email us directly.' });
+      });
   };
 
   const inputClasses = 'w-full bg-background/80 border border-slate/40 rounded-xl px-5 py-4 text-textMain font-sans text-sm placeholder:text-textMuted/60 focus:outline-none focus:border-primary/60 transition-colors duration-300';
@@ -1105,13 +976,13 @@ const Footer = () => (
       </div>
 
       <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-        <div className="flex items-center gap-8 font-mono text-xs text-textMuted">
+        <nav aria-label="Footer navigation" className="flex items-center gap-8 font-mono text-xs text-textMuted">
           <button onClick={() => scrollTo('services')} className="hover:text-primary transition-colors cursor-pointer">Services</button>
           <button onClick={() => scrollTo('process')} className="hover:text-primary transition-colors cursor-pointer">Process</button>
           <button onClick={() => scrollTo('results')} className="hover:text-primary transition-colors cursor-pointer">Results</button>
           <Link to="/blog" className="hover:text-primary transition-colors">Blog</Link>
           <button onClick={() => scrollTo('contact')} className="hover:text-primary transition-colors cursor-pointer">Contact</button>
-        </div>
+        </nav>
 
         <div className="flex items-center gap-6 font-mono text-xs text-textMuted">
           <a href="mailto:hello@galaxymarketing.com" className="hover:text-primary transition-colors">Email</a>
@@ -1125,6 +996,20 @@ const Footer = () => (
       </div>
     </div>
   </footer>
+);
+
+/* ── 404 Not Found ── */
+const NotFound = () => (
+  <main className="relative z-10 min-h-screen pt-32 pb-24 px-6 md:px-16 text-center flex flex-col items-center justify-center">
+    <div className="max-w-2xl mx-auto">
+      <p className="font-mono text-primary text-8xl font-bold mb-6">404</p>
+      <h1 className="text-3xl md:text-5xl font-sans font-bold text-textMain mb-4">Page Not Found</h1>
+      <p className="text-textMuted text-lg mb-8">The page you're looking for doesn't exist or has been moved.</p>
+      <Link to="/" className="inline-flex items-center gap-2 bg-primary text-background px-8 py-4 rounded-full font-medium hover:bg-primary/90 transition-colors">
+        Back to Home <ArrowRight size={16} />
+      </Link>
+    </div>
+  </main>
 );
 
 /* ── Home Page ── */
@@ -1143,18 +1028,31 @@ const HomePage = () => (
   </main>
 );
 
+/* ── Scroll To Top on Route Change ── */
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
+
 /* ── App ── */
 const App = () => {
   return (
     <div className="w-full min-h-screen relative text-textMain antialiased selection:bg-primary/20 selection:text-primary">
       <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:bg-primary focus:text-background focus:px-4 focus:py-2 focus:rounded-full focus:font-sans focus:text-sm">Skip to content</a>
+      <ScrollToTop />
       <GlobalSpaceBg />
       <Navbar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/blog" element={<Blog posts={blogPosts} />} />
-        <Route path="/blog/:slug" element={<BlogPost posts={blogPosts} />} />
-      </Routes>
+      <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="h-8 w-8 border-2 border-primary/30 border-t-primary rounded-full animate-spin"></div></div>}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/blog" element={<Blog posts={blogPosts} />} />
+          <Route path="/blog/:slug" element={<BlogPost posts={blogPosts} />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
       <Footer />
     </div>
   );

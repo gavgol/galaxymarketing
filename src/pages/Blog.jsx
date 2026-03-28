@@ -86,6 +86,8 @@ const BlogCard = ({ post, index }) => (
 const Blog = ({ posts }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    document.title = 'Blog | Galaxy Marketing — SEO, GEO, AEO & Web Design Insights';
+    return () => { document.title = 'Galaxy Marketing | Web Design & Digital Growth'; };
   }, []);
 
   return (
